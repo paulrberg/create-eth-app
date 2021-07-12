@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Contract } from "@ethersproject/contracts";
 import { getDefaultProvider } from "@ethersproject/providers";
 import { useQuery } from "@apollo/react-hooks";
@@ -33,6 +33,30 @@ function WalletButton({ provider, loadWeb3Modal, logoutOfWeb3Modal }) {
   );
 }
 
+function UserInfo({provider}){
+  const [account, setAccount] = useState(false);
+  const [name, setName] = useState(false);
+  React.useEffect(() => {
+    async function fetchAccount() {
+      try{
+        const a = (await provider.listAccounts())[0]
+        setAccount(a)
+        const n = await provider.lookupAddress(a);
+        setName(n)
+      }catch(e){
+        console.log(e)
+      }
+    }
+    if(provider) fetchAccount();
+  }, [provider]);
+
+  if(account){
+    return(`Connected as ${name || account.slice(0,5) + '...'}`);
+  }else{
+    return('')
+  }
+}
+
 function App() {
   const { loading, error, data } = useQuery({{ graphqlQueryName }});
   const [provider, loadWeb3Modal, logoutOfWeb3Modal] = useWeb3Modal();
@@ -46,6 +70,7 @@ function App() {
   return (
     <div>
       <Header>
+        <UserInfo provider={provider} />
         <WalletButton provider={provider} loadWeb3Modal={loadWeb3Modal} logoutOfWeb3Modal={logoutOfWeb3Modal} />
       </Header>
       <Body>
