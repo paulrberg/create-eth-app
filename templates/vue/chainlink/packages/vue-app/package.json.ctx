@@ -1,0 +1,13 @@
+{
+  "packageName": "@chainlink-app/vue-app",
+  "dependencies": {
+    "keys": [
+      "@chainlink-app/contracts",
+      "@chainlink/contracts"
+    ],
+    "values": [
+      "^1.0.0",
+      "0.2.1"
+    ]
+  }
+}

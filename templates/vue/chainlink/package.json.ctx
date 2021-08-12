@@ -1,0 +1,7 @@
+{
+  "orgName": "@chainlink-app",
+  "packageName": "@chainlink-app/monorepo",
+  "keywords": [
+    "chainlink"
+  ]
+}

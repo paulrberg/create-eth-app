@@ -1,0 +1,11 @@
+{
+  "description": "Chainlink is middleware to simplify communication with blockchains. Read more about it in the [official documentation](https://docs.chain.link/).",
+  "packages": [
+    "[contracts](/packages/contracts)",
+    "[react-app](/packages/react-app)"
+  ],
+  "subgraphName": "Chainlink",
+  "subgraphUrl": "https://thegraph.com/legacy-explorer/subgraph/tomafrench/chainlink",
+  "templateName": "Chainlink",
+  "templateUrl": "https://github.com/paulrberg/create-eth-app/tree/develop/templates/react/chainlink"
+}

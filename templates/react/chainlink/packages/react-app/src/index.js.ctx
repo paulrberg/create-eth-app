@@ -1,0 +1,4 @@
+{
+  "subgraphComment": "// This is NOT the official Chainlink subgraph. You can replace it with your own, if you need to.",
+  "subgraphUrl": "https://api.thegraph.com/subgraphs/name/tomafrench/chainlink"
+}
