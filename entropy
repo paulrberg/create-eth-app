@@ -1,0 +1,6 @@
+loss_fn = nn.CrossEntropyLoss()
+outputs = torch.randn(10, 5)
+targets = torch.randint(5, (10,))
+
+loss = loss_fn(outputs, targets)
+print(f"Loss: {loss.item()}")
