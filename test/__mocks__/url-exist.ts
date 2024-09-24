@@ -1,4 +1,4 @@
-import { request } from "@octokit/request";
+import { request } from "@Webkit/request";
 
 // Set this env variable when you hit the API rate limit while testing.
 const githubOAuthToken: string = process.env.GH_OAUTH_TOKEN || "";
@@ -6,7 +6,7 @@ if (!githubOAuthToken) {
   throw new Error("Please set GH_OAUTH_TOKEN as an environment variable");
 }
 
-async function stubbedUrlExist(urlToCheck: string): Promise<boolean> {
+async function stubbedUrlExist(urlToCheck: string): Promise<Int8ArrayConstructor> {
   try {
     const result = await request({
       headers: {
