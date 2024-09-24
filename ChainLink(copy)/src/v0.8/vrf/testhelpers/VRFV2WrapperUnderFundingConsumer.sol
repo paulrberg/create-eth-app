@@ -1,0 +1,40 @@
+/*
+    
+   ██████  ██████   ██████  ██   ██ ██████   ██████   ██████  ██   ██    ██████  ███████ ██    ██
+  ██      ██    ██ ██    ██ ██  ██  ██   ██ ██    ██ ██    ██ ██  ██     ██   ██ ██      ██    ██
+  ██      ██    ██ ██    ██ █████   ██████  ██    ██ ██    ██ █████      ██   ██ █████   ██    ██
+  ██      ██    ██ ██    ██ ██  ██  ██   ██ ██    ██ ██    ██ ██  ██     ██   ██ ██       ██  ██
+   ██████  ██████   ██████  ██   ██ ██████   ██████   ██████  ██   ██ ██ ██████  ███████   ████
+  
+  Find any smart contract, and build your project faster: https://www.cookbook.dev
+  Twitter: https://twitter.com/cookbook_dev
+  Discord: https://discord.gg/cookbookdev
+  
+  Find this contract on Cookbook: https://www.cookbook.dev/protocols/ChainLink?utm=code
+  */
+  
+  // SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+import "../../ConfirmedOwner.sol";
+import "../../interfaces/LinkTokenInterface.sol";
+import "../../interfaces/VRFV2WrapperInterface.sol";
+
+contract VRFV2WrapperUnderFundingConsumer is ConfirmedOwner {
+  LinkTokenInterface internal immutable LINK;
+  VRFV2WrapperInterface internal immutable VRF_V2_WRAPPER;
+
+  constructor(address _link, address _vrfV2Wrapper) ConfirmedOwner(msg.sender) {
+    LINK = LinkTokenInterface(_link);
+    VRF_V2_WRAPPER = VRFV2WrapperInterface(_vrfV2Wrapper);
+  }
+
+  function makeRequest(uint32 _callbackGasLimit, uint16 _requestConfirmations, uint32 _numWords) external onlyOwner {
+    LINK.transferAndCall(
+      address(VRF_V2_WRAPPER),
+      // Pay less than the needed amount
+      VRF_V2_WRAPPER.calculateRequestPrice(_callbackGasLimit) - 1,
+      abi.encode(_callbackGasLimit, _requestConfirmations, _numWords)
+    );
+  }
+}

@@ -1,0 +1,618 @@
+{
+	"compiler": {
+		"version": "0.7.6+commit.7338295f"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint24",
+						"name": "fee",
+						"type": "uint24"
+					},
+					{
+						"indexed": true,
+						"internalType": "int24",
+						"name": "tickSpacing",
+						"type": "int24"
+					}
+				],
+				"name": "FeeAmountEnabled",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "oldOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnerChanged",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "token0",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "token1",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint24",
+						"name": "fee",
+						"type": "uint24"
+					},
+					{
+						"indexed": false,
+						"internalType": "int24",
+						"name": "tickSpacing",
+						"type": "int24"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "pool",
+						"type": "address"
+					}
+				],
+				"name": "PoolCreated",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "tokenA",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "tokenB",
+						"type": "address"
+					},
+					{
+						"internalType": "uint24",
+						"name": "fee",
+						"type": "uint24"
+					}
+				],
+				"name": "createPool",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "pool",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint24",
+						"name": "fee",
+						"type": "uint24"
+					},
+					{
+						"internalType": "int24",
+						"name": "tickSpacing",
+						"type": "int24"
+					}
+				],
+				"name": "enableFeeAmount",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint24",
+						"name": "",
+						"type": "uint24"
+					}
+				],
+				"name": "feeAmountTickSpacing",
+				"outputs": [
+					{
+						"internalType": "int24",
+						"name": "",
+						"type": "int24"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint24",
+						"name": "",
+						"type": "uint24"
+					}
+				],
+				"name": "getPool",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "parameters",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "factory",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "token0",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "token1",
+						"type": "address"
+					},
+					{
+						"internalType": "uint24",
+						"name": "fee",
+						"type": "uint24"
+					},
+					{
+						"internalType": "int24",
+						"name": "tickSpacing",
+						"type": "int24"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_owner",
+						"type": "address"
+					}
+				],
+				"name": "setOwner",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"createPool(address,address,uint24)": {
+					"details": "tokenA and tokenB may be passed in either order: token0/token1 or token1/token0. tickSpacing is retrieved from the fee. The call will revert if the pool already exists, the fee is invalid, or the token arguments are invalid.",
+					"params": {
+						"fee": "The desired fee for the pool",
+						"tokenA": "One of the two tokens in the desired pool",
+						"tokenB": "The other of the two tokens in the desired pool"
+					},
+					"returns": {
+						"pool": "The address of the newly created pool"
+					}
+				},
+				"enableFeeAmount(uint24,int24)": {
+					"details": "Fee amounts may never be removed once enabled",
+					"params": {
+						"fee": "The fee amount to enable, denominated in hundredths of a bip (i.e. 1e-6)",
+						"tickSpacing": "The spacing between ticks to be enforced for all pools created with the given fee amount"
+					}
+				},
+				"setOwner(address)": {
+					"details": "Must be called by the current owner",
+					"params": {
+						"_owner": "The new owner of the factory"
+					}
+				}
+			},
+			"stateVariables": {
+				"feeAmountTickSpacing": {
+					"details": "A fee amount can never be removed, so this value should be hard coded or cached in the calling context",
+					"params": {
+						"fee": "The enabled fee, denominated in hundredths of a bip. Returns 0 in case of unenabled fee"
+					},
+					"return": "The tick spacing"
+				},
+				"getPool": {
+					"details": "tokenA and tokenB may be passed in either token0/token1 or token1/token0 order",
+					"params": {
+						"fee": "The fee collected upon every swap in the pool, denominated in hundredths of a bip",
+						"tokenA": "The contract address of either token0 or token1",
+						"tokenB": "The contract address of the other token"
+					},
+					"return": "pool The pool address"
+				},
+				"owner": {
+					"details": "Can be changed by the current owner via setOwner",
+					"return": "The address of the factory owner"
+				}
+			},
+			"title": "Canonical Uniswap V3 factory",
+			"version": 1
+		},
+		"userdoc": {
+			"events": {
+				"FeeAmountEnabled(uint24,int24)": {
+					"notice": "Emitted when a new fee amount is enabled for pool creation via the factory"
+				},
+				"OwnerChanged(address,address)": {
+					"notice": "Emitted when the owner of the factory is changed"
+				},
+				"PoolCreated(address,address,uint24,int24,address)": {
+					"notice": "Emitted when a pool is created"
+				}
+			},
+			"kind": "user",
+			"methods": {
+				"createPool(address,address,uint24)": {
+					"notice": "Creates a pool for the given two tokens and fee"
+				},
+				"enableFeeAmount(uint24,int24)": {
+					"notice": "Enables a fee amount with the given tickSpacing"
+				},
+				"feeAmountTickSpacing(uint24)": {
+					"notice": "Returns the tick spacing for a given fee amount, if enabled, or 0 if not enabled"
+				},
+				"getPool(address,address,uint24)": {
+					"notice": "Returns the pool address for a given pair of tokens and a fee, or address 0 if it does not exist"
+				},
+				"owner()": {
+					"notice": "Returns the current owner of the factory"
+				},
+				"parameters()": {
+					"notice": "Get the parameters to be used in constructing the pool, set transiently during pool creation."
+				},
+				"setOwner(address)": {
+					"notice": "Updates the owner of the factory"
+				}
+			},
+			"notice": "Deploys Uniswap V3 pools and manages ownership and control over pool protocol fees",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Uniswap-V3//UniswapV3Factory.sol": "UniswapV3Factory"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Uniswap-V3//UniswapV3Factory.sol": {
+			"keccak256": "0x2629866af06f695e5f64f7a30ba031c30a540f2730377f52c33b4a6ea195321b",
+			"license": "BUSL-1.1",
+			"urls": [
+				"bzz-raw://66280f903185f156227e68642f1c409d4dceb5701139aa332aaeb891763f723e",
+				"dweb:/ipfs/QmZX4TBaQtwsuonPLih4mHbhxnWkXYfM7dR19c716FnJmh"
+			]
+		},
+		"Uniswap-V3/NoDelegateCall.sol": {
+			"keccak256": "0x6aca06a474273f3cc8215ecd78fee5b0220c7c35e326c5dbc8a488a29f88a339",
+			"license": "BUSL-1.1",
+			"urls": [
+				"bzz-raw://bf688bb13b51e7bcce4407b4d6cf9bae36fede523ffb170d9a52c4f192e729d8",
+				"dweb:/ipfs/QmQnYsnQKYP2sgCdr7PXw5F5HFJiUHbDjKEy8jmR7yX7Ct"
+			]
+		},
+		"Uniswap-V3/UniswapV3Pool.sol": {
+			"keccak256": "0x87a228d45b73dff37d13e78e860c92a5be7cd63c5280722995ee133a610c7dc0",
+			"license": "BUSL-1.1",
+			"urls": [
+				"bzz-raw://4b984259a593109fc5137051fb74ab5cc03dd71df63e88fe31fcb2d6b6f73e9f",
+				"dweb:/ipfs/QmPTgZU25rzoTG8jGWtNzrzmAYLCCKDr6Esc4dTjMsaNLQ"
+			]
+		},
+		"Uniswap-V3/UniswapV3PoolDeployer.sol": {
+			"keccak256": "0xad174ea24436ecf5c46ed4b23f7ecd3ee3fb480219c17ba75ba9c9f69696d98d",
+			"license": "BUSL-1.1",
+			"urls": [
+				"bzz-raw://c36d77864b608c2c74f41c5f2a79cbee12480de144ed1c1f09e866b3031d6252",
+				"dweb:/ipfs/Qmb3E26JbStjvj9FBVSwNZJuUPthPBXv6z13MZcGhwQ5UP"
+			]
+		},
+		"Uniswap-V3/interfaces/IERC20Minimal.sol": {
+			"keccak256": "0x783a1a8fb69f7fd85ca71ff339ddbfc28499b7e3d586af02a66eba9f5e37a145",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://7af711c954d32db569012991e50a1ede25d3f83a599bde659fb439cace18fd2f",
+				"dweb:/ipfs/QmPcxzsLyBvANRdh1TsXGZnPubBAhmuB4pP54X29DU7Ky2"
+			]
+		},
+		"Uniswap-V3/interfaces/IUniswapV3Factory.sol": {
+			"keccak256": "0x7435f79c6bccf7e48c1f8de3d9e5e92c3728a68203a21445bd21530f52cc5b4a",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://fbaccfacdb6bc1b42d42aaedf081d28f91cc77049d223156068d4ddf136beb7b",
+				"dweb:/ipfs/QmfDTp8L7QcyXeFicG9m8gN1aFaBiZnGaykpYqM5EW2G4j"
+			]
+		},
+		"Uniswap-V3/interfaces/IUniswapV3Pool.sol": {
+			"keccak256": "0x30f3664a18fed578a1caa72825738345460e25cf4849321d4d4b60e7e7dcf1a4",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://2ba255eb422f39841209f77333ccbfc936c6878797b4f06574f8f2289a62b2fc",
+				"dweb:/ipfs/QmWQq3xyEDpdVhva2PU4qCLJgBZdKzB9ZjJP8xdmnz6gzT"
+			]
+		},
+		"Uniswap-V3/interfaces/IUniswapV3PoolDeployer.sol": {
+			"keccak256": "0xa36a4c242d5b56ac480f8050960d166071e0c3437dad3cf89507c87133cba71f",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://bbb79c0d3943573f79a5482270ceb182fea2187e44fa464abee0237043a73d8f",
+				"dweb:/ipfs/QmWzDZE8cjNQRL4EMwcVWBAVwF5uXx6R3qFU9vTBdtQQjo"
+			]
+		},
+		"Uniswap-V3/interfaces/callback/IUniswapV3FlashCallback.sol": {
+			"keccak256": "0x312da22057b2390c6d1d844dbd58a4a34e75450e55d2cad020167918c3a55531",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://001ffd1a10603f69ea14a63950755bbe903ba92f12878ac88466207a5ff2b3a0",
+				"dweb:/ipfs/QmZWgrSMiFE96WV3BfbL6auk5uXWeb4VQq8hyPFsLg259k"
+			]
+		},
+		"Uniswap-V3/interfaces/callback/IUniswapV3MintCallback.sol": {
+			"keccak256": "0x30b680fc57068dafef26db83f6f95bb928b95acb1e813192754e9422493a57bc",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://256c470dde824832c8dbf09ca3611f11c6fe0d29b38ef3df61b8cfbf5e60105d",
+				"dweb:/ipfs/QmexXdv45iJSDaqrovCmUoJgmjE3imDNgWo3M4Re6aV2R7"
+			]
+		},
+		"Uniswap-V3/interfaces/callback/IUniswapV3SwapCallback.sol": {
+			"keccak256": "0xd2504db445c876e7bf2f08b7642309958c2b7b7859ddebdeb15ff14c3dc9a7f1",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://54bf64d92dd5bfa5cfcec99ccb68d21cd9245d84fe33acfd66b467f9abfc5b32",
+				"dweb:/ipfs/QmNtLQHxHUwgzS8QMnHWP6bGPz7Mf8MbpR73TZDEU2todF"
+			]
+		},
+		"Uniswap-V3/interfaces/pool/IUniswapV3PoolActions.sol": {
+			"keccak256": "0xb0ba0008f75afb4fc4ed642890f700b2bf430f99709c1f3a5bd7d9ea089b9ea2",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://4c7df72686b2b18a03d34b9b091afcae5adf452e6c6eaa1b3979bb430fb8ee33",
+				"dweb:/ipfs/Qmarv2nbp4MP9QUsdrUczqpP9r9ESbxxsnivoazXKutt5W"
+			]
+		},
+		"Uniswap-V3/interfaces/pool/IUniswapV3PoolDerivedState.sol": {
+			"keccak256": "0xc8380a7eec0895530bda029258e1e0dc3368b77606787a11accd15848a551af5",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://9bb1bf0f6c6161d4925d96dbf059f6da8b5a1f62c46bda702442db2eba355144",
+				"dweb:/ipfs/QmYTtYKjEu5kR7Rg9AeNgGpqkjhWLy336yAW23Dq5wzmt9"
+			]
+		},
+		"Uniswap-V3/interfaces/pool/IUniswapV3PoolEvents.sol": {
+			"keccak256": "0x5814e5a3c72bbbaee1d3db53876d960f4ad1129e10649169e4d8a5b9d70f0dc6",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://f7022b280f9d36dd37f43d7e59763e5989991b56722e99c2fb148bed975251dd",
+				"dweb:/ipfs/QmZniXPiwv1kj8RMzkzPhYsxqGxU8q84wmWqDdgZT9kQV6"
+			]
+		},
+		"Uniswap-V3/interfaces/pool/IUniswapV3PoolImmutables.sol": {
+			"keccak256": "0x0cdc1392f486a8c75aa4e391e6518d5333979a0f78bdfd03e48269eca2ae065f",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://32f4da9105119ebf3e9b66b7b546ce1109500eb189f31d851c9e37c09dac44d2",
+				"dweb:/ipfs/QmbsV6eJ8WYbVksrfUsRWCtjomVNvvQ4QEoh1stxsEB9Sr"
+			]
+		},
+		"Uniswap-V3/interfaces/pool/IUniswapV3PoolOwnerActions.sol": {
+			"keccak256": "0xfe4ee0872e3c6002cd2a95b917c3a259ef2d66f1916899553cf941f4147995ca",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://6929c54be0bfa702fdbcd533d91d029604f6ceb3b078c54bc837555b49dcb4e8",
+				"dweb:/ipfs/Qmf3qwKXehVtJ4nYEbZV3FB4Tw3bTWtkJTtkVEZ9kmB2xY"
+			]
+		},
+		"Uniswap-V3/interfaces/pool/IUniswapV3PoolState.sol": {
+			"keccak256": "0x868dc05c30ae67fbbb113a60b8c44be88c90f76f564cc7cdefb2ac116d60d8e7",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://62520b113ef64906fab1c2ef965255c917718350e60a1ad3dac706256170dc76",
+				"dweb:/ipfs/QmcZZ1PYJ7D4eZj5nbaHcFfbn9TNwaaV8oVioH8SgmZCFB"
+			]
+		},
+		"Uniswap-V3/libraries/BitMath.sol": {
+			"keccak256": "0x17c34a777ae613271a76dc1bf3871ad413cc1dd059a66abdfd7fea6516bd0259",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://75934e0b78ed1c9eb8657addc0bb1de3aef06d37812a5808b866e1e641b55538",
+				"dweb:/ipfs/QmPQihn9RDBXPhrGEHRDEWUAHYbjPQo9AUzSjVJuhuBJQD"
+			]
+		},
+		"Uniswap-V3/libraries/FixedPoint128.sol": {
+			"keccak256": "0x988e5473ab7abf2e3106a451d13075015bb2cab1c7593bfc71cfa985fa388437",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://42882ad684296999ef9df7fe8e6160aea74d04c6e6da2bb6988f79edccd238d9",
+				"dweb:/ipfs/Qmb742ebpEL2GMjLC33LxocdVrB43Fxts8bmb9mTDfHR1D"
+			]
+		},
+		"Uniswap-V3/libraries/FixedPoint96.sol": {
+			"keccak256": "0x5d199a404e0723d7e41702bacd07e7b485358b0b1e3cd1155a2cf978dc07fab4",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://1c406d86ee3d61dc1150dae830b451e49469bfacb91766eb165d0f3b730a594b",
+				"dweb:/ipfs/QmejB7GLds64BSRJ1AzvYPYppnyCxm65uZxL9p67qCqvEQ"
+			]
+		},
+		"Uniswap-V3/libraries/FullMath.sol": {
+			"keccak256": "0x91ec4e77f812b602246980a3bd4cc3503d3db75769684595c0fea95a205187d6",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://529753b2722173040bd4cd25f4bc4723bb95defbf0317c9256b5cd845a658f9e",
+				"dweb:/ipfs/QmbMS2uAaMBqmQ1g3EygPM8dUuZiRpx3rmi7ZA2EGf3Htk"
+			]
+		},
+		"Uniswap-V3/libraries/LiquidityMath.sol": {
+			"keccak256": "0x842af0b7dd76bc7c1c310bd10faca28fe16728a6e0e3cd74e78616ce6fbc84c8",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://ec8ba4f2777c962aab9a72ae6d16cc6937eeff4cd4c77bcaa96c7a680a51fefa",
+				"dweb:/ipfs/Qmc3CNGYii7k538a9mcT4bHHNiLVXXuUGc1u23vK2Gf1Nr"
+			]
+		},
+		"Uniswap-V3/libraries/LowGasSafeMath.sol": {
+			"keccak256": "0x26f848f2559be619c946365e272653ecf8143602fe4163ca3186c121ae10c31d",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://7d4f44ddbef66d765b2a92e234d70531311235208ea7e76934e94b432e8dbac6",
+				"dweb:/ipfs/QmSnyNh7KKnJnSPPPCQvxLtAGUh24RjWvzM7qYNVhctn7e"
+			]
+		},
+		"Uniswap-V3/libraries/Oracle.sol": {
+			"keccak256": "0xed5c70dcef2558635ef283d5a81d105708d3ddbdf1360c6cba6de456542a117a",
+			"license": "BUSL-1.1",
+			"urls": [
+				"bzz-raw://f33ea8d81e54c3c463e9dbf83f1becded98611431fc3f5abd058c7581c907758",
+				"dweb:/ipfs/QmRgK1GEYm1X3rktFSF9UJJaixUYJjRA142LdJzZY7LZ9S"
+			]
+		},
+		"Uniswap-V3/libraries/Position.sol": {
+			"keccak256": "0x5f5aafa5df9bac4e357632b499a99929f173984f05bb476d9ee64deda1b46d52",
+			"license": "BUSL-1.1",
+			"urls": [
+				"bzz-raw://97b044046aedbdc229b86fc9fdff9d7ded496d76b2d5657dbf2cc859bd578770",
+				"dweb:/ipfs/QmZvtQdyYJ8dhHNJNciYRadcxvTwhwAiyskGoXY3Wq5SgF"
+			]
+		},
+		"Uniswap-V3/libraries/SafeCast.sol": {
+			"keccak256": "0xc5148936bf74779cb451308167e7f266660d7e87c816f4548d268d2775354745",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://40fa7a38782dceb69c71d0ed5e1f5beaa255f62a08c717f025c9ae1c0dfb7ab0",
+				"dweb:/ipfs/QmWf2datneQuARzgUDJzh8nyoTrg1itsAeW3oAkjwJgB2P"
+			]
+		},
+		"Uniswap-V3/libraries/SqrtPriceMath.sol": {
+			"keccak256": "0x3ccddb95540705cc67b73908db0297a29943eec9e7c048600af3f14a891f2bad",
+			"license": "BUSL-1.1",
+			"urls": [
+				"bzz-raw://7796a557459578ec66c49a05d9045f13ca45945c39b786c240e8023e07df78a8",
+				"dweb:/ipfs/QmaCn41jx8NqXws2XNv8joDJ1xSGDdiTFPYj4wMK998gha"
+			]
+		},
+		"Uniswap-V3/libraries/SwapMath.sol": {
+			"keccak256": "0x2ec643096ec58f1547d7e2cf208702412f5067a56284be16bc805675572a92f0",
+			"license": "BUSL-1.1",
+			"urls": [
+				"bzz-raw://b644b998729d629c74785abbfc107453c62416918c28a297b3a372716fc0c685",
+				"dweb:/ipfs/QmbuqHENa26RqTNqmD7ksPjY3N7gX96fH2ZLZL2K4xy1mf"
+			]
+		},
+		"Uniswap-V3/libraries/Tick.sol": {
+			"keccak256": "0x149b25079b97c8822249170333104dfb4c440eea358119bd5c93e71ff428cc45",
+			"license": "BUSL-1.1",
+			"urls": [
+				"bzz-raw://98b1b518b3efc85dc8c64751f5d20941221e1a22a4acaa180b344b5881693366",
+				"dweb:/ipfs/QmTRWBfTCyPKMPtJ3kuSwk4S224XAtBC8TVs4MtaLxraRh"
+			]
+		},
+		"Uniswap-V3/libraries/TickBitmap.sol": {
+			"keccak256": "0x1df1bbb62c917ee651c334e8df8755ab7c41e43e4a6140b188a9683be21feb54",
+			"license": "BUSL-1.1",
+			"urls": [
+				"bzz-raw://5d53988c6195b28a5c2e35be4a692a5806d08b2edfb17602647d71dd11ff496e",
+				"dweb:/ipfs/QmXaeWASWtRm2fq6FyXU8affBYErZMJYDBQLf9asLomvHN"
+			]
+		},
+		"Uniswap-V3/libraries/TickMath.sol": {
+			"keccak256": "0xdf423674978420c3b87f0ef477d1564e0a82848a84ed8b7cd537ccd728302ae0",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://43aad367193e415415ece75f46f8114ad2ed7f9b52880bc4678a34e5fbfab1a8",
+				"dweb:/ipfs/QmQaJNWqvfoNDbNgSy3WXQPgLX88ZD9LnxurRGVeyZCzyg"
+			]
+		},
+		"Uniswap-V3/libraries/TransferHelper.sol": {
+			"keccak256": "0x68be37aaac7476f459d99488d9417dd3254d4179967ca5be9af57f183408dda9",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://1d2aa37a85541631206d820e960608c0f741ec49eda61826004440129bbfc944",
+				"dweb:/ipfs/QmQzQKFJF5rA1hGyMYJL7Xviegjp442mDg8PaZBXNNhzs7"
+			]
+		},
+		"Uniswap-V3/libraries/UnsafeMath.sol": {
+			"keccak256": "0x61ab6851b8a39916079391e7a5ef993e22c238ae1dfefd1127a1f50add31f6b9",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://2099cda9cfcbf12c41f8d03c4bda4c8511a5facb952c762a9f24272721030135",
+				"dweb:/ipfs/Qmd9c5pV7p7PNL1gR4y5mPZTxyqTpXMMmKgWMLd4Vq9g4V"
+			]
+		}
+	},
+	"version": 1
+}
