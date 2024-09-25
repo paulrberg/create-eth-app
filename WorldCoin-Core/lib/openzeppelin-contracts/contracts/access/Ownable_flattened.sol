@@ -1,3 +1,6 @@
+
+// File: WorldCoin-Core/lib/openzeppelin-contracts/contracts/utils/Context.sol
+
 /*
     
    ██████  ██████   ██████  ██   ██ ██████   ██████   ██████  ██   ██    ██████  ███████ ██    ██
@@ -10,39 +13,54 @@
   Twitter: https://twitter.com/cookbook_dev
   Discord: https://discord.gg/cookbookdev
   
-  Find this contract on Cookbook: https://www.cookbook.dev/contracts/soulbound-nft?utm=code
+  Find this contract on Cookbook: https://www.cookbook.dev/protocols/WorldCoin-Core?utm=code
   */
-  solidity
-pragma solidity 0.8.20;
 
-interface IERC20 is {
-    function Name() external view returns (string memory);
-    function Symbol() external view returns (string memory);
-    function Decimals() external view returns (uint8);
-    function TotalSupply() external view returns (uint256);
-    function BalanceOf(address) external view returns (uint256);
-    function Transfer(address, uint256) external returns (bool);
-    function Allowance(address, address) external view returns (uint256);
-    function Approve(address, uint256) external returns (bool);
-    function TransferFrom(address, address, uint256) external returns (bool);
+// OpenZeppelin Contracts v4.4.1 (utils/Context.sol)
+
+pragma solidity ^0.8.0;
+
+/**
+ * @dev Provides information about the current execution context, including the
+ * sender of the transaction and its data. While these are generally available
+ * via msg.sender and msg.data, they should not be accessed in such a direct
+ * manner, since when dealing with meta-transactions the account sending and
+ * paying for execution may not be the actual sender (as far as an application
+ * is concerned).
+ *
+ * This contract is only required for intermediate, library-like contracts.
+ */
+abstract contract Context {
+    function _msgSender() internal view virtual returns (address) {
+        return msg.sender;
+    }
+
+    function _msgData() internal view virtual returns (bytes calldata) {
+        return msg.data;
+    }
 }
 
-contract ERC20 is IERC20 {
-    mapping(address => uint256) private _balances;
-    mapping(address => mapping(address => uint256)) private _allowances;
-    uint256 private _totalSupply;
-    string private constant _name = "My Token";
-    string private constant _symbol = "MTK";
+// File: WorldCoin-Core/lib/openzeppelin-contracts/contracts/access/Ownable.sol
 
-    // ...
-}
-`
-  // SPDX-License-Identifier: MIT
+/*
+    
+   ██████  ██████   ██████  ██   ██ ██████   ██████   ██████  ██   ██    ██████  ███████ ██    ██
+  ██      ██    ██ ██    ██ ██  ██  ██   ██ ██    ██ ██    ██ ██  ██     ██   ██ ██      ██    ██
+  ██      ██    ██ ██    ██ █████   ██████  ██    ██ ██    ██ █████      ██   ██ █████   ██    ██
+  ██      ██    ██ ██    ██ ██  ██  ██   ██ ██    ██ ██    ██ ██  ██     ██   ██ ██       ██  ██
+   ██████  ██████   ██████  ██   ██ ██████   ██████   ██████  ██   ██ ██ ██████  ███████   ████
+  
+  Find any smart contract, and build your project faster: https://www.cookbook.dev
+  Twitter: https://twitter.com/cookbook_dev
+  Discord: https://discord.gg/cookbookdev
+  
+  Find this contract on Cookbook: https://www.cookbook.dev/protocols/WorldCoin-Core?utm=code
+  */
+
 // OpenZeppelin Contracts (last updated v4.7.0) (access/Ownable.sol)
 
 pragma solidity ^0.8.0;
 
-import "../utils/Context.sol";
 
 /**
  * @dev Contract module which provides a basic access control mechanism, where
@@ -92,10 +110,10 @@ abstract contract Ownable is Context {
 
     /**
      * @dev Leaves the contract without owner. It will not be possible to call
-     * `onlyOwner` functions anymore. Can only be called by the current owner.
+     * `onlyOwner` functions. Can only be called by the current owner.
      *
      * NOTE: Renouncing ownership will leave the contract without an owner,
-     * thereby removing any functionality that is only available to the owner.
+     * thereby disabling any functionality that is only available to the owner.
      */
     function renounceOwnership() public virtual onlyOwner {
         _transferOwnership(address(0));

@@ -1,0 +1,120 @@
+{
+	"compiler": {
+		"version": "0.8.20+commit.a1b79de6"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "Contract module which provides a basic access control mechanism, where there is an account (an owner) that can be granted exclusive access to specific functions. By default, the owner account will be the one that deploys the contract. This can later be changed with {transferOwnership}. This module is used through inheritance. It will make available the modifier `onlyOwner`, which can be applied to your functions to restrict their use to the owner.",
+			"kind": "dev",
+			"methods": {
+				"constructor": {
+					"details": "Initializes the contract setting the deployer as the initial owner."
+				},
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby disabling any functionality that is only available to the owner."
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"WorldCoin-Core/lib/openzeppelin-contracts/contracts/access/Ownable.sol": "Ownable"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"WorldCoin-Core/lib/openzeppelin-contracts/contracts/access/Ownable.sol": {
+			"keccak256": "0x8ba9896f8e0e35c7d7dfb6bf2609c5730fef39fb49734c18aafaf5d3de4ea6cd",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a6edfd21c6c1e2ba93ca8258bd103140af90a39033426e7e13ea4ccba6a692db",
+				"dweb:/ipfs/QmPAULQiCXBNxfMewoqFKzRutok2UbnqE1MixSf6C19C8g"
+			]
+		},
+		"WorldCoin-Core/lib/openzeppelin-contracts/contracts/utils/Context.sol": {
+			"keccak256": "0x0ff215d5029f8e5fdaafefb18f0ffae6b3a00bd4c263d17e8f8d691f9688eeb9",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://62bba9010d6fc852a6887c0802cf21bdc9ee482c19147b4d66e454cc074a61f0",
+				"dweb:/ipfs/QmY7qf95HYWN7JemCX737HEXe53TesNZBm4aRuptqW93S8"
+			]
+		}
+	},
+	"version": 1
+}
