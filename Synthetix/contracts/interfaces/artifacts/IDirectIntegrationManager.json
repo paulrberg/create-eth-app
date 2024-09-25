@@ -1,0 +1,238 @@
+{
+	"deploy": {
+		"VM:-": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"main:1": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"ropsten:3": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"rinkeby:4": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"kovan:42": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"goerli:5": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"Custom": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		}
+	},
+	"data": {
+		"bytecode": {
+			"linkReferences": {},
+			"object": "",
+			"opcodes": "",
+			"sourceMap": ""
+		},
+		"deployedBytecode": {
+			"linkReferences": {},
+			"object": "",
+			"opcodes": "",
+			"sourceMap": ""
+		},
+		"gasEstimates": null,
+		"methodIdentifiers": {
+			"getExchangeParameters(address,bytes32)": "697b659b",
+			"setExchangeParameters(address,bytes32[],(bytes32,address,address,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256))": "5a684562"
+		}
+	},
+	"abi": [
+		{
+			"constant": true,
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "integration",
+					"type": "address"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "key",
+					"type": "bytes32"
+				}
+			],
+			"name": "getExchangeParameters",
+			"outputs": [
+				{
+					"components": [
+						{
+							"internalType": "bytes32",
+							"name": "currencyKey",
+							"type": "bytes32"
+						},
+						{
+							"internalType": "address",
+							"name": "dexPriceAggregator",
+							"type": "address"
+						},
+						{
+							"internalType": "address",
+							"name": "atomicEquivalentForDexPricing",
+							"type": "address"
+						},
+						{
+							"internalType": "uint256",
+							"name": "atomicExchangeFeeRate",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "atomicTwapWindow",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "atomicMaxVolumePerBlock",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "atomicVolatilityConsiderationWindow",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "atomicVolatilityUpdateThreshold",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "exchangeFeeRate",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "exchangeMaxDynamicFee",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "exchangeDynamicFeeRounds",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "exchangeDynamicFeeThreshold",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "exchangeDynamicFeeWeightDecay",
+							"type": "uint256"
+						}
+					],
+					"internalType": "struct IDirectIntegrationManager.ParameterIntegrationSettings",
+					"name": "settings",
+					"type": "tuple"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "integration",
+					"type": "address"
+				},
+				{
+					"internalType": "bytes32[]",
+					"name": "currencyKeys",
+					"type": "bytes32[]"
+				},
+				{
+					"components": [
+						{
+							"internalType": "bytes32",
+							"name": "currencyKey",
+							"type": "bytes32"
+						},
+						{
+							"internalType": "address",
+							"name": "dexPriceAggregator",
+							"type": "address"
+						},
+						{
+							"internalType": "address",
+							"name": "atomicEquivalentForDexPricing",
+							"type": "address"
+						},
+						{
+							"internalType": "uint256",
+							"name": "atomicExchangeFeeRate",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "atomicTwapWindow",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "atomicMaxVolumePerBlock",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "atomicVolatilityConsiderationWindow",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "atomicVolatilityUpdateThreshold",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "exchangeFeeRate",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "exchangeMaxDynamicFee",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "exchangeDynamicFeeRounds",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "exchangeDynamicFeeThreshold",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "exchangeDynamicFeeWeightDecay",
+							"type": "uint256"
+						}
+					],
+					"internalType": "struct IDirectIntegrationManager.ParameterIntegrationSettings",
+					"name": "params",
+					"type": "tuple"
+				}
+			],
+			"name": "setExchangeParameters",
+			"outputs": [],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		}
+	]
+}

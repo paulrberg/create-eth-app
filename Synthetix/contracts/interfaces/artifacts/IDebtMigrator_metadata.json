@@ -1,0 +1,73 @@
+{
+	"compiler": {
+		"version": "0.5.17+commit.d19bba13"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "debtSharesMigrated",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "escrowMigrated",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "liquidSnxMigrated",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "debtPayload",
+						"type": "bytes"
+					}
+				],
+				"name": "finalizeDebtMigration",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"methods": {}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Synthetix/contracts/interfaces/IDebtMigrator.sol": "IDebtMigrator"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Synthetix/contracts/interfaces/IDebtMigrator.sol": {
+			"keccak256": "0xb829a33f0749a91df69fdab075f005e24e412a7538f26704e10c389a917325ea",
+			"urls": [
+				"bzz-raw://d19da03625fa2dc50a6eff9e87e2013c08739ced7b575313f6bff18e6d46cacf",
+				"dweb:/ipfs/QmdKnRNakw4LB9s1DVwv6mB1bKqK9bTT9yUgQEk8Aq3brL"
+			]
+		}
+	},
+	"version": 1
+}

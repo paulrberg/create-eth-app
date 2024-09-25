@@ -1,0 +1,56 @@
+{
+	"compiler": {
+		"version": "0.5.17+commit.d19bba13"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"constant": false,
+				"inputs": [],
+				"name": "resumeInitiation",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [],
+				"name": "suspendInitiation",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"methods": {}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Synthetix/contracts/interfaces/IBaseSynthetixBridge.sol": "IBaseSynthetixBridge"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Synthetix/contracts/interfaces/IBaseSynthetixBridge.sol": {
+			"keccak256": "0x8dc0b2f7b4c85f697a71eee1ea90e0f55999f20afa4af4a93c4d6ef10dee54af",
+			"urls": [
+				"bzz-raw://8114789192374bdc1bb963d82fd222333a4eab951b540320372ea22dbce31268",
+				"dweb:/ipfs/QmdMttRujPFgtRtshh9c8AtcjZZsY6eqg9DDCZDGa7p4N9"
+			]
+		}
+	},
+	"version": 1
+}

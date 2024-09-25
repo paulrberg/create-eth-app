@@ -1,0 +1,345 @@
+{
+	"id": "5279d9ff7b97cba652cc3335a62152f2",
+	"_format": "hh-sol-build-info-1",
+	"solcVersion": "0.5.17",
+	"solcLongVersion": "0.5.17+commit.d19bba13",
+	"input": {
+		"language": "Solidity",
+		"sources": {
+			"Synthetix/contracts/interfaces/IDebtMigrator.sol": {
+				"content": "/*\n    \n   ██████  ██████   ██████  ██   ██ ██████   ██████   ██████  ██   ██    ██████  ███████ ██    ██\n  ██      ██    ██ ██    ██ ██  ██  ██   ██ ██    ██ ██    ██ ██  ██     ██   ██ ██      ██    ██\n  ██      ██    ██ ██    ██ █████   ██████  ██    ██ ██    ██ █████      ██   ██ █████   ██    ██\n  ██      ██    ██ ██    ██ ██  ██  ██   ██ ██    ██ ██    ██ ██  ██     ██   ██ ██       ██  ██\n   ██████  ██████   ██████  ██   ██ ██████   ██████   ██████  ██   ██ ██ ██████  ███████   ████\n  \n  Find any smart contract, and build your project faster: https://www.cookbook.dev\n  Twitter: https://twitter.com/cookbook_dev\n  Discord: https://discord.gg/cookbookdev\n  \n  Find this contract on Cookbook: https://www.cookbook.dev/protocols/Synthetix?utm=code\n  */\n  \n  pragma solidity >=0.4.24;\npragma experimental ABIEncoderV2;\n\ninterface IDebtMigrator {\n    function finalizeDebtMigration(\n        address account,\n        uint debtSharesMigrated,\n        uint escrowMigrated,\n        uint liquidSnxMigrated,\n        bytes calldata debtPayload\n    ) external;\n}\n"
+			}
+		},
+		"settings": {
+			"optimizer": {
+				"enabled": true,
+				"runs": 200
+			},
+			"outputSelection": {
+				"*": {
+					"": [
+						"ast"
+					],
+					"*": [
+						"abi",
+						"metadata",
+						"devdoc",
+						"userdoc",
+						"storageLayout",
+						"evm.legacyAssembly",
+						"evm.bytecode",
+						"evm.deployedBytecode",
+						"evm.methodIdentifiers",
+						"evm.gasEstimates",
+						"evm.assembly"
+					]
+				}
+			},
+			"remappings": []
+		}
+	},
+	"output": {
+		"contracts": {
+			"Synthetix/contracts/interfaces/IDebtMigrator.sol": {
+				"IDebtMigrator": {
+					"abi": [
+						{
+							"constant": false,
+							"inputs": [
+								{
+									"internalType": "address",
+									"name": "account",
+									"type": "address"
+								},
+								{
+									"internalType": "uint256",
+									"name": "debtSharesMigrated",
+									"type": "uint256"
+								},
+								{
+									"internalType": "uint256",
+									"name": "escrowMigrated",
+									"type": "uint256"
+								},
+								{
+									"internalType": "uint256",
+									"name": "liquidSnxMigrated",
+									"type": "uint256"
+								},
+								{
+									"internalType": "bytes",
+									"name": "debtPayload",
+									"type": "bytes"
+								}
+							],
+							"name": "finalizeDebtMigration",
+							"outputs": [],
+							"payable": false,
+							"stateMutability": "nonpayable",
+							"type": "function"
+						}
+					],
+					"devdoc": {
+						"methods": {}
+					},
+					"evm": {
+						"assembly": "",
+						"bytecode": {
+							"linkReferences": {},
+							"object": "",
+							"opcodes": "",
+							"sourceMap": ""
+						},
+						"deployedBytecode": {
+							"linkReferences": {},
+							"object": "",
+							"opcodes": "",
+							"sourceMap": ""
+						},
+						"gasEstimates": null,
+						"legacyAssembly": null,
+						"methodIdentifiers": {
+							"finalizeDebtMigration(address,uint256,uint256,uint256,bytes)": "23d02b5c"
+						}
+					},
+					"metadata": "{\"compiler\":{\"version\":\"0.5.17+commit.d19bba13\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"debtSharesMigrated\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"escrowMigrated\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"liquidSnxMigrated\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"debtPayload\",\"type\":\"bytes\"}],\"name\":\"finalizeDebtMigration\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"Synthetix/contracts/interfaces/IDebtMigrator.sol\":\"IDebtMigrator\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"Synthetix/contracts/interfaces/IDebtMigrator.sol\":{\"keccak256\":\"0xb829a33f0749a91df69fdab075f005e24e412a7538f26704e10c389a917325ea\",\"urls\":[\"bzz-raw://d19da03625fa2dc50a6eff9e87e2013c08739ced7b575313f6bff18e6d46cacf\",\"dweb:/ipfs/QmdKnRNakw4LB9s1DVwv6mB1bKqK9bTT9yUgQEk8Aq3brL\"]}},\"version\":1}",
+					"storageLayout": {
+						"storage": [],
+						"types": null
+					},
+					"userdoc": {
+						"methods": {}
+					}
+				}
+			}
+		},
+		"errors": [
+			{
+				"component": "general",
+				"formattedMessage": "Synthetix/contracts/interfaces/IDebtMigrator.sol:17:1: Warning: Experimental features are turned on. Do not use experimental features on live deployments.\npragma experimental ABIEncoderV2;\n^-------------------------------^\n",
+				"message": "Experimental features are turned on. Do not use experimental features on live deployments.",
+				"severity": "warning",
+				"sourceLocation": {
+					"end": 1329,
+					"file": "Synthetix/contracts/interfaces/IDebtMigrator.sol",
+					"start": 1296
+				},
+				"type": "Warning"
+			}
+		],
+		"sources": {
+			"Synthetix/contracts/interfaces/IDebtMigrator.sol": {
+				"ast": {
+					"absolutePath": "Synthetix/contracts/interfaces/IDebtMigrator.sol",
+					"exportedSymbols": {
+						"IDebtMigrator": [
+							16
+						]
+					},
+					"id": 17,
+					"nodeType": "SourceUnit",
+					"nodes": [
+						{
+							"id": 1,
+							"literals": [
+								"solidity",
+								">=",
+								"0.4",
+								".24"
+							],
+							"nodeType": "PragmaDirective",
+							"src": "1270:25:0"
+						},
+						{
+							"id": 2,
+							"literals": [
+								"experimental",
+								"ABIEncoderV2"
+							],
+							"nodeType": "PragmaDirective",
+							"src": "1296:33:0"
+						},
+						{
+							"baseContracts": [],
+							"contractDependencies": [],
+							"contractKind": "interface",
+							"documentation": null,
+							"fullyImplemented": false,
+							"id": 16,
+							"linearizedBaseContracts": [
+								16
+							],
+							"name": "IDebtMigrator",
+							"nodeType": "ContractDefinition",
+							"nodes": [
+								{
+									"body": null,
+									"documentation": null,
+									"id": 15,
+									"implemented": false,
+									"kind": "function",
+									"modifiers": [],
+									"name": "finalizeDebtMigration",
+									"nodeType": "FunctionDefinition",
+									"parameters": {
+										"id": 13,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 4,
+												"name": "account",
+												"nodeType": "VariableDeclaration",
+												"scope": 15,
+												"src": "1401:15:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_address",
+													"typeString": "address"
+												},
+												"typeName": {
+													"id": 3,
+													"name": "address",
+													"nodeType": "ElementaryTypeName",
+													"src": "1401:7:0",
+													"stateMutability": "nonpayable",
+													"typeDescriptions": {
+														"typeIdentifier": "t_address",
+														"typeString": "address"
+													}
+												},
+												"value": null,
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 6,
+												"name": "debtSharesMigrated",
+												"nodeType": "VariableDeclaration",
+												"scope": 15,
+												"src": "1426:23:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												},
+												"typeName": {
+													"id": 5,
+													"name": "uint",
+													"nodeType": "ElementaryTypeName",
+													"src": "1426:4:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_uint256",
+														"typeString": "uint256"
+													}
+												},
+												"value": null,
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 8,
+												"name": "escrowMigrated",
+												"nodeType": "VariableDeclaration",
+												"scope": 15,
+												"src": "1459:19:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												},
+												"typeName": {
+													"id": 7,
+													"name": "uint",
+													"nodeType": "ElementaryTypeName",
+													"src": "1459:4:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_uint256",
+														"typeString": "uint256"
+													}
+												},
+												"value": null,
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 10,
+												"name": "liquidSnxMigrated",
+												"nodeType": "VariableDeclaration",
+												"scope": 15,
+												"src": "1488:22:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												},
+												"typeName": {
+													"id": 9,
+													"name": "uint",
+													"nodeType": "ElementaryTypeName",
+													"src": "1488:4:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_uint256",
+														"typeString": "uint256"
+													}
+												},
+												"value": null,
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 12,
+												"name": "debtPayload",
+												"nodeType": "VariableDeclaration",
+												"scope": 15,
+												"src": "1520:26:0",
+												"stateVariable": false,
+												"storageLocation": "calldata",
+												"typeDescriptions": {
+													"typeIdentifier": "t_bytes_calldata_ptr",
+													"typeString": "bytes"
+												},
+												"typeName": {
+													"id": 11,
+													"name": "bytes",
+													"nodeType": "ElementaryTypeName",
+													"src": "1520:5:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_bytes_storage_ptr",
+														"typeString": "bytes"
+													}
+												},
+												"value": null,
+												"visibility": "internal"
+											}
+										],
+										"src": "1391:161:0"
+									},
+									"returnParameters": {
+										"id": 14,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "1561:0:0"
+									},
+									"scope": 16,
+									"src": "1361:201:0",
+									"stateMutability": "nonpayable",
+									"superFunction": null,
+									"visibility": "external"
+								}
+							],
+							"scope": 17,
+							"src": "1331:233:0"
+						}
+					],
+					"src": "1270:295:0"
+				},
+				"id": 0
+			}
+		}
+	}
+}

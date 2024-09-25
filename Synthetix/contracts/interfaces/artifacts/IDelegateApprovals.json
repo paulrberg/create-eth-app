@@ -1,0 +1,319 @@
+{
+	"deploy": {
+		"VM:-": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"main:1": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"ropsten:3": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"rinkeby:4": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"kovan:42": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"goerli:5": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"Custom": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		}
+	},
+	"data": {
+		"bytecode": {
+			"linkReferences": {},
+			"object": "",
+			"opcodes": "",
+			"sourceMap": ""
+		},
+		"deployedBytecode": {
+			"linkReferences": {},
+			"object": "",
+			"opcodes": "",
+			"sourceMap": ""
+		},
+		"gasEstimates": null,
+		"methodIdentifiers": {
+			"approveAllDelegatePowers(address)": "bc87acbf",
+			"approveBurnOnBehalf(address)": "9c79ce35",
+			"approveClaimOnBehalf(address)": "4180e5b5",
+			"approveExchangeOnBehalf(address)": "447fbc63",
+			"approveIssueOnBehalf(address)": "9f61d336",
+			"canBurnFor(address,address)": "7d3f0ba2",
+			"canClaimFor(address,address)": "21f4ae57",
+			"canExchangeFor(address,address)": "faf431bb",
+			"canIssueFor(address,address)": "04872617",
+			"removeAllDelegatePowers(address)": "6f95200b",
+			"removeBurnOnBehalf(address)": "59cec3d6",
+			"removeClaimOnBehalf(address)": "6c8bc9fe",
+			"removeExchangeOnBehalf(address)": "b9156efa",
+			"removeIssueOnBehalf(address)": "431ce540"
+		}
+	},
+	"abi": [
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "delegate",
+					"type": "address"
+				}
+			],
+			"name": "approveAllDelegatePowers",
+			"outputs": [],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "delegate",
+					"type": "address"
+				}
+			],
+			"name": "approveBurnOnBehalf",
+			"outputs": [],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "delegate",
+					"type": "address"
+				}
+			],
+			"name": "approveClaimOnBehalf",
+			"outputs": [],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "delegate",
+					"type": "address"
+				}
+			],
+			"name": "approveExchangeOnBehalf",
+			"outputs": [],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "delegate",
+					"type": "address"
+				}
+			],
+			"name": "approveIssueOnBehalf",
+			"outputs": [],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "authoriser",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "delegate",
+					"type": "address"
+				}
+			],
+			"name": "canBurnFor",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "authoriser",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "delegate",
+					"type": "address"
+				}
+			],
+			"name": "canClaimFor",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "authoriser",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "delegate",
+					"type": "address"
+				}
+			],
+			"name": "canExchangeFor",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "authoriser",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "delegate",
+					"type": "address"
+				}
+			],
+			"name": "canIssueFor",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "delegate",
+					"type": "address"
+				}
+			],
+			"name": "removeAllDelegatePowers",
+			"outputs": [],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "delegate",
+					"type": "address"
+				}
+			],
+			"name": "removeBurnOnBehalf",
+			"outputs": [],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "delegate",
+					"type": "address"
+				}
+			],
+			"name": "removeClaimOnBehalf",
+			"outputs": [],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "delegate",
+					"type": "address"
+				}
+			],
+			"name": "removeExchangeOnBehalf",
+			"outputs": [],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "delegate",
+					"type": "address"
+				}
+			],
+			"name": "removeIssueOnBehalf",
+			"outputs": [],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		}
+	]
+}

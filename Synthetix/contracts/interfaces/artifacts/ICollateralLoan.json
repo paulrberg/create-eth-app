@@ -1,0 +1,55 @@
+{
+	"deploy": {
+		"VM:-": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"main:1": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"ropsten:3": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"rinkeby:4": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"kovan:42": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"goerli:5": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"Custom": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		}
+	},
+	"data": {
+		"bytecode": {
+			"linkReferences": {},
+			"object": "6080604052348015600f57600080fd5b50604c80601d6000396000f3fe6080604052600080fdfea365627a7a72315820e662982464801514dd637bf57a2f4d8feca2dc1653cbfa431de124d1761ee3676c6578706572696d656e74616cf564736f6c63430005110040",
+			"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH1 0xF JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x4C DUP1 PUSH1 0x1D PUSH1 0x0 CODECOPY PUSH1 0x0 RETURN INVALID PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG3 PUSH6 0x627A7A723158 KECCAK256 0xE6 PUSH3 0x982464 DUP1 ISZERO EQ 0xDD PUSH4 0x7BF57A2F 0x4D DUP16 0xEC LOG2 0xDC AND MSTORE8 0xCB STATICCALL NUMBER SAR 0xE1 0x24 0xD1 PUSH23 0x1EE3676C6578706572696D656E74616CF564736F6C6343 STOP SDIV GT STOP BLOCKHASH ",
+			"sourceMap": "1332:628:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1332:628:0;;;;;;;"
+		},
+		"deployedBytecode": {
+			"linkReferences": {},
+			"object": "6080604052600080fdfea365627a7a72315820e662982464801514dd637bf57a2f4d8feca2dc1653cbfa431de124d1761ee3676c6578706572696d656e74616cf564736f6c63430005110040",
+			"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG3 PUSH6 0x627A7A723158 KECCAK256 0xE6 PUSH3 0x982464 DUP1 ISZERO EQ 0xDD PUSH4 0x7BF57A2F 0x4D DUP16 0xEC LOG2 0xDC AND MSTORE8 0xCB STATICCALL NUMBER SAR 0xE1 0x24 0xD1 PUSH23 0x1EE3676C6578706572696D656E74616CF564736F6C6343 STOP SDIV GT STOP BLOCKHASH ",
+			"sourceMap": "1332:628:0:-;;;;;"
+		},
+		"gasEstimates": {
+			"creation": {
+				"codeDepositCost": "15200",
+				"executionCost": "69",
+				"totalCost": "15269"
+			}
+		},
+		"methodIdentifiers": {}
+	},
+	"abi": []
+}

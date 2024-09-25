@@ -1,0 +1,170 @@
+{
+	"deploy": {
+		"VM:-": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"main:1": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"ropsten:3": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"rinkeby:4": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"kovan:42": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"goerli:5": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"Custom": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		}
+	},
+	"data": {
+		"bytecode": {
+			"generatedSources": [],
+			"linkReferences": {},
+			"object": "",
+			"opcodes": "",
+			"sourceMap": ""
+		},
+		"deployedBytecode": {
+			"generatedSources": [],
+			"immutableReferences": {},
+			"linkReferences": {},
+			"object": "",
+			"opcodes": "",
+			"sourceMap": ""
+		},
+		"gasEstimates": null,
+		"methodIdentifiers": {
+			"decimals()": "313ce567",
+			"description()": "7284e416",
+			"getRoundData(uint80)": "9a6fc8f5",
+			"latestRoundData()": "feaf968c",
+			"version()": "54fd4d50"
+		}
+	},
+	"abi": [
+		{
+			"inputs": [],
+			"name": "decimals",
+			"outputs": [
+				{
+					"internalType": "uint8",
+					"name": "",
+					"type": "uint8"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "description",
+			"outputs": [
+				{
+					"internalType": "string",
+					"name": "",
+					"type": "string"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint80",
+					"name": "_roundId",
+					"type": "uint80"
+				}
+			],
+			"name": "getRoundData",
+			"outputs": [
+				{
+					"internalType": "uint80",
+					"name": "roundId",
+					"type": "uint80"
+				},
+				{
+					"internalType": "int256",
+					"name": "answer",
+					"type": "int256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "startedAt",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "updatedAt",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint80",
+					"name": "answeredInRound",
+					"type": "uint80"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "latestRoundData",
+			"outputs": [
+				{
+					"internalType": "uint80",
+					"name": "roundId",
+					"type": "uint80"
+				},
+				{
+					"internalType": "int256",
+					"name": "answer",
+					"type": "int256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "startedAt",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "updatedAt",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint80",
+					"name": "answeredInRound",
+					"type": "uint80"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "version",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		}
+	]
+}

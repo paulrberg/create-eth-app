@@ -1,0 +1,557 @@
+{
+	"id": "42d54c75768e15673a9779c25ae69b67",
+	"_format": "hh-sol-build-info-1",
+	"solcVersion": "0.5.17",
+	"solcLongVersion": "0.5.17+commit.d19bba13",
+	"input": {
+		"language": "Solidity",
+		"sources": {
+			"Synthetix/contracts/interfaces/ICollateralLoan.sol": {
+				"content": "/*\n    \n   ██████  ██████   ██████  ██   ██ ██████   ██████   ██████  ██   ██    ██████  ███████ ██    ██\n  ██      ██    ██ ██    ██ ██  ██  ██   ██ ██    ██ ██    ██ ██  ██     ██   ██ ██      ██    ██\n  ██      ██    ██ ██    ██ █████   ██████  ██    ██ ██    ██ █████      ██   ██ █████   ██    ██\n  ██      ██    ██ ██    ██ ██  ██  ██   ██ ██    ██ ██    ██ ██  ██     ██   ██ ██       ██  ██\n   ██████  ██████   ██████  ██   ██ ██████   ██████   ██████  ██   ██ ██ ██████  ███████   ████\n  \n  Find any smart contract, and build your project faster: https://www.cookbook.dev\n  Twitter: https://twitter.com/cookbook_dev\n  Discord: https://discord.gg/cookbookdev\n  \n  Find this contract on Cookbook: https://www.cookbook.dev/protocols/Synthetix?utm=code\n  */\n  \n  pragma solidity >=0.4.24;\n\npragma experimental ABIEncoderV2;\n\ninterface ICollateralLoan {\n    struct Loan {\n        // ID for the loan\n        uint id;\n        //  Acccount that created the loan\n        address payable account;\n        //  Amount of collateral deposited\n        uint collateral;\n        // The synth that was borowed\n        bytes32 currency;\n        //  Amount of synths borrowed\n        uint amount;\n        // Indicates if the position was short sold\n        bool short;\n        // interest amounts accrued\n        uint accruedInterest;\n        // last interest index\n        uint interestIndex;\n        // time of last interaction.\n        uint lastInteraction;\n    }\n}\n"
+			}
+		},
+		"settings": {
+			"optimizer": {
+				"enabled": true,
+				"runs": 200
+			},
+			"outputSelection": {
+				"*": {
+					"": [
+						"ast"
+					],
+					"*": [
+						"abi",
+						"metadata",
+						"devdoc",
+						"userdoc",
+						"storageLayout",
+						"evm.legacyAssembly",
+						"evm.bytecode",
+						"evm.deployedBytecode",
+						"evm.methodIdentifiers",
+						"evm.gasEstimates",
+						"evm.assembly"
+					]
+				}
+			},
+			"remappings": []
+		}
+	},
+	"output": {
+		"contracts": {
+			"Synthetix/contracts/interfaces/ICollateralLoan.sol": {
+				"ICollateralLoan": {
+					"abi": [],
+					"devdoc": {
+						"methods": {}
+					},
+					"evm": {
+						"assembly": "    /* \"Synthetix/contracts/interfaces/ICollateralLoan.sol\":1332:1960  interface ICollateralLoan {... */\n  mstore(0x40, 0x80)\n  callvalue\n    /* \"--CODEGEN--\":8:17   */\n  dup1\n    /* \"--CODEGEN--\":5:7   */\n  iszero\n  tag_1\n  jumpi\n    /* \"--CODEGEN--\":30:31   */\n  0x00\n    /* \"--CODEGEN--\":27:28   */\n  dup1\n    /* \"--CODEGEN--\":20:32   */\n  revert\n    /* \"--CODEGEN--\":5:7   */\ntag_1:\n    /* \"Synthetix/contracts/interfaces/ICollateralLoan.sol\":1332:1960  interface ICollateralLoan {... */\n  pop\n  dataSize(sub_0)\n  dup1\n  dataOffset(sub_0)\n  0x00\n  codecopy\n  0x00\n  return\nstop\n\nsub_0: assembly {\n        /* \"Synthetix/contracts/interfaces/ICollateralLoan.sol\":1332:1960  interface ICollateralLoan {... */\n      mstore(0x40, 0x80)\n      0x00\n      dup1\n      revert\n\n    auxdata: 0xa365627a7a72315820e662982464801514dd637bf57a2f4d8feca2dc1653cbfa431de124d1761ee3676c6578706572696d656e74616cf564736f6c63430005110040\n}\n",
+						"bytecode": {
+							"linkReferences": {},
+							"object": "6080604052348015600f57600080fd5b50604c80601d6000396000f3fe6080604052600080fdfea365627a7a72315820e662982464801514dd637bf57a2f4d8feca2dc1653cbfa431de124d1761ee3676c6578706572696d656e74616cf564736f6c63430005110040",
+							"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH1 0xF JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x4C DUP1 PUSH1 0x1D PUSH1 0x0 CODECOPY PUSH1 0x0 RETURN INVALID PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG3 PUSH6 0x627A7A723158 KECCAK256 0xE6 PUSH3 0x982464 DUP1 ISZERO EQ 0xDD PUSH4 0x7BF57A2F 0x4D DUP16 0xEC LOG2 0xDC AND MSTORE8 0xCB STATICCALL NUMBER SAR 0xE1 0x24 0xD1 PUSH23 0x1EE3676C6578706572696D656E74616CF564736F6C6343 STOP SDIV GT STOP BLOCKHASH ",
+							"sourceMap": "1332:628:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1332:628:0;;;;;;;"
+						},
+						"deployedBytecode": {
+							"linkReferences": {},
+							"object": "6080604052600080fdfea365627a7a72315820e662982464801514dd637bf57a2f4d8feca2dc1653cbfa431de124d1761ee3676c6578706572696d656e74616cf564736f6c63430005110040",
+							"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG3 PUSH6 0x627A7A723158 KECCAK256 0xE6 PUSH3 0x982464 DUP1 ISZERO EQ 0xDD PUSH4 0x7BF57A2F 0x4D DUP16 0xEC LOG2 0xDC AND MSTORE8 0xCB STATICCALL NUMBER SAR 0xE1 0x24 0xD1 PUSH23 0x1EE3676C6578706572696D656E74616CF564736F6C6343 STOP SDIV GT STOP BLOCKHASH ",
+							"sourceMap": "1332:628:0:-;;;;;"
+						},
+						"gasEstimates": {
+							"creation": {
+								"codeDepositCost": "15200",
+								"executionCost": "69",
+								"totalCost": "15269"
+							}
+						},
+						"legacyAssembly": {
+							".code": [
+								{
+									"begin": 1332,
+									"end": 1960,
+									"name": "PUSH",
+									"value": "80"
+								},
+								{
+									"begin": 1332,
+									"end": 1960,
+									"name": "PUSH",
+									"value": "40"
+								},
+								{
+									"begin": 1332,
+									"end": 1960,
+									"name": "MSTORE"
+								},
+								{
+									"begin": 1332,
+									"end": 1960,
+									"name": "CALLVALUE"
+								},
+								{
+									"begin": 8,
+									"end": 17,
+									"name": "DUP1"
+								},
+								{
+									"begin": 5,
+									"end": 7,
+									"name": "ISZERO"
+								},
+								{
+									"begin": 5,
+									"end": 7,
+									"name": "PUSH [tag]",
+									"value": "1"
+								},
+								{
+									"begin": 5,
+									"end": 7,
+									"name": "JUMPI"
+								},
+								{
+									"begin": 30,
+									"end": 31,
+									"name": "PUSH",
+									"value": "0"
+								},
+								{
+									"begin": 27,
+									"end": 28,
+									"name": "DUP1"
+								},
+								{
+									"begin": 20,
+									"end": 32,
+									"name": "REVERT"
+								},
+								{
+									"begin": 5,
+									"end": 7,
+									"name": "tag",
+									"value": "1"
+								},
+								{
+									"begin": 5,
+									"end": 7,
+									"name": "JUMPDEST"
+								},
+								{
+									"begin": 1332,
+									"end": 1960,
+									"name": "POP"
+								},
+								{
+									"begin": 1332,
+									"end": 1960,
+									"name": "PUSH #[$]",
+									"value": "0000000000000000000000000000000000000000000000000000000000000000"
+								},
+								{
+									"begin": 1332,
+									"end": 1960,
+									"name": "DUP1"
+								},
+								{
+									"begin": 1332,
+									"end": 1960,
+									"name": "PUSH [$]",
+									"value": "0000000000000000000000000000000000000000000000000000000000000000"
+								},
+								{
+									"begin": 1332,
+									"end": 1960,
+									"name": "PUSH",
+									"value": "0"
+								},
+								{
+									"begin": 1332,
+									"end": 1960,
+									"name": "CODECOPY"
+								},
+								{
+									"begin": 1332,
+									"end": 1960,
+									"name": "PUSH",
+									"value": "0"
+								},
+								{
+									"begin": 1332,
+									"end": 1960,
+									"name": "RETURN"
+								}
+							],
+							".data": {
+								"0": {
+									".auxdata": "a365627a7a72315820e662982464801514dd637bf57a2f4d8feca2dc1653cbfa431de124d1761ee3676c6578706572696d656e74616cf564736f6c63430005110040",
+									".code": [
+										{
+											"begin": 1332,
+											"end": 1960,
+											"name": "PUSH",
+											"value": "80"
+										},
+										{
+											"begin": 1332,
+											"end": 1960,
+											"name": "PUSH",
+											"value": "40"
+										},
+										{
+											"begin": 1332,
+											"end": 1960,
+											"name": "MSTORE"
+										},
+										{
+											"begin": 1332,
+											"end": 1960,
+											"name": "PUSH",
+											"value": "0"
+										},
+										{
+											"begin": 1332,
+											"end": 1960,
+											"name": "DUP1"
+										},
+										{
+											"begin": 1332,
+											"end": 1960,
+											"name": "REVERT"
+										}
+									]
+								}
+							}
+						},
+						"methodIdentifiers": {}
+					},
+					"metadata": "{\"compiler\":{\"version\":\"0.5.17+commit.d19bba13\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"Synthetix/contracts/interfaces/ICollateralLoan.sol\":\"ICollateralLoan\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"Synthetix/contracts/interfaces/ICollateralLoan.sol\":{\"keccak256\":\"0x4bf1db1363eeab9680122f00a82b3015603ebecaaf39d36175b67c80d23a8ebf\",\"urls\":[\"bzz-raw://ac3ee53d77a846dc8de331298395adcd0415a50e0697621043655c0dc13d9527\",\"dweb:/ipfs/QmW5yPRRvsVFjPym5ytJJy73dufYoHPBLGKuPpPEYzh5tz\"]}},\"version\":1}",
+					"storageLayout": {
+						"storage": [],
+						"types": null
+					},
+					"userdoc": {
+						"methods": {}
+					}
+				}
+			}
+		},
+		"errors": [
+			{
+				"component": "general",
+				"formattedMessage": "Synthetix/contracts/interfaces/ICollateralLoan.sol:18:1: Warning: Experimental features are turned on. Do not use experimental features on live deployments.\npragma experimental ABIEncoderV2;\n^-------------------------------^\n",
+				"message": "Experimental features are turned on. Do not use experimental features on live deployments.",
+				"severity": "warning",
+				"sourceLocation": {
+					"end": 1330,
+					"file": "Synthetix/contracts/interfaces/ICollateralLoan.sol",
+					"start": 1297
+				},
+				"type": "Warning"
+			}
+		],
+		"sources": {
+			"Synthetix/contracts/interfaces/ICollateralLoan.sol": {
+				"ast": {
+					"absolutePath": "Synthetix/contracts/interfaces/ICollateralLoan.sol",
+					"exportedSymbols": {
+						"ICollateralLoan": [
+							22
+						]
+					},
+					"id": 23,
+					"nodeType": "SourceUnit",
+					"nodes": [
+						{
+							"id": 1,
+							"literals": [
+								"solidity",
+								">=",
+								"0.4",
+								".24"
+							],
+							"nodeType": "PragmaDirective",
+							"src": "1270:25:0"
+						},
+						{
+							"id": 2,
+							"literals": [
+								"experimental",
+								"ABIEncoderV2"
+							],
+							"nodeType": "PragmaDirective",
+							"src": "1297:33:0"
+						},
+						{
+							"baseContracts": [],
+							"contractDependencies": [],
+							"contractKind": "interface",
+							"documentation": null,
+							"fullyImplemented": true,
+							"id": 22,
+							"linearizedBaseContracts": [
+								22
+							],
+							"name": "ICollateralLoan",
+							"nodeType": "ContractDefinition",
+							"nodes": [
+								{
+									"canonicalName": "ICollateralLoan.Loan",
+									"id": 21,
+									"members": [
+										{
+											"constant": false,
+											"id": 4,
+											"name": "id",
+											"nodeType": "VariableDeclaration",
+											"scope": 21,
+											"src": "1413:7:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_uint256",
+												"typeString": "uint256"
+											},
+											"typeName": {
+												"id": 3,
+												"name": "uint",
+												"nodeType": "ElementaryTypeName",
+												"src": "1413:4:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												}
+											},
+											"value": null,
+											"visibility": "internal"
+										},
+										{
+											"constant": false,
+											"id": 6,
+											"name": "account",
+											"nodeType": "VariableDeclaration",
+											"scope": 21,
+											"src": "1473:23:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_address_payable",
+												"typeString": "address payable"
+											},
+											"typeName": {
+												"id": 5,
+												"name": "address",
+												"nodeType": "ElementaryTypeName",
+												"src": "1473:15:0",
+												"stateMutability": "payable",
+												"typeDescriptions": {
+													"typeIdentifier": "t_address_payable",
+													"typeString": "address payable"
+												}
+											},
+											"value": null,
+											"visibility": "internal"
+										},
+										{
+											"constant": false,
+											"id": 8,
+											"name": "collateral",
+											"nodeType": "VariableDeclaration",
+											"scope": 21,
+											"src": "1549:15:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_uint256",
+												"typeString": "uint256"
+											},
+											"typeName": {
+												"id": 7,
+												"name": "uint",
+												"nodeType": "ElementaryTypeName",
+												"src": "1549:4:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												}
+											},
+											"value": null,
+											"visibility": "internal"
+										},
+										{
+											"constant": false,
+											"id": 10,
+											"name": "currency",
+											"nodeType": "VariableDeclaration",
+											"scope": 21,
+											"src": "1612:16:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_bytes32",
+												"typeString": "bytes32"
+											},
+											"typeName": {
+												"id": 9,
+												"name": "bytes32",
+												"nodeType": "ElementaryTypeName",
+												"src": "1612:7:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_bytes32",
+													"typeString": "bytes32"
+												}
+											},
+											"value": null,
+											"visibility": "internal"
+										},
+										{
+											"constant": false,
+											"id": 12,
+											"name": "amount",
+											"nodeType": "VariableDeclaration",
+											"scope": 21,
+											"src": "1676:11:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_uint256",
+												"typeString": "uint256"
+											},
+											"typeName": {
+												"id": 11,
+												"name": "uint",
+												"nodeType": "ElementaryTypeName",
+												"src": "1676:4:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												}
+											},
+											"value": null,
+											"visibility": "internal"
+										},
+										{
+											"constant": false,
+											"id": 14,
+											"name": "short",
+											"nodeType": "VariableDeclaration",
+											"scope": 21,
+											"src": "1749:10:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_bool",
+												"typeString": "bool"
+											},
+											"typeName": {
+												"id": 13,
+												"name": "bool",
+												"nodeType": "ElementaryTypeName",
+												"src": "1749:4:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_bool",
+													"typeString": "bool"
+												}
+											},
+											"value": null,
+											"visibility": "internal"
+										},
+										{
+											"constant": false,
+											"id": 16,
+											"name": "accruedInterest",
+											"nodeType": "VariableDeclaration",
+											"scope": 21,
+											"src": "1805:20:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_uint256",
+												"typeString": "uint256"
+											},
+											"typeName": {
+												"id": 15,
+												"name": "uint",
+												"nodeType": "ElementaryTypeName",
+												"src": "1805:4:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												}
+											},
+											"value": null,
+											"visibility": "internal"
+										},
+										{
+											"constant": false,
+											"id": 18,
+											"name": "interestIndex",
+											"nodeType": "VariableDeclaration",
+											"scope": 21,
+											"src": "1866:18:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_uint256",
+												"typeString": "uint256"
+											},
+											"typeName": {
+												"id": 17,
+												"name": "uint",
+												"nodeType": "ElementaryTypeName",
+												"src": "1866:4:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												}
+											},
+											"value": null,
+											"visibility": "internal"
+										},
+										{
+											"constant": false,
+											"id": 20,
+											"name": "lastInteraction",
+											"nodeType": "VariableDeclaration",
+											"scope": 21,
+											"src": "1931:20:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_uint256",
+												"typeString": "uint256"
+											},
+											"typeName": {
+												"id": 19,
+												"name": "uint",
+												"nodeType": "ElementaryTypeName",
+												"src": "1931:4:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												}
+											},
+											"value": null,
+											"visibility": "internal"
+										}
+									],
+									"name": "Loan",
+									"nodeType": "StructDefinition",
+									"scope": 22,
+									"src": "1364:594:0",
+									"visibility": "public"
+								}
+							],
+							"scope": 23,
+							"src": "1332:628:0"
+						}
+					],
+					"src": "1270:691:0"
+				},
+				"id": 0
+			}
+		}
+	}
+}

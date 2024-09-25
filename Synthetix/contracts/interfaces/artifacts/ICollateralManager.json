@@ -1,0 +1,679 @@
+{
+	"deploy": {
+		"VM:-": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"main:1": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"ropsten:3": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"rinkeby:4": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"kovan:42": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"goerli:5": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"Custom": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		}
+	},
+	"data": {
+		"bytecode": {
+			"linkReferences": {},
+			"object": "",
+			"opcodes": "",
+			"sourceMap": ""
+		},
+		"deployedBytecode": {
+			"linkReferences": {},
+			"object": "",
+			"opcodes": "",
+			"sourceMap": ""
+		},
+		"gasEstimates": null,
+		"methodIdentifiers": {
+			"accrueInterest(uint256,bytes32,bool)": "80054666",
+			"addCollaterals(address[])": "bbb601cd",
+			"addShortableSynths(bytes32[],bytes32[])": "a894a14b",
+			"addSynths(bytes32[],bytes32[])": "23d60e2e",
+			"areShortableSynthsSet(bytes32[],bytes32[])": "93a72fbe",
+			"areSynthsAndCurrenciesSet(bytes32[],bytes32[])": "72e18b6a",
+			"decrementLongs(bytes32,uint256)": "e50a31b3",
+			"decrementShorts(bytes32,uint256)": "5246f2b9",
+			"exceedsDebtLimit(uint256,bytes32)": "b4d6cb40",
+			"getBorrowRate()": "ba1c5e80",
+			"getNewLoanId()": "b3b46732",
+			"getRatesAndTime(uint256)": "03f048b0",
+			"getShortRate(bytes32)": "ee81f790",
+			"getShortRatesAndTime(bytes32,uint256)": "af07aa9d",
+			"hasCollateral(address)": "b38988f7",
+			"incrementLongs(bytes32,uint256)": "eb94bbde",
+			"incrementShorts(bytes32,uint256)": "e31f27c1",
+			"isSynthManaged(bytes32)": "8471db13",
+			"long(bytes32)": "d2f00475",
+			"removeCollaterals(address[])": "ffa749cd",
+			"removeShortableSynths(bytes32[])": "ca969f23",
+			"removeSynths(bytes32[],bytes32[])": "710388d1",
+			"short(bytes32)": "e32261fe",
+			"totalLong()": "1e33fc6b",
+			"totalShort()": "ad79a858",
+			"updateBorrowRatesCollateral(uint256)": "8d134190",
+			"updateShortRatesCollateral(bytes32,uint256)": "7687402a"
+		}
+	},
+	"abi": [
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "interestIndex",
+					"type": "uint256"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "currency",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "bool",
+					"name": "isShort",
+					"type": "bool"
+				}
+			],
+			"name": "accrueInterest",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "difference",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "index",
+					"type": "uint256"
+				}
+			],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"internalType": "address[]",
+					"name": "collaterals",
+					"type": "address[]"
+				}
+			],
+			"name": "addCollaterals",
+			"outputs": [],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"internalType": "bytes32[]",
+					"name": "requiredSynthNamesInResolver",
+					"type": "bytes32[]"
+				},
+				{
+					"internalType": "bytes32[]",
+					"name": "synthKeys",
+					"type": "bytes32[]"
+				}
+			],
+			"name": "addShortableSynths",
+			"outputs": [],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"internalType": "bytes32[]",
+					"name": "synthNamesInResolver",
+					"type": "bytes32[]"
+				},
+				{
+					"internalType": "bytes32[]",
+					"name": "synthKeys",
+					"type": "bytes32[]"
+				}
+			],
+			"name": "addSynths",
+			"outputs": [],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [
+				{
+					"internalType": "bytes32[]",
+					"name": "requiredSynthNamesInResolver",
+					"type": "bytes32[]"
+				},
+				{
+					"internalType": "bytes32[]",
+					"name": "synthKeys",
+					"type": "bytes32[]"
+				}
+			],
+			"name": "areShortableSynthsSet",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [
+				{
+					"internalType": "bytes32[]",
+					"name": "requiredSynthNamesInResolver",
+					"type": "bytes32[]"
+				},
+				{
+					"internalType": "bytes32[]",
+					"name": "synthKeys",
+					"type": "bytes32[]"
+				}
+			],
+			"name": "areSynthsAndCurrenciesSet",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"internalType": "bytes32",
+					"name": "synth",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "uint256",
+					"name": "amount",
+					"type": "uint256"
+				}
+			],
+			"name": "decrementLongs",
+			"outputs": [],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"internalType": "bytes32",
+					"name": "synth",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "uint256",
+					"name": "amount",
+					"type": "uint256"
+				}
+			],
+			"name": "decrementShorts",
+			"outputs": [],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "amount",
+					"type": "uint256"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "currency",
+					"type": "bytes32"
+				}
+			],
+			"name": "exceedsDebtLimit",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "canIssue",
+					"type": "bool"
+				},
+				{
+					"internalType": "bool",
+					"name": "anyRateIsInvalid",
+					"type": "bool"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [],
+			"name": "getBorrowRate",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "borrowRate",
+					"type": "uint256"
+				},
+				{
+					"internalType": "bool",
+					"name": "anyRateIsInvalid",
+					"type": "bool"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [],
+			"name": "getNewLoanId",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "id",
+					"type": "uint256"
+				}
+			],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "index",
+					"type": "uint256"
+				}
+			],
+			"name": "getRatesAndTime",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "entryRate",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "lastRate",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "lastUpdated",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "newIndex",
+					"type": "uint256"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [
+				{
+					"internalType": "bytes32",
+					"name": "synth",
+					"type": "bytes32"
+				}
+			],
+			"name": "getShortRate",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "shortRate",
+					"type": "uint256"
+				},
+				{
+					"internalType": "bool",
+					"name": "rateIsInvalid",
+					"type": "bool"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [
+				{
+					"internalType": "bytes32",
+					"name": "currency",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "uint256",
+					"name": "index",
+					"type": "uint256"
+				}
+			],
+			"name": "getShortRatesAndTime",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "entryRate",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "lastRate",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "lastUpdated",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "newIndex",
+					"type": "uint256"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "collateral",
+					"type": "address"
+				}
+			],
+			"name": "hasCollateral",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"internalType": "bytes32",
+					"name": "synth",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "uint256",
+					"name": "amount",
+					"type": "uint256"
+				}
+			],
+			"name": "incrementLongs",
+			"outputs": [],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"internalType": "bytes32",
+					"name": "synth",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "uint256",
+					"name": "amount",
+					"type": "uint256"
+				}
+			],
+			"name": "incrementShorts",
+			"outputs": [],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [
+				{
+					"internalType": "bytes32",
+					"name": "currencyKey",
+					"type": "bytes32"
+				}
+			],
+			"name": "isSynthManaged",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [
+				{
+					"internalType": "bytes32",
+					"name": "synth",
+					"type": "bytes32"
+				}
+			],
+			"name": "long",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "amount",
+					"type": "uint256"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"internalType": "address[]",
+					"name": "collaterals",
+					"type": "address[]"
+				}
+			],
+			"name": "removeCollaterals",
+			"outputs": [],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"internalType": "bytes32[]",
+					"name": "synths",
+					"type": "bytes32[]"
+				}
+			],
+			"name": "removeShortableSynths",
+			"outputs": [],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"internalType": "bytes32[]",
+					"name": "synths",
+					"type": "bytes32[]"
+				},
+				{
+					"internalType": "bytes32[]",
+					"name": "synthKeys",
+					"type": "bytes32[]"
+				}
+			],
+			"name": "removeSynths",
+			"outputs": [],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [
+				{
+					"internalType": "bytes32",
+					"name": "synth",
+					"type": "bytes32"
+				}
+			],
+			"name": "short",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "amount",
+					"type": "uint256"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [],
+			"name": "totalLong",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "susdValue",
+					"type": "uint256"
+				},
+				{
+					"internalType": "bool",
+					"name": "anyRateIsInvalid",
+					"type": "bool"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [],
+			"name": "totalShort",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "susdValue",
+					"type": "uint256"
+				},
+				{
+					"internalType": "bool",
+					"name": "anyRateIsInvalid",
+					"type": "bool"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "rate",
+					"type": "uint256"
+				}
+			],
+			"name": "updateBorrowRatesCollateral",
+			"outputs": [],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"constant": false,
+			"inputs": [
+				{
+					"internalType": "bytes32",
+					"name": "currency",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "uint256",
+					"name": "rate",
+					"type": "uint256"
+				}
+			],
+			"name": "updateShortRatesCollateral",
+			"outputs": [],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		}
+	]
+}

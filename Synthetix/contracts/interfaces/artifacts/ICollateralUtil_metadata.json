@@ -1,0 +1,263 @@
+{
+	"compiler": {
+		"version": "0.5.17+commit.d19bba13"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "currency",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "collateralKey",
+						"type": "bytes32"
+					}
+				],
+				"name": "collateralRedeemed",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "collateral",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address payable",
+								"name": "account",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "collateral",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bytes32",
+								"name": "currency",
+								"type": "bytes32"
+							},
+							{
+								"internalType": "uint256",
+								"name": "amount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "short",
+								"type": "bool"
+							},
+							{
+								"internalType": "uint256",
+								"name": "accruedInterest",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "interestIndex",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "lastInteraction",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct ICollateralLoan.Loan",
+						"name": "loan",
+						"type": "tuple"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "collateralKey",
+						"type": "bytes32"
+					}
+				],
+				"name": "getCollateralRatio",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "cratio",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address payable",
+								"name": "account",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "collateral",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bytes32",
+								"name": "currency",
+								"type": "bytes32"
+							},
+							{
+								"internalType": "uint256",
+								"name": "amount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "short",
+								"type": "bool"
+							},
+							{
+								"internalType": "uint256",
+								"name": "accruedInterest",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "interestIndex",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "lastInteraction",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct ICollateralLoan.Loan",
+						"name": "loan",
+						"type": "tuple"
+					},
+					{
+						"internalType": "uint256",
+						"name": "minCratio",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "collateralKey",
+						"type": "bytes32"
+					}
+				],
+				"name": "liquidationAmount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "currency",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "uint256",
+						"name": "minCratio",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "collateralKey",
+						"type": "bytes32"
+					}
+				],
+				"name": "maxLoan",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "max",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"methods": {}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Synthetix/contracts/interfaces/ICollateralUtil.sol": "ICollateralUtil"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Synthetix/contracts/interfaces/ICollateralLoan.sol": {
+			"keccak256": "0x4bf1db1363eeab9680122f00a82b3015603ebecaaf39d36175b67c80d23a8ebf",
+			"urls": [
+				"bzz-raw://ac3ee53d77a846dc8de331298395adcd0415a50e0697621043655c0dc13d9527",
+				"dweb:/ipfs/QmW5yPRRvsVFjPym5ytJJy73dufYoHPBLGKuPpPEYzh5tz"
+			]
+		},
+		"Synthetix/contracts/interfaces/ICollateralUtil.sol": {
+			"keccak256": "0x0ff6b1f547aaae383e157521513cf982153a40a1c81a297761fa6c88273c5ea4",
+			"urls": [
+				"bzz-raw://c8d6f6bdea37dbbc111c158a85f546d1aab12b5473fae5a616bcb722dd0ebc52",
+				"dweb:/ipfs/Qma4FEKfB32U6nTuZCKJtRjgoFTEZ1y9eBenrrZu7YRh2n"
+			]
+		}
+	},
+	"version": 1
+}

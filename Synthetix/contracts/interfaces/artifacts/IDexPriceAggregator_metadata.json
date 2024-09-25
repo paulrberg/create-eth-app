@@ -1,0 +1,74 @@
+{
+	"compiler": {
+		"version": "0.5.17+commit.d19bba13"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "tokenIn",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amountIn",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "tokenOut",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "twapPeriod",
+						"type": "uint256"
+					}
+				],
+				"name": "assetToAsset",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "amountOut",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"methods": {}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Synthetix/contracts/interfaces/IDexPriceAggregator.sol": "IDexPriceAggregator"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Synthetix/contracts/interfaces/IDexPriceAggregator.sol": {
+			"keccak256": "0xc1c358e543831421e1c8bd13b8c74773509ac2c0f29ad76f8e4f591bb0758d20",
+			"urls": [
+				"bzz-raw://dc6f807f7dc776fb131b5afb66485e87b61fcbab45033a79906bcfe4dcf03a4f",
+				"dweb:/ipfs/QmTMMGrzUywYqGPDEKoyD9MbRD8ZtGaZUPJATADf9iNzGR"
+			]
+		}
+	},
+	"version": 1
+}

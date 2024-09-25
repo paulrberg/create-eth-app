@@ -1,0 +1,37 @@
+{
+	"compiler": {
+		"version": "0.5.17+commit.d19bba13"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"methods": {}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Synthetix/contracts/interfaces/ICollateralLoan.sol": "ICollateralLoan"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Synthetix/contracts/interfaces/ICollateralLoan.sol": {
+			"keccak256": "0x4bf1db1363eeab9680122f00a82b3015603ebecaaf39d36175b67c80d23a8ebf",
+			"urls": [
+				"bzz-raw://ac3ee53d77a846dc8de331298395adcd0415a50e0697621043655c0dc13d9527",
+				"dweb:/ipfs/QmW5yPRRvsVFjPym5ytJJy73dufYoHPBLGKuPpPEYzh5tz"
+			]
+		}
+	},
+	"version": 1
+}

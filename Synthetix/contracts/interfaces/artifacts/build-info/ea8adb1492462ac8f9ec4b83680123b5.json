@@ -1,0 +1,917 @@
+{
+	"id": "ea8adb1492462ac8f9ec4b83680123b5",
+	"_format": "hh-sol-build-info-1",
+	"solcVersion": "0.5.17",
+	"solcLongVersion": "0.5.17+commit.d19bba13",
+	"input": {
+		"language": "Solidity",
+		"sources": {
+			"Synthetix/contracts/interfaces/IDirectIntegrationManager.sol": {
+				"content": "/*\n    \n   ██████  ██████   ██████  ██   ██ ██████   ██████   ██████  ██   ██    ██████  ███████ ██    ██\n  ██      ██    ██ ██    ██ ██  ██  ██   ██ ██    ██ ██    ██ ██  ██     ██   ██ ██      ██    ██\n  ██      ██    ██ ██    ██ █████   ██████  ██    ██ ██    ██ █████      ██   ██ █████   ██    ██\n  ██      ██    ██ ██    ██ ██  ██  ██   ██ ██    ██ ██    ██ ██  ██     ██   ██ ██       ██  ██\n   ██████  ██████   ██████  ██   ██ ██████   ██████   ██████  ██   ██ ██ ██████  ███████   ████\n  \n  Find any smart contract, and build your project faster: https://www.cookbook.dev\n  Twitter: https://twitter.com/cookbook_dev\n  Discord: https://discord.gg/cookbookdev\n  \n  Find this contract on Cookbook: https://www.cookbook.dev/protocols/Synthetix?utm=code\n  */\n  \n  pragma solidity >=0.4.24;\npragma experimental ABIEncoderV2;\n\n// https://docs.synthetix.io/contracts/source/interfaces/IDirectIntegration\ninterface IDirectIntegrationManager {\n    struct ParameterIntegrationSettings {\n        bytes32 currencyKey;\n        address dexPriceAggregator;\n        address atomicEquivalentForDexPricing;\n        uint atomicExchangeFeeRate;\n        uint atomicTwapWindow;\n        uint atomicMaxVolumePerBlock;\n        uint atomicVolatilityConsiderationWindow;\n        uint atomicVolatilityUpdateThreshold;\n        uint exchangeFeeRate;\n        uint exchangeMaxDynamicFee;\n        uint exchangeDynamicFeeRounds;\n        uint exchangeDynamicFeeThreshold;\n        uint exchangeDynamicFeeWeightDecay;\n    }\n\n    function getExchangeParameters(address integration, bytes32 key)\n        external\n        view\n        returns (ParameterIntegrationSettings memory settings);\n\n    function setExchangeParameters(\n        address integration,\n        bytes32[] calldata currencyKeys,\n        ParameterIntegrationSettings calldata params\n    ) external;\n}\n"
+			}
+		},
+		"settings": {
+			"optimizer": {
+				"enabled": true,
+				"runs": 200
+			},
+			"outputSelection": {
+				"*": {
+					"": [
+						"ast"
+					],
+					"*": [
+						"abi",
+						"metadata",
+						"devdoc",
+						"userdoc",
+						"storageLayout",
+						"evm.legacyAssembly",
+						"evm.bytecode",
+						"evm.deployedBytecode",
+						"evm.methodIdentifiers",
+						"evm.gasEstimates",
+						"evm.assembly"
+					]
+				}
+			},
+			"remappings": []
+		}
+	},
+	"output": {
+		"contracts": {
+			"Synthetix/contracts/interfaces/IDirectIntegrationManager.sol": {
+				"IDirectIntegrationManager": {
+					"abi": [
+						{
+							"constant": true,
+							"inputs": [
+								{
+									"internalType": "address",
+									"name": "integration",
+									"type": "address"
+								},
+								{
+									"internalType": "bytes32",
+									"name": "key",
+									"type": "bytes32"
+								}
+							],
+							"name": "getExchangeParameters",
+							"outputs": [
+								{
+									"components": [
+										{
+											"internalType": "bytes32",
+											"name": "currencyKey",
+											"type": "bytes32"
+										},
+										{
+											"internalType": "address",
+											"name": "dexPriceAggregator",
+											"type": "address"
+										},
+										{
+											"internalType": "address",
+											"name": "atomicEquivalentForDexPricing",
+											"type": "address"
+										},
+										{
+											"internalType": "uint256",
+											"name": "atomicExchangeFeeRate",
+											"type": "uint256"
+										},
+										{
+											"internalType": "uint256",
+											"name": "atomicTwapWindow",
+											"type": "uint256"
+										},
+										{
+											"internalType": "uint256",
+											"name": "atomicMaxVolumePerBlock",
+											"type": "uint256"
+										},
+										{
+											"internalType": "uint256",
+											"name": "atomicVolatilityConsiderationWindow",
+											"type": "uint256"
+										},
+										{
+											"internalType": "uint256",
+											"name": "atomicVolatilityUpdateThreshold",
+											"type": "uint256"
+										},
+										{
+											"internalType": "uint256",
+											"name": "exchangeFeeRate",
+											"type": "uint256"
+										},
+										{
+											"internalType": "uint256",
+											"name": "exchangeMaxDynamicFee",
+											"type": "uint256"
+										},
+										{
+											"internalType": "uint256",
+											"name": "exchangeDynamicFeeRounds",
+											"type": "uint256"
+										},
+										{
+											"internalType": "uint256",
+											"name": "exchangeDynamicFeeThreshold",
+											"type": "uint256"
+										},
+										{
+											"internalType": "uint256",
+											"name": "exchangeDynamicFeeWeightDecay",
+											"type": "uint256"
+										}
+									],
+									"internalType": "struct IDirectIntegrationManager.ParameterIntegrationSettings",
+									"name": "settings",
+									"type": "tuple"
+								}
+							],
+							"payable": false,
+							"stateMutability": "view",
+							"type": "function"
+						},
+						{
+							"constant": false,
+							"inputs": [
+								{
+									"internalType": "address",
+									"name": "integration",
+									"type": "address"
+								},
+								{
+									"internalType": "bytes32[]",
+									"name": "currencyKeys",
+									"type": "bytes32[]"
+								},
+								{
+									"components": [
+										{
+											"internalType": "bytes32",
+											"name": "currencyKey",
+											"type": "bytes32"
+										},
+										{
+											"internalType": "address",
+											"name": "dexPriceAggregator",
+											"type": "address"
+										},
+										{
+											"internalType": "address",
+											"name": "atomicEquivalentForDexPricing",
+											"type": "address"
+										},
+										{
+											"internalType": "uint256",
+											"name": "atomicExchangeFeeRate",
+											"type": "uint256"
+										},
+										{
+											"internalType": "uint256",
+											"name": "atomicTwapWindow",
+											"type": "uint256"
+										},
+										{
+											"internalType": "uint256",
+											"name": "atomicMaxVolumePerBlock",
+											"type": "uint256"
+										},
+										{
+											"internalType": "uint256",
+											"name": "atomicVolatilityConsiderationWindow",
+											"type": "uint256"
+										},
+										{
+											"internalType": "uint256",
+											"name": "atomicVolatilityUpdateThreshold",
+											"type": "uint256"
+										},
+										{
+											"internalType": "uint256",
+											"name": "exchangeFeeRate",
+											"type": "uint256"
+										},
+										{
+											"internalType": "uint256",
+											"name": "exchangeMaxDynamicFee",
+											"type": "uint256"
+										},
+										{
+											"internalType": "uint256",
+											"name": "exchangeDynamicFeeRounds",
+											"type": "uint256"
+										},
+										{
+											"internalType": "uint256",
+											"name": "exchangeDynamicFeeThreshold",
+											"type": "uint256"
+										},
+										{
+											"internalType": "uint256",
+											"name": "exchangeDynamicFeeWeightDecay",
+											"type": "uint256"
+										}
+									],
+									"internalType": "struct IDirectIntegrationManager.ParameterIntegrationSettings",
+									"name": "params",
+									"type": "tuple"
+								}
+							],
+							"name": "setExchangeParameters",
+							"outputs": [],
+							"payable": false,
+							"stateMutability": "nonpayable",
+							"type": "function"
+						}
+					],
+					"devdoc": {
+						"methods": {}
+					},
+					"evm": {
+						"assembly": "",
+						"bytecode": {
+							"linkReferences": {},
+							"object": "",
+							"opcodes": "",
+							"sourceMap": ""
+						},
+						"deployedBytecode": {
+							"linkReferences": {},
+							"object": "",
+							"opcodes": "",
+							"sourceMap": ""
+						},
+						"gasEstimates": null,
+						"legacyAssembly": null,
+						"methodIdentifiers": {
+							"getExchangeParameters(address,bytes32)": "697b659b",
+							"setExchangeParameters(address,bytes32[],(bytes32,address,address,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256))": "5a684562"
+						}
+					},
+					"metadata": "{\"compiler\":{\"version\":\"0.5.17+commit.d19bba13\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"integration\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"key\",\"type\":\"bytes32\"}],\"name\":\"getExchangeParameters\",\"outputs\":[{\"components\":[{\"internalType\":\"bytes32\",\"name\":\"currencyKey\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"dexPriceAggregator\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"atomicEquivalentForDexPricing\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"atomicExchangeFeeRate\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"atomicTwapWindow\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"atomicMaxVolumePerBlock\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"atomicVolatilityConsiderationWindow\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"atomicVolatilityUpdateThreshold\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"exchangeFeeRate\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"exchangeMaxDynamicFee\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"exchangeDynamicFeeRounds\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"exchangeDynamicFeeThreshold\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"exchangeDynamicFeeWeightDecay\",\"type\":\"uint256\"}],\"internalType\":\"struct IDirectIntegrationManager.ParameterIntegrationSettings\",\"name\":\"settings\",\"type\":\"tuple\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"integration\",\"type\":\"address\"},{\"internalType\":\"bytes32[]\",\"name\":\"currencyKeys\",\"type\":\"bytes32[]\"},{\"components\":[{\"internalType\":\"bytes32\",\"name\":\"currencyKey\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"dexPriceAggregator\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"atomicEquivalentForDexPricing\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"atomicExchangeFeeRate\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"atomicTwapWindow\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"atomicMaxVolumePerBlock\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"atomicVolatilityConsiderationWindow\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"atomicVolatilityUpdateThreshold\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"exchangeFeeRate\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"exchangeMaxDynamicFee\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"exchangeDynamicFeeRounds\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"exchangeDynamicFeeThreshold\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"exchangeDynamicFeeWeightDecay\",\"type\":\"uint256\"}],\"internalType\":\"struct IDirectIntegrationManager.ParameterIntegrationSettings\",\"name\":\"params\",\"type\":\"tuple\"}],\"name\":\"setExchangeParameters\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"Synthetix/contracts/interfaces/IDirectIntegrationManager.sol\":\"IDirectIntegrationManager\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"Synthetix/contracts/interfaces/IDirectIntegrationManager.sol\":{\"keccak256\":\"0xadc3298b920ce231221dd09a9da34fc4175a43336dd6c3392714b4b0c102ee50\",\"urls\":[\"bzz-raw://e6b050bede0275d76ea6b16aa4c90801eb70f736f8c1e3595d3a87e42a57162d\",\"dweb:/ipfs/QmRUBgzxsL2thi4JKgxZxNgZtVvQiTdiXJsdYk3y6yJK58\"]}},\"version\":1}",
+					"storageLayout": {
+						"storage": [],
+						"types": null
+					},
+					"userdoc": {
+						"methods": {}
+					}
+				}
+			}
+		},
+		"errors": [
+			{
+				"component": "general",
+				"formattedMessage": "Synthetix/contracts/interfaces/IDirectIntegrationManager.sol:17:1: Warning: Experimental features are turned on. Do not use experimental features on live deployments.\npragma experimental ABIEncoderV2;\n^-------------------------------^\n",
+				"message": "Experimental features are turned on. Do not use experimental features on live deployments.",
+				"severity": "warning",
+				"sourceLocation": {
+					"end": 1329,
+					"file": "Synthetix/contracts/interfaces/IDirectIntegrationManager.sol",
+					"start": 1296
+				},
+				"type": "Warning"
+			}
+		],
+		"sources": {
+			"Synthetix/contracts/interfaces/IDirectIntegrationManager.sol": {
+				"ast": {
+					"absolutePath": "Synthetix/contracts/interfaces/IDirectIntegrationManager.sol",
+					"exportedSymbols": {
+						"IDirectIntegrationManager": [
+							49
+						]
+					},
+					"id": 50,
+					"nodeType": "SourceUnit",
+					"nodes": [
+						{
+							"id": 1,
+							"literals": [
+								"solidity",
+								">=",
+								"0.4",
+								".24"
+							],
+							"nodeType": "PragmaDirective",
+							"src": "1270:25:0"
+						},
+						{
+							"id": 2,
+							"literals": [
+								"experimental",
+								"ABIEncoderV2"
+							],
+							"nodeType": "PragmaDirective",
+							"src": "1296:33:0"
+						},
+						{
+							"baseContracts": [],
+							"contractDependencies": [],
+							"contractKind": "interface",
+							"documentation": null,
+							"fullyImplemented": false,
+							"id": 49,
+							"linearizedBaseContracts": [
+								49
+							],
+							"name": "IDirectIntegrationManager",
+							"nodeType": "ContractDefinition",
+							"nodes": [
+								{
+									"canonicalName": "IDirectIntegrationManager.ParameterIntegrationSettings",
+									"id": 29,
+									"members": [
+										{
+											"constant": false,
+											"id": 4,
+											"name": "currencyKey",
+											"nodeType": "VariableDeclaration",
+											"scope": 29,
+											"src": "1495:19:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_bytes32",
+												"typeString": "bytes32"
+											},
+											"typeName": {
+												"id": 3,
+												"name": "bytes32",
+												"nodeType": "ElementaryTypeName",
+												"src": "1495:7:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_bytes32",
+													"typeString": "bytes32"
+												}
+											},
+											"value": null,
+											"visibility": "internal"
+										},
+										{
+											"constant": false,
+											"id": 6,
+											"name": "dexPriceAggregator",
+											"nodeType": "VariableDeclaration",
+											"scope": 29,
+											"src": "1524:26:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_address",
+												"typeString": "address"
+											},
+											"typeName": {
+												"id": 5,
+												"name": "address",
+												"nodeType": "ElementaryTypeName",
+												"src": "1524:7:0",
+												"stateMutability": "nonpayable",
+												"typeDescriptions": {
+													"typeIdentifier": "t_address",
+													"typeString": "address"
+												}
+											},
+											"value": null,
+											"visibility": "internal"
+										},
+										{
+											"constant": false,
+											"id": 8,
+											"name": "atomicEquivalentForDexPricing",
+											"nodeType": "VariableDeclaration",
+											"scope": 29,
+											"src": "1560:37:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_address",
+												"typeString": "address"
+											},
+											"typeName": {
+												"id": 7,
+												"name": "address",
+												"nodeType": "ElementaryTypeName",
+												"src": "1560:7:0",
+												"stateMutability": "nonpayable",
+												"typeDescriptions": {
+													"typeIdentifier": "t_address",
+													"typeString": "address"
+												}
+											},
+											"value": null,
+											"visibility": "internal"
+										},
+										{
+											"constant": false,
+											"id": 10,
+											"name": "atomicExchangeFeeRate",
+											"nodeType": "VariableDeclaration",
+											"scope": 29,
+											"src": "1607:26:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_uint256",
+												"typeString": "uint256"
+											},
+											"typeName": {
+												"id": 9,
+												"name": "uint",
+												"nodeType": "ElementaryTypeName",
+												"src": "1607:4:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												}
+											},
+											"value": null,
+											"visibility": "internal"
+										},
+										{
+											"constant": false,
+											"id": 12,
+											"name": "atomicTwapWindow",
+											"nodeType": "VariableDeclaration",
+											"scope": 29,
+											"src": "1643:21:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_uint256",
+												"typeString": "uint256"
+											},
+											"typeName": {
+												"id": 11,
+												"name": "uint",
+												"nodeType": "ElementaryTypeName",
+												"src": "1643:4:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												}
+											},
+											"value": null,
+											"visibility": "internal"
+										},
+										{
+											"constant": false,
+											"id": 14,
+											"name": "atomicMaxVolumePerBlock",
+											"nodeType": "VariableDeclaration",
+											"scope": 29,
+											"src": "1674:28:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_uint256",
+												"typeString": "uint256"
+											},
+											"typeName": {
+												"id": 13,
+												"name": "uint",
+												"nodeType": "ElementaryTypeName",
+												"src": "1674:4:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												}
+											},
+											"value": null,
+											"visibility": "internal"
+										},
+										{
+											"constant": false,
+											"id": 16,
+											"name": "atomicVolatilityConsiderationWindow",
+											"nodeType": "VariableDeclaration",
+											"scope": 29,
+											"src": "1712:40:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_uint256",
+												"typeString": "uint256"
+											},
+											"typeName": {
+												"id": 15,
+												"name": "uint",
+												"nodeType": "ElementaryTypeName",
+												"src": "1712:4:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												}
+											},
+											"value": null,
+											"visibility": "internal"
+										},
+										{
+											"constant": false,
+											"id": 18,
+											"name": "atomicVolatilityUpdateThreshold",
+											"nodeType": "VariableDeclaration",
+											"scope": 29,
+											"src": "1762:36:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_uint256",
+												"typeString": "uint256"
+											},
+											"typeName": {
+												"id": 17,
+												"name": "uint",
+												"nodeType": "ElementaryTypeName",
+												"src": "1762:4:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												}
+											},
+											"value": null,
+											"visibility": "internal"
+										},
+										{
+											"constant": false,
+											"id": 20,
+											"name": "exchangeFeeRate",
+											"nodeType": "VariableDeclaration",
+											"scope": 29,
+											"src": "1808:20:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_uint256",
+												"typeString": "uint256"
+											},
+											"typeName": {
+												"id": 19,
+												"name": "uint",
+												"nodeType": "ElementaryTypeName",
+												"src": "1808:4:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												}
+											},
+											"value": null,
+											"visibility": "internal"
+										},
+										{
+											"constant": false,
+											"id": 22,
+											"name": "exchangeMaxDynamicFee",
+											"nodeType": "VariableDeclaration",
+											"scope": 29,
+											"src": "1838:26:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_uint256",
+												"typeString": "uint256"
+											},
+											"typeName": {
+												"id": 21,
+												"name": "uint",
+												"nodeType": "ElementaryTypeName",
+												"src": "1838:4:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												}
+											},
+											"value": null,
+											"visibility": "internal"
+										},
+										{
+											"constant": false,
+											"id": 24,
+											"name": "exchangeDynamicFeeRounds",
+											"nodeType": "VariableDeclaration",
+											"scope": 29,
+											"src": "1874:29:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_uint256",
+												"typeString": "uint256"
+											},
+											"typeName": {
+												"id": 23,
+												"name": "uint",
+												"nodeType": "ElementaryTypeName",
+												"src": "1874:4:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												}
+											},
+											"value": null,
+											"visibility": "internal"
+										},
+										{
+											"constant": false,
+											"id": 26,
+											"name": "exchangeDynamicFeeThreshold",
+											"nodeType": "VariableDeclaration",
+											"scope": 29,
+											"src": "1913:32:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_uint256",
+												"typeString": "uint256"
+											},
+											"typeName": {
+												"id": 25,
+												"name": "uint",
+												"nodeType": "ElementaryTypeName",
+												"src": "1913:4:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												}
+											},
+											"value": null,
+											"visibility": "internal"
+										},
+										{
+											"constant": false,
+											"id": 28,
+											"name": "exchangeDynamicFeeWeightDecay",
+											"nodeType": "VariableDeclaration",
+											"scope": 29,
+											"src": "1955:34:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_uint256",
+												"typeString": "uint256"
+											},
+											"typeName": {
+												"id": 27,
+												"name": "uint",
+												"nodeType": "ElementaryTypeName",
+												"src": "1955:4:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												}
+											},
+											"value": null,
+											"visibility": "internal"
+										}
+									],
+									"name": "ParameterIntegrationSettings",
+									"nodeType": "StructDefinition",
+									"scope": 49,
+									"src": "1449:547:0",
+									"visibility": "public"
+								},
+								{
+									"body": null,
+									"documentation": null,
+									"id": 38,
+									"implemented": false,
+									"kind": "function",
+									"modifiers": [],
+									"name": "getExchangeParameters",
+									"nodeType": "FunctionDefinition",
+									"parameters": {
+										"id": 34,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 31,
+												"name": "integration",
+												"nodeType": "VariableDeclaration",
+												"scope": 38,
+												"src": "2033:19:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_address",
+													"typeString": "address"
+												},
+												"typeName": {
+													"id": 30,
+													"name": "address",
+													"nodeType": "ElementaryTypeName",
+													"src": "2033:7:0",
+													"stateMutability": "nonpayable",
+													"typeDescriptions": {
+														"typeIdentifier": "t_address",
+														"typeString": "address"
+													}
+												},
+												"value": null,
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 33,
+												"name": "key",
+												"nodeType": "VariableDeclaration",
+												"scope": 38,
+												"src": "2054:11:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_bytes32",
+													"typeString": "bytes32"
+												},
+												"typeName": {
+													"id": 32,
+													"name": "bytes32",
+													"nodeType": "ElementaryTypeName",
+													"src": "2054:7:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_bytes32",
+														"typeString": "bytes32"
+													}
+												},
+												"value": null,
+												"visibility": "internal"
+											}
+										],
+										"src": "2032:34:0"
+									},
+									"returnParameters": {
+										"id": 37,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 36,
+												"name": "settings",
+												"nodeType": "VariableDeclaration",
+												"scope": 38,
+												"src": "2114:44:0",
+												"stateVariable": false,
+												"storageLocation": "memory",
+												"typeDescriptions": {
+													"typeIdentifier": "t_struct$_ParameterIntegrationSettings_$29_memory_ptr",
+													"typeString": "struct IDirectIntegrationManager.ParameterIntegrationSettings"
+												},
+												"typeName": {
+													"contractScope": null,
+													"id": 35,
+													"name": "ParameterIntegrationSettings",
+													"nodeType": "UserDefinedTypeName",
+													"referencedDeclaration": 29,
+													"src": "2114:28:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_struct$_ParameterIntegrationSettings_$29_storage_ptr",
+														"typeString": "struct IDirectIntegrationManager.ParameterIntegrationSettings"
+													}
+												},
+												"value": null,
+												"visibility": "internal"
+											}
+										],
+										"src": "2113:46:0"
+									},
+									"scope": 49,
+									"src": "2002:158:0",
+									"stateMutability": "view",
+									"superFunction": null,
+									"visibility": "external"
+								},
+								{
+									"body": null,
+									"documentation": null,
+									"id": 48,
+									"implemented": false,
+									"kind": "function",
+									"modifiers": [],
+									"name": "setExchangeParameters",
+									"nodeType": "FunctionDefinition",
+									"parameters": {
+										"id": 46,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 40,
+												"name": "integration",
+												"nodeType": "VariableDeclaration",
+												"scope": 48,
+												"src": "2206:19:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_address",
+													"typeString": "address"
+												},
+												"typeName": {
+													"id": 39,
+													"name": "address",
+													"nodeType": "ElementaryTypeName",
+													"src": "2206:7:0",
+													"stateMutability": "nonpayable",
+													"typeDescriptions": {
+														"typeIdentifier": "t_address",
+														"typeString": "address"
+													}
+												},
+												"value": null,
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 43,
+												"name": "currencyKeys",
+												"nodeType": "VariableDeclaration",
+												"scope": 48,
+												"src": "2235:31:0",
+												"stateVariable": false,
+												"storageLocation": "calldata",
+												"typeDescriptions": {
+													"typeIdentifier": "t_array$_t_bytes32_$dyn_calldata_ptr",
+													"typeString": "bytes32[]"
+												},
+												"typeName": {
+													"baseType": {
+														"id": 41,
+														"name": "bytes32",
+														"nodeType": "ElementaryTypeName",
+														"src": "2235:7:0",
+														"typeDescriptions": {
+															"typeIdentifier": "t_bytes32",
+															"typeString": "bytes32"
+														}
+													},
+													"id": 42,
+													"length": null,
+													"nodeType": "ArrayTypeName",
+													"src": "2235:9:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_array$_t_bytes32_$dyn_storage_ptr",
+														"typeString": "bytes32[]"
+													}
+												},
+												"value": null,
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 45,
+												"name": "params",
+												"nodeType": "VariableDeclaration",
+												"scope": 48,
+												"src": "2276:44:0",
+												"stateVariable": false,
+												"storageLocation": "calldata",
+												"typeDescriptions": {
+													"typeIdentifier": "t_struct$_ParameterIntegrationSettings_$29_calldata_ptr",
+													"typeString": "struct IDirectIntegrationManager.ParameterIntegrationSettings"
+												},
+												"typeName": {
+													"contractScope": null,
+													"id": 44,
+													"name": "ParameterIntegrationSettings",
+													"nodeType": "UserDefinedTypeName",
+													"referencedDeclaration": 29,
+													"src": "2276:28:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_struct$_ParameterIntegrationSettings_$29_storage_ptr",
+														"typeString": "struct IDirectIntegrationManager.ParameterIntegrationSettings"
+													}
+												},
+												"value": null,
+												"visibility": "internal"
+											}
+										],
+										"src": "2196:130:0"
+									},
+									"returnParameters": {
+										"id": 47,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "2335:0:0"
+									},
+									"scope": 49,
+									"src": "2166:170:0",
+									"stateMutability": "nonpayable",
+									"superFunction": null,
+									"visibility": "external"
+								}
+							],
+							"scope": 50,
+							"src": "1407:931:0"
+						}
+					],
+					"src": "1270:1069:0"
+				},
+				"id": 0
+			}
+		}
+	}
+}
