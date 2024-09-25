@@ -1,0 +1,29 @@
+json
+{
+  "compiler": {
+    "version": "0.8.4",
+    "settings": {
+      "optimizer": {
+        "enabled": false,
+        "runs": 200
+      }
+    }
+  },
+  "sources": {
+    "OwnerEthApp.sol": {
+      "content": "/*\n * Submitted for verification at BscScan.com on 2021-09-16\n */\npragma solidity ^0.8.4;\n\n// SPDX-License-Identifier: MIT\n\ninterface IERC20 {\n    function totalSupply() external view returns (uint256);\n    function balanceOf(address account) external view returns (uint256);\n    function transfer(address recipient, uint256 amount) external returns (bool);\n    function allowance(address owner, address spender) external view returns (uint256);\n    function approve(address spender, uint256 amount) external returns (bool);\n    function transferFrom(address sender, address recipient, uint256 amount) external returns (bool);\n    event Transfer(address indexed from, address indexed to, uint256 value);\n    event Approval(address indexed owner, address indexed spender, uint256 value);\n}\n\ninterface IERC20Metadata is IERC20 {\n    function name() external view returns (string memory);\n    function symbol() external view returns (string memory);\n    function decimals() external view returns (uint8);\n}\n\ncontract ERC20 is IERC20, IERC20Metadata {\n    // Contract implementation goes here...\n}\n"
+    }
+  },
+  "settings": {
+    "metadata": {
+      "useLiteralContent": true
+    },
+    "outputSelection": {
+      "*": {
+        "*": [
+          "metadata"
+        ]
+      }
+    }
+  }
+}
