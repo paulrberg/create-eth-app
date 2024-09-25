@@ -1,0 +1,70 @@
+{
+	"compiler": {
+		"version": "0.8.27+commit.40a35a09"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint64",
+						"name": "midpointId",
+						"type": "uint64"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_data",
+						"type": "bytes"
+					}
+				],
+				"name": "callMidpoint",
+				"outputs": [
+					{
+						"internalType": "uint64",
+						"name": "requestId",
+						"type": "uint64"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Lottery-Contract/lottery.sol": "IMidpoint"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Lottery-Contract/lottery.sol": {
+			"keccak256": "0x0afcdb67d2e42eee2be4e9ce5943c3947d7ac658b644e74a5252becee9abb621",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://13ac76cd1092d8c9ff418f9793fd531bb76142a0ad41febe6fb7a78eea518e71",
+				"dweb:/ipfs/QmTfa2ukVWsDt5Jxdq3cSCDRcjav8YuTSaDHqoqWCfMpsV"
+			]
+		}
+	},
+	"version": 1
+}

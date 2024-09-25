@@ -1,0 +1,1174 @@
+{
+	"compiler": {
+		"version": "0.8.4+commit.c7e474f2"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "Create2Error",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "CreateError",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newController",
+						"type": "address"
+					}
+				],
+				"name": "InvalidNewController",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "accountsLength",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "allocationsLength",
+						"type": "uint256"
+					}
+				],
+				"name": "InvalidSplit__AccountsAndAllocationsMismatch",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "InvalidSplit__AccountsOutOfOrder",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "InvalidSplit__AllocationMustBePositive",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint32",
+						"name": "allocationsSum",
+						"type": "uint32"
+					}
+				],
+				"name": "InvalidSplit__InvalidAllocationsSum",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint32",
+						"name": "distributorFee",
+						"type": "uint32"
+					}
+				],
+				"name": "InvalidSplit__InvalidDistributorFee",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "hash",
+						"type": "bytes32"
+					}
+				],
+				"name": "InvalidSplit__InvalidHash",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "accountsLength",
+						"type": "uint256"
+					}
+				],
+				"name": "InvalidSplit__TooFewAccounts",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					}
+				],
+				"name": "Unauthorized",
+				"type": "error"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "split",
+						"type": "address"
+					}
+				],
+				"name": "CancelControlTransfer",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "split",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousController",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newController",
+						"type": "address"
+					}
+				],
+				"name": "ControlTransfer",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "split",
+						"type": "address"
+					}
+				],
+				"name": "CreateSplit",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "split",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "contract ERC20",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "distributorAddress",
+						"type": "address"
+					}
+				],
+				"name": "DistributeERC20",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "split",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "distributorAddress",
+						"type": "address"
+					}
+				],
+				"name": "DistributeETH",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "split",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newPotentialController",
+						"type": "address"
+					}
+				],
+				"name": "InitiateControlTransfer",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "split",
+						"type": "address"
+					}
+				],
+				"name": "UpdateSplit",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "ethAmount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "contract ERC20[]",
+						"name": "tokens",
+						"type": "address[]"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256[]",
+						"name": "tokenAmounts",
+						"type": "uint256[]"
+					}
+				],
+				"name": "Withdrawal",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "PERCENTAGE_SCALE",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "split",
+						"type": "address"
+					}
+				],
+				"name": "acceptControl",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "split",
+						"type": "address"
+					}
+				],
+				"name": "cancelControlTransfer",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address[]",
+						"name": "accounts",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint32[]",
+						"name": "percentAllocations",
+						"type": "uint32[]"
+					},
+					{
+						"internalType": "uint32",
+						"name": "distributorFee",
+						"type": "uint32"
+					},
+					{
+						"internalType": "address",
+						"name": "controller",
+						"type": "address"
+					}
+				],
+				"name": "createSplit",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "split",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "split",
+						"type": "address"
+					},
+					{
+						"internalType": "contract ERC20",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"internalType": "address[]",
+						"name": "accounts",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint32[]",
+						"name": "percentAllocations",
+						"type": "uint32[]"
+					},
+					{
+						"internalType": "uint32",
+						"name": "distributorFee",
+						"type": "uint32"
+					},
+					{
+						"internalType": "address",
+						"name": "distributorAddress",
+						"type": "address"
+					}
+				],
+				"name": "distributeERC20",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "split",
+						"type": "address"
+					},
+					{
+						"internalType": "address[]",
+						"name": "accounts",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint32[]",
+						"name": "percentAllocations",
+						"type": "uint32[]"
+					},
+					{
+						"internalType": "uint32",
+						"name": "distributorFee",
+						"type": "uint32"
+					},
+					{
+						"internalType": "address",
+						"name": "distributorAddress",
+						"type": "address"
+					}
+				],
+				"name": "distributeETH",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "split",
+						"type": "address"
+					}
+				],
+				"name": "getController",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"internalType": "contract ERC20",
+						"name": "token",
+						"type": "address"
+					}
+				],
+				"name": "getERC20Balance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "getETHBalance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "split",
+						"type": "address"
+					}
+				],
+				"name": "getHash",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "split",
+						"type": "address"
+					}
+				],
+				"name": "getNewPotentialController",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "split",
+						"type": "address"
+					}
+				],
+				"name": "makeSplitImmutable",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address[]",
+						"name": "accounts",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint32[]",
+						"name": "percentAllocations",
+						"type": "uint32[]"
+					},
+					{
+						"internalType": "uint32",
+						"name": "distributorFee",
+						"type": "uint32"
+					}
+				],
+				"name": "predictImmutableSplitAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "split",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "split",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "newController",
+						"type": "address"
+					}
+				],
+				"name": "transferControl",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "split",
+						"type": "address"
+					},
+					{
+						"internalType": "contract ERC20",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"internalType": "address[]",
+						"name": "accounts",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint32[]",
+						"name": "percentAllocations",
+						"type": "uint32[]"
+					},
+					{
+						"internalType": "uint32",
+						"name": "distributorFee",
+						"type": "uint32"
+					},
+					{
+						"internalType": "address",
+						"name": "distributorAddress",
+						"type": "address"
+					}
+				],
+				"name": "updateAndDistributeERC20",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "split",
+						"type": "address"
+					},
+					{
+						"internalType": "address[]",
+						"name": "accounts",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint32[]",
+						"name": "percentAllocations",
+						"type": "uint32[]"
+					},
+					{
+						"internalType": "uint32",
+						"name": "distributorFee",
+						"type": "uint32"
+					},
+					{
+						"internalType": "address",
+						"name": "distributorAddress",
+						"type": "address"
+					}
+				],
+				"name": "updateAndDistributeETH",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "split",
+						"type": "address"
+					},
+					{
+						"internalType": "address[]",
+						"name": "accounts",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint32[]",
+						"name": "percentAllocations",
+						"type": "uint32[]"
+					},
+					{
+						"internalType": "uint32",
+						"name": "distributorFee",
+						"type": "uint32"
+					}
+				],
+				"name": "updateSplit",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "walletImplementation",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "withdrawETH",
+						"type": "uint256"
+					},
+					{
+						"internalType": "contract ERC20[]",
+						"name": "tokens",
+						"type": "address[]"
+					}
+				],
+				"name": "withdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
+			}
+		],
+		"devdoc": {
+			"author": "0xSplits <will@0xSplits.xyz>",
+			"details": "Split recipients, ownerships, and keeper fees are stored onchain as calldata & re-passed as args / validated via hashing when needed. Each split gets its own address & proxy for maximum composability with other contracts onchain. For these proxies, we extended EIP-1167 Minimal Proxy Contract to avoid `DELEGATECALL` inside `receive()` to accept hard gas-capped `sends` & `transfers`.",
+			"errors": {
+				"InvalidNewController(address)": [
+					{
+						"params": {
+							"newController": "Invalid new controller"
+						}
+					}
+				],
+				"InvalidSplit__AccountsAndAllocationsMismatch(uint256,uint256)": [
+					{
+						"params": {
+							"accountsLength": "Length of accounts array",
+							"allocationsLength": "Length of percentAllocations array"
+						}
+					}
+				],
+				"InvalidSplit__AccountsOutOfOrder(uint256)": [
+					{
+						"params": {
+							"index": "Index of out-of-order account"
+						}
+					}
+				],
+				"InvalidSplit__AllocationMustBePositive(uint256)": [
+					{
+						"params": {
+							"index": "Index of zero percentAllocation"
+						}
+					}
+				],
+				"InvalidSplit__InvalidAllocationsSum(uint32)": [
+					{
+						"params": {
+							"allocationsSum": "Sum of percentAllocations array"
+						}
+					}
+				],
+				"InvalidSplit__InvalidDistributorFee(uint32)": [
+					{
+						"params": {
+							"distributorFee": "Invalid distributorFee amount"
+						}
+					}
+				],
+				"InvalidSplit__InvalidHash(bytes32)": [
+					{
+						"params": {
+							"hash": "Invalid hash"
+						}
+					}
+				],
+				"InvalidSplit__TooFewAccounts(uint256)": [
+					{
+						"params": {
+							"accountsLength": "Length of accounts array"
+						}
+					}
+				],
+				"Unauthorized(address)": [
+					{
+						"params": {
+							"sender": "Transaction sender"
+						}
+					}
+				]
+			},
+			"kind": "dev",
+			"methods": {
+				"acceptControl(address)": {
+					"params": {
+						"split": "Address of mutable split to accept control transfer for"
+					}
+				},
+				"cancelControlTransfer(address)": {
+					"params": {
+						"split": "Address of mutable split to cancel control transfer for"
+					}
+				},
+				"createSplit(address[],uint32[],uint32,address)": {
+					"params": {
+						"accounts": "Ordered, unique list of addresses with ownership in the split",
+						"controller": "Controlling address (0x0 if immutable)",
+						"distributorFee": "Keeper fee paid by split to cover gas costs of distribution",
+						"percentAllocations": "Percent allocations associated with each address"
+					},
+					"returns": {
+						"split": "Address of newly created split"
+					}
+				},
+				"distributeERC20(address,address,address[],uint32[],uint32,address)": {
+					"details": "`accounts`, `percentAllocations`, and `distributorFee` are verified by hashing  & comparing to the hash in storage associated with split `split`pernicious ERC20s may cause overflow in this function inside  _scaleAmountByPercentage, but results do not affect ETH & other ERC20 balances",
+					"params": {
+						"accounts": "Ordered, unique list of addresses with ownership in the split",
+						"distributorAddress": "Address to pay `distributorFee` to",
+						"distributorFee": "Keeper fee paid by split to cover gas costs of distribution",
+						"percentAllocations": "Percent allocations associated with each address",
+						"split": "Address of split to distribute balance for",
+						"token": "Address of ERC20 to distribute balance for"
+					}
+				},
+				"distributeETH(address,address[],uint32[],uint32,address)": {
+					"details": "`accounts`, `percentAllocations`, and `distributorFee` are verified by hashing  & comparing to the hash in storage associated with split `split`",
+					"params": {
+						"accounts": "Ordered, unique list of addresses with ownership in the split",
+						"distributorAddress": "Address to pay `distributorFee` to",
+						"distributorFee": "Keeper fee paid by split to cover gas costs of distribution",
+						"percentAllocations": "Percent allocations associated with each address",
+						"split": "Address of split to distribute balance for"
+					}
+				},
+				"getController(address)": {
+					"params": {
+						"split": "Split to return controller for"
+					},
+					"returns": {
+						"_0": "Split's controller"
+					}
+				},
+				"getERC20Balance(address,address)": {
+					"params": {
+						"account": "Account to return ERC20 `token` balance for",
+						"token": "Token to return balance for"
+					},
+					"returns": {
+						"_0": "Account's balance of `token`"
+					}
+				},
+				"getETHBalance(address)": {
+					"params": {
+						"account": "Account to return ETH balance for"
+					},
+					"returns": {
+						"_0": "Account's balance of ETH"
+					}
+				},
+				"getHash(address)": {
+					"params": {
+						"split": "Split to return hash for"
+					},
+					"returns": {
+						"_0": "Split's hash"
+					}
+				},
+				"getNewPotentialController(address)": {
+					"params": {
+						"split": "Split to return newPotentialController for"
+					},
+					"returns": {
+						"_0": "Split's newPotentialController"
+					}
+				},
+				"makeSplitImmutable(address)": {
+					"params": {
+						"split": "Address of mutable split to turn immutable"
+					}
+				},
+				"predictImmutableSplitAddress(address[],uint32[],uint32)": {
+					"params": {
+						"accounts": "Ordered, unique list of addresses with ownership in the split",
+						"distributorFee": "Keeper fee paid by split to cover gas costs of distribution",
+						"percentAllocations": "Percent allocations associated with each address"
+					},
+					"returns": {
+						"split": "Predicted address of such an immutable split"
+					}
+				},
+				"transferControl(address,address)": {
+					"details": "Two-step control transfer inspired by [dharma](https://github.com/dharma-eng/dharma-smart-wallet/blob/master/contracts/helpers/TwoStepOwnable.sol)",
+					"params": {
+						"newController": "Address to begin transferring control to",
+						"split": "Address of mutable split to transfer control for"
+					}
+				},
+				"updateAndDistributeERC20(address,address,address[],uint32[],uint32,address)": {
+					"details": "only callable by SplitControllerpernicious ERC20s may cause overflow in this function inside  _scaleAmountByPercentage, but results do not affect ETH & other ERC20 balances",
+					"params": {
+						"accounts": "Ordered, unique list of addresses with ownership in the split",
+						"distributorAddress": "Address to pay `distributorFee` to",
+						"distributorFee": "Keeper fee paid by split to cover gas costs of distribution",
+						"percentAllocations": "Percent allocations associated with each address",
+						"split": "Address of split to distribute balance for",
+						"token": "Address of ERC20 to distribute balance for"
+					}
+				},
+				"updateAndDistributeETH(address,address[],uint32[],uint32,address)": {
+					"details": "only callable by SplitController",
+					"params": {
+						"accounts": "Ordered, unique list of addresses with ownership in the split",
+						"distributorAddress": "Address to pay `distributorFee` to",
+						"distributorFee": "Keeper fee paid by split to cover gas costs of distribution",
+						"percentAllocations": "Percent allocations associated with each address",
+						"split": "Address of split to distribute balance for"
+					}
+				},
+				"updateSplit(address,address[],uint32[],uint32)": {
+					"params": {
+						"accounts": "Ordered, unique list of addresses with ownership in the split",
+						"distributorFee": "Keeper fee paid by split to cover gas costs of distribution",
+						"percentAllocations": "Percent allocations associated with each address",
+						"split": "Address of mutable split to update"
+					}
+				},
+				"withdraw(address,uint256,address[])": {
+					"params": {
+						"account": "Address to withdraw on behalf of",
+						"tokens": "Addresses of ERC20s to withdraw",
+						"withdrawETH": "Withdraw all ETH if nonzero"
+					}
+				}
+			},
+			"title": "SplitMain",
+			"version": 1
+		},
+		"userdoc": {
+			"errors": {
+				"Create2Error()": [
+					{
+						"notice": "create2 opcode failed"
+					}
+				],
+				"CreateError()": [
+					{
+						"notice": "create opcode failed"
+					}
+				],
+				"InvalidNewController(address)": [
+					{
+						"notice": "Invalid new controlling address `newController` for mutable split"
+					}
+				],
+				"InvalidSplit__AccountsAndAllocationsMismatch(uint256,uint256)": [
+					{
+						"notice": "Array lengths of accounts & percentAllocations don't match (`accountsLength` != `allocationsLength`)"
+					}
+				],
+				"InvalidSplit__AccountsOutOfOrder(uint256)": [
+					{
+						"notice": "Invalid accounts ordering at `index`"
+					}
+				],
+				"InvalidSplit__AllocationMustBePositive(uint256)": [
+					{
+						"notice": "Invalid percentAllocation of zero at `index`"
+					}
+				],
+				"InvalidSplit__InvalidAllocationsSum(uint32)": [
+					{
+						"notice": "Invalid percentAllocations sum `allocationsSum` must equal `PERCENTAGE_SCALE`"
+					}
+				],
+				"InvalidSplit__InvalidDistributorFee(uint32)": [
+					{
+						"notice": "Invalid distributorFee `distributorFee` cannot be greater than 10% (1e5)"
+					}
+				],
+				"InvalidSplit__InvalidHash(bytes32)": [
+					{
+						"notice": "Invalid hash `hash` from split data (accounts, percentAllocations, distributorFee)"
+					}
+				],
+				"InvalidSplit__TooFewAccounts(uint256)": [
+					{
+						"notice": "Invalid number of accounts `accountsLength`, must have at least 2"
+					}
+				],
+				"Unauthorized(address)": [
+					{
+						"notice": "Unauthorized sender `sender`"
+					}
+				]
+			},
+			"events": {
+				"CancelControlTransfer(address)": {
+					"notice": "emitted after each canceled split control transfer"
+				},
+				"ControlTransfer(address,address,address)": {
+					"notice": "emitted after each successful split control transfer"
+				},
+				"CreateSplit(address)": {
+					"notice": "emitted after each successful split creation"
+				},
+				"DistributeERC20(address,address,uint256,address)": {
+					"notice": "emitted after each successful ERC20 balance split"
+				},
+				"DistributeETH(address,uint256,address)": {
+					"notice": "emitted after each successful ETH balance split"
+				},
+				"InitiateControlTransfer(address,address)": {
+					"notice": "emitted after each initiated split control transfer"
+				},
+				"UpdateSplit(address)": {
+					"notice": "emitted after each successful split update"
+				},
+				"Withdrawal(address,uint256,address[],uint256[])": {
+					"notice": "emitted after each successful withdrawal"
+				}
+			},
+			"kind": "user",
+			"methods": {
+				"PERCENTAGE_SCALE()": {
+					"notice": "constant to scale uints into percentages (1e6 == 100%)"
+				},
+				"acceptControl(address)": {
+					"notice": "Accepts transfer of the controlling address of mutable split `split`"
+				},
+				"cancelControlTransfer(address)": {
+					"notice": "Cancels transfer of the controlling address of mutable split `split`"
+				},
+				"constructor": {
+					"notice": "CONSTRUCTOR"
+				},
+				"createSplit(address[],uint32[],uint32,address)": {
+					"notice": "Creates a new split with recipients `accounts` with ownerships `percentAllocations`, a keeper fee for splitting of `distributorFee` and the controlling address `controller`"
+				},
+				"distributeERC20(address,address,address[],uint32[],uint32,address)": {
+					"notice": "Distributes the ERC20 `token` balance for split `split`"
+				},
+				"distributeETH(address,address[],uint32[],uint32,address)": {
+					"notice": "Distributes the ETH balance for split `split`"
+				},
+				"getController(address)": {
+					"notice": "Returns the current controller of split `split`"
+				},
+				"getERC20Balance(address,address)": {
+					"notice": "Returns the ERC20 balance of token `token` for account `account`"
+				},
+				"getETHBalance(address)": {
+					"notice": "Returns the current ETH balance of account `account`"
+				},
+				"getHash(address)": {
+					"notice": "Returns the current hash of split `split`"
+				},
+				"getNewPotentialController(address)": {
+					"notice": "Returns the current newPotentialController of split `split`"
+				},
+				"makeSplitImmutable(address)": {
+					"notice": "Turns mutable split `split` immutable"
+				},
+				"predictImmutableSplitAddress(address[],uint32[],uint32)": {
+					"notice": "Predicts the address for an immutable split created with recipients `accounts` with ownerships `percentAllocations` and a keeper fee for splitting of `distributorFee`"
+				},
+				"transferControl(address,address)": {
+					"notice": "Begins transfer of the controlling address of mutable split `split` to `newController`"
+				},
+				"updateAndDistributeERC20(address,address,address[],uint32[],uint32,address)": {
+					"notice": "Updates & distributes the ERC20 `token` balance for split `split`"
+				},
+				"updateAndDistributeETH(address,address[],uint32[],uint32,address)": {
+					"notice": "Updates & distributes the ETH balance for split `split`"
+				},
+				"updateSplit(address,address[],uint32[],uint32)": {
+					"notice": "Updates an existing split with recipients `accounts` with ownerships `percentAllocations` and a keeper fee for splitting of `distributorFee`"
+				},
+				"walletImplementation()": {
+					"notice": "address of wallet implementation for split proxies"
+				},
+				"withdraw(address,uint256,address[])": {
+					"notice": "Withdraw ETH &/ ERC20 balances for account `account`"
+				}
+			},
+			"notice": "A composable and gas-efficient protocol for deploying splitter contracts.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"on-chain-income-splitter-and-distributor/contracts/SplitMain.sol": "SplitMain"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"on-chain-income-splitter-and-distributor/@rari-capital/solmate/src/tokens/ERC20.sol": {
+			"keccak256": "0xe4944d37a5e20bccf3e3e2b32b28f13019f627e3ebbac17b90180bee365b9584",
+			"license": "AGPL-3.0-only",
+			"urls": [
+				"bzz-raw://75776524602b3cdfb8c0d3dcbcfa6ce41d34b76d7088dd68ddffafcec78da304",
+				"dweb:/ipfs/QmVCB6WY7AMiDMcUznYWxhr82SFmdQTSGQMQ8SHT9Fj1Jp"
+			]
+		},
+		"on-chain-income-splitter-and-distributor/@rari-capital/solmate/src/utils/SafeTransferLib.sol": {
+			"keccak256": "0xebf817d22edcac6f176411c83df7fc61b7ee59a9b11334b8e7554613acc70546",
+			"license": "AGPL-3.0-only",
+			"urls": [
+				"bzz-raw://2025851b7c3eabc1dcf080e2534590a961f6001ba13a55c9d95cb13b92b5c350",
+				"dweb:/ipfs/QmVqzJzyxLqajKGG3GeNztezfv5iXKM3b6VZ2Rr1WjSua6"
+			]
+		},
+		"on-chain-income-splitter-and-distributor/contracts/SplitMain.sol": {
+			"keccak256": "0xfa4f54c4260bc9271cdbba39a3cd0f5a03c699fa3d09bcf7b3f1f9a53f194dd2",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://2b3a24bb4b86bcbe6ba1f5114272a496f4965c208c40665b0eba82cb54c88eca",
+				"dweb:/ipfs/QmV8tsgVjmiMe34NKhKF4FLNm8quvfQbAb7D7KcNk4jmac"
+			]
+		},
+		"on-chain-income-splitter-and-distributor/contracts/SplitWallet.sol": {
+			"keccak256": "0xa9bd1c605e4f947dcc5a66c869d06bef6dea28ac444ff32262519e0e76e0e5dc",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://c71c26dada959d8efe765096f6c6b4f04f223ec591dad9e507f94faeecb0d5eb",
+				"dweb:/ipfs/QmUeJPFM578WhKv5aPxYXr9C2bhCtFUntgEtnJnQhMJJpD"
+			]
+		},
+		"on-chain-income-splitter-and-distributor/contracts/interfaces/ISplitMain.sol": {
+			"keccak256": "0xf1509b3c76edcd76348417f2fc6bacf4176c31787000bf0c8fb651be623ea96e",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://edc220e16c47ea57734d16c1b7ac983c4bbecb6901b4ef875fff1cf578d49999",
+				"dweb:/ipfs/QmXgE2GNd1BM6fFHob4EcHYwVPoZFSWt4NVhAysVqLpCF7"
+			]
+		},
+		"on-chain-income-splitter-and-distributor/contracts/libraries/Clones.sol": {
+			"keccak256": "0xba9c7c0f7e06e2a91cd7c2d871e453f939c6762d55bcd2f86c2af844917b30f6",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://ebea20a4668ad3481808ca2c662889e70eb785e4c944866096b47e7889189d82",
+				"dweb:/ipfs/QmNevwjGFi7CJvqomfy8pvD2JPYxqSa85pCFZH2thXRh7i"
+			]
+		}
+	},
+	"version": 1
+}

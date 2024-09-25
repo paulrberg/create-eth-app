@@ -1,0 +1,109 @@
+{
+	"compiler": {
+		"version": "0.8.10+commit.fc410830"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"dividend-paying-token-with-buy-sell-fee/contracts/VIRAL.sol": "Address"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"dividend-paying-token-with-buy-sell-fee/contracts/VIRAL.sol": {
+			"keccak256": "0x9efc26b59a959dabb3ad07a47e29d9c7ff82646361ec089254b6933fbb25dc1c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://1319876ae2e3cdd0de8c71be68ee6d5f1577de19adc2947b86a041024292bfce",
+				"dweb:/ipfs/Qmexy4Fbbr2jjBbVycK3FSuDN8BgQSruzUWXXTrXwxw3vR"
+			]
+		},
+		"dividend-paying-token-with-buy-sell-fee/contracts/interfaces/Context.sol": {
+			"keccak256": "0x4b5382885bab52e981c9651f02700159c86a448b32bc935bfc7be4324f2f9802",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://88058c54fd2191ad6dedf1bbb73394d629673fcdb83aaf75881dbcc6337843f3",
+				"dweb:/ipfs/QmR5Qr14JySBQ45jBcBbLGjvAhYqrtCroT3hip4XV1Knnv"
+			]
+		},
+		"dividend-paying-token-with-buy-sell-fee/contracts/interfaces/DividendPayingToken.sol": {
+			"keccak256": "0x4fbad3f5ca15e25cfddcef2beefccc98a34ae7ff98ebe804dbeac53f5ca1ff5b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://3d8edcb8aa89472f4dd7921ddfdcef6712fd02ab4d87f078b1675243612f49db",
+				"dweb:/ipfs/QmRnXvUEUFfsv8Jw4WN4PK48HNTt6hRtP568PZsykEUQvi"
+			]
+		},
+		"dividend-paying-token-with-buy-sell-fee/contracts/interfaces/DividendPayingTokenInterface.sol": {
+			"keccak256": "0xdf22d65301608ce0ec9085eaa972c4d891625c3c45af5743d5f6a3c90a84dd6a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a229dc06b352355de6ea25c5d2a6e4e8219b7fe0137d77fcf34490e57613bcc2",
+				"dweb:/ipfs/QmPHu6JJFyJ8jBbhpdmR6gaX5MxLDnPF8syqxbwgxL9y2K"
+			]
+		},
+		"dividend-paying-token-with-buy-sell-fee/contracts/interfaces/ERC20.sol": {
+			"keccak256": "0x1bf73ed65054a63594fd14b491857286337fa89b6e753de2c8ec201e486c1177",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://165a31d49fff20c09d8b693799dc5b861a32ae38e540b4b00825388eb93ccab3",
+				"dweb:/ipfs/QmdH7aLn9oYVqKNmDPsaM1y77V9HiPqvPdWyxrkqN6xWPL"
+			]
+		},
+		"dividend-paying-token-with-buy-sell-fee/contracts/interfaces/IDex.sol": {
+			"keccak256": "0xb4735aba5fe22b1d60731a1136e9cd72c30d73bd2299599a93f17956e78fa407",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c05c3faa040402dec172f88792a11f5652d3e1c3d19e3c50e57b3595c066841a",
+				"dweb:/ipfs/QmQvXcWGNeUQc9y3Tz7n7A7GYD56BULXWJ4ATLgHNGJeW2"
+			]
+		},
+		"dividend-paying-token-with-buy-sell-fee/contracts/interfaces/IERC20.sol": {
+			"keccak256": "0xd400b6eacdc1b45ae6b861a335a14dcce441be2815b30821251884de9f5c24d5",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://bdb7625b50f95689b5cab3ce91e1bb09e5119ec782463202a8574920b68ba40a",
+				"dweb:/ipfs/QmbcEzMbhWympzAo8TKdZKdfxWBpBzrkFGBDqfyhy3weCH"
+			]
+		},
+		"dividend-paying-token-with-buy-sell-fee/contracts/interfaces/Ownable.sol": {
+			"keccak256": "0x04f02506115df51f69823c1ea5defb2209684bc37f176ab7f7b035394f72e82f",
+			"license": "MIT License",
+			"urls": [
+				"bzz-raw://5b157c58c7be4910a741e24fffdbf2ece5f87301f3abad2bec2beeac5dc0535a",
+				"dweb:/ipfs/QmUKpkrBpRthEYGHKiCEhmisvpJbWeN7z5apkKcCYKZHTe"
+			]
+		},
+		"dividend-paying-token-with-buy-sell-fee/contracts/interfaces/SafeMath.sol": {
+			"keccak256": "0xa6e23313a20c30de93eb6638573ec6e98ac8643797024fedf601e107e36d716c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://41e689c6789f0e142eeede17d9c6788aa6c0a6c72ab104ce96e1087047ac2b05",
+				"dweb:/ipfs/Qmbv3HddwKKFBFdFdsfCsUKRYfNMQ7Fvhy91vkVbjrjD7t"
+			]
+		}
+	},
+	"version": 1
+}

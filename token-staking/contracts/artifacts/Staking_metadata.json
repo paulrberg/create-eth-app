@@ -1,0 +1,561 @@
+{
+	"compiler": {
+		"version": "0.8.4+commit.c7e474f2"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "oilerToken_",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "stakingDurationInBlocks_",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "stakingFundAmount_",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "vestingDuration_",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "owner_",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "recipient",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amountEarned",
+						"type": "uint256"
+					}
+				],
+				"name": "RewardGranted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "recipient",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "tokenAmount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "lockingPeriodInBlocks",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "expectedStakingRewardPoints",
+						"type": "uint256"
+					}
+				],
+				"name": "StakeLocked",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "recipient",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "tokenAmount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "lockingPeriodInBlocks",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "rewardPoints",
+						"type": "uint256"
+					}
+				],
+				"name": "StakeUnlocked",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "recipient",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "tokenAmount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "lockingPeriodInBlocks",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "actualLockingPeriodInBlocks",
+						"type": "uint256"
+					}
+				],
+				"name": "StakeUnlockedPrematurely",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "recipient",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "grantedTokensReleased",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint72",
+						"name": "tokenAmount_",
+						"type": "uint72"
+					},
+					{
+						"internalType": "uint24",
+						"name": "lockingPeriodInBlocks_",
+						"type": "uint24"
+					}
+				],
+				"name": "calculateStakingRewardPoints",
+				"outputs": [
+					{
+						"internalType": "uint128",
+						"name": "",
+						"type": "uint128"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getRewards",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "grantedTokens",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint72",
+						"name": "tokenAmount_",
+						"type": "uint72"
+					},
+					{
+						"internalType": "uint24",
+						"name": "lockingPeriodInBlocks_",
+						"type": "uint24"
+					}
+				],
+				"name": "lockTokens",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "oilerToken",
+				"outputs": [
+					{
+						"internalType": "contract IERC20",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "poolToken",
+				"outputs": [
+					{
+						"internalType": "contract IERC20",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "release",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "releasedTokens",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "rewardPointsEarned",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "poolToken_",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "stakingFundAddress_",
+						"type": "address"
+					}
+				],
+				"name": "setPoolToken",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "stakes",
+				"outputs": [
+					{
+						"internalType": "uint72",
+						"name": "tokenAmount",
+						"type": "uint72"
+					},
+					{
+						"internalType": "uint24",
+						"name": "lockingPeriodInBlocks",
+						"type": "uint24"
+					},
+					{
+						"internalType": "uint32",
+						"name": "startBlock",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint128",
+						"name": "expectedStakingRewardPoints",
+						"type": "uint128"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "stakingFundAmount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "stakingProgramEndsBlock",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalRewardPoints",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "unlockTokens",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "vestingDuration",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"calculateStakingRewardPoints(uint72,uint24)": {
+					"details": "If any parameter is zero - it will fail, thus we save gas on \"requires\" by not checking in other places",
+					"params": {
+						"lockingPeriodInBlocks_": "- Lock duration defined in blocks.",
+						"tokenAmount_": "- Amount of tokens to be stake."
+					}
+				},
+				"constructor": {
+					"details": "before deploying the stakingFundAddress must have set allowances on behalf of that contract. The address can be predicted basing on the CREATE or CREATE2 opcode.",
+					"params": {
+						"oilerToken_": "- address of the token in which rewards will be payed off.",
+						"owner_": "- Owner of the contract (is used to initialize poolToken after it's available).",
+						"stakingDurationInBlocks_": "- Number of blocks after which staking will end.",
+						"stakingFundAmount_": "- Amount of tokens to be payed of as rewards.",
+						"vestingDuration_": "- Number of blocks after which OIL tokens earned by staking will be released (duration of Vesting period)."
+					}
+				},
+				"getRewards()": {
+					"details": "Which means that all stakes lock periods are already over, and totalRewardPoints value isn't changing anymore - so we can now calculate the percentages of rewards"
+				},
+				"lockTokens(uint72,uint24)": {
+					"params": {
+						"lockingPeriodInBlocks_": "- locking period duration defined in blocks.",
+						"tokenAmount_": "- Amount of LP tokens to be locked."
+					}
+				}
+			},
+			"stateVariables": {
+				"owner": {
+					"details": "Owner is used only in setPoolToken()"
+				},
+				"vestingDuration": {
+					"details": "In blocks - should be around 100 days"
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"calculateStakingRewardPoints(uint72,uint24)": {
+					"notice": "Calculates the RewardPoints user will earn for a given tokenAmount locked for a given period"
+				},
+				"getRewards()": {
+					"notice": "This can only be called after the Staking Program ended"
+				},
+				"grantedTokens(address)": {
+					"notice": "The amount of OIL tokens earned, granted to be released during vesting period "
+				},
+				"lockTokens(uint72,uint24)": {
+					"notice": "Lock the LP tokens for a specified period of Blocks.Can only be called before Staking Program ends.And the locking period can't last longer than the end of Staking Program block."
+				},
+				"oilerToken()": {
+					"notice": "Oiler token that will be given as a reward"
+				},
+				"poolToken()": {
+					"notice": "Uniswap pool that we accept LP tokens from"
+				},
+				"release()": {
+					"notice": "Releases granted tokens"
+				},
+				"releasedTokens(address)": {
+					"notice": "The amount of OIL tokens that were already released during vesting period"
+				},
+				"rewardPointsEarned(address)": {
+					"notice": "\"Reward points\" each user earned (would be relative to totalRewardPoints to get the percentage)"
+				},
+				"setPoolToken(address,address)": {
+					"notice": "Initialize poolToken when OIL<>USDC Uniswap pool is available"
+				},
+				"stakes(address)": {
+					"notice": "Active stakes for each user"
+				},
+				"stakingFundAmount()": {
+					"notice": "Amount of Staking Bonus Fund (500 000 OIL), Oiler funds must be here, approved and ready to be transferredFrom"
+				},
+				"stakingProgramEndsBlock()": {
+					"notice": "Block when Staking Program ends          "
+				},
+				"totalRewardPoints()": {
+					"notice": "Total \"reward points\" all users earned"
+				},
+				"unlockTokens()": {
+					"notice": "Unlock the tokens and get the rewardThis can be called at any time, even after Staking Program end block"
+				}
+			},
+			"notice": "Staking contract assumes there is a Staking Program going on until a specified Staking Program End Date. And there is an amount of Oiler tokens that is gonna be given away to incentivise participation in the Staking Program (called StakingFund).  During this Program - users commit to lock tokens for some period of time, earning RewardPoints (if they don't unlock prematurely). RewardPoints multiplier grows linearly with the locking period length (see the formula in calculateStakingRewardPoints() function)  After the end of the Staking Program - the amount of RewardPoints earned by each user is relatively compared to the total RewardPoints earned by all staking participants - and the OIL tokens from StakingFund are divided among them accordingly, by their RewardPoints proportions.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"token-staking/contracts/Staking.sol": "Staking"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"token-staking/@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+			"keccak256": "0x3138ea0baa52800b416d6c3a25ab1f366ebf5d744d0158f4b347fe5882ccbe3c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://dd850b6d164fbdf2abcf4e6828ee1f3e17508627cbf8f487805c616f3d6816a5",
+				"dweb:/ipfs/QmPNJmXfo3fUbEwZPDtA7bAYLX3bekxyuLzw5Sui2kKA64"
+			]
+		},
+		"token-staking/contracts/Staking.sol": {
+			"keccak256": "0x26e1918e9d3de12c8b3a8c980513637175faea101226f231648d6619b0599851",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c18687c00eb66e7478f81651c42109e63da9e262318d28e33405c060f9ec874a",
+				"dweb:/ipfs/QmPVj9phF5Y5nRNZM2ZPTH2TcWr4HAVh4MxkjGtZkRV6er"
+			]
+		}
+	},
+	"version": 1
+}

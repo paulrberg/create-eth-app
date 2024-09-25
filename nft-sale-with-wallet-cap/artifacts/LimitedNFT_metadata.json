@@ -1,0 +1,881 @@
+{
+	"compiler": {
+		"version": "0.8.27+commit.40a35a09"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_symbol",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_uri",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "limit",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "price",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "maxSupply",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "approved",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "Approval",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "operator",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "approved",
+						"type": "bool"
+					}
+				],
+				"name": "ApprovalForAll",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "Transfer",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "MAX_SUPPLY",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "approve",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"name": "balanceOf",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "currentPrice",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "getApproved",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "operator",
+						"type": "address"
+					}
+				],
+				"name": "isApprovedForAll",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "mint",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "name",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "ownerOf",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "n",
+						"type": "uint256"
+					}
+				],
+				"name": "reserve",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "safeTransferFrom",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					}
+				],
+				"name": "safeTransferFrom",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "saleIsActive",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "operator",
+						"type": "address"
+					},
+					{
+						"internalType": "bool",
+						"name": "approved",
+						"type": "bool"
+					}
+				],
+				"name": "setApprovalForAll",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "baseURI_",
+						"type": "string"
+					}
+				],
+				"name": "setBaseURI",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "price",
+						"type": "uint256"
+					}
+				],
+				"name": "setCurrentPrice",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bool",
+						"name": "isActive",
+						"type": "bool"
+					}
+				],
+				"name": "setSaleIsActive",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "limit",
+						"type": "uint256"
+					}
+				],
+				"name": "setWalletLimit",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes4",
+						"name": "interfaceId",
+						"type": "bytes4"
+					}
+				],
+				"name": "supportsInterface",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "symbol",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "tokenByIndex",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "tokenOfOwnerByIndex",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "tokenURI",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalSupply",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "transferFrom",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "walletLimit",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "withdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"author": "Breakthrough Labs Inc.",
+			"custom:address": "9",
+			"custom:default-precision": "0",
+			"custom:simple-description": "NFT with a built in sale. The sale includes a per wallet limit to guarantee a large number of users are able to purchase NFTs.",
+			"custom:version": "1.0.8",
+			"details": "ERC721 NFT with the following features:  - Built-in sale with an adjustable price.  - Wallets can only purchase a limited number of NFTs during the sale.  - Reserve function for the owner to mint free NFTs.  - Fixed maximum supply.",
+			"events": {
+				"Approval(address,address,uint256)": {
+					"details": "Emitted when `owner` enables `approved` to manage the `tokenId` token."
+				},
+				"ApprovalForAll(address,address,bool)": {
+					"details": "Emitted when `owner` enables or disables (`approved`) `operator` to manage all of its assets."
+				},
+				"Transfer(address,address,uint256)": {
+					"details": "Emitted when `tokenId` token is transferred from `from` to `to`."
+				}
+			},
+			"kind": "dev",
+			"methods": {
+				"approve(address,uint256)": {
+					"details": "See {IERC721-approve}."
+				},
+				"balanceOf(address)": {
+					"details": "See {IERC721-balanceOf}."
+				},
+				"constructor": {
+					"params": {
+						"_name": "NFT Name",
+						"_symbol": "NFT Symbol",
+						"_uri": "Token URI used for metadata",
+						"limit": "Wallet Limit",
+						"maxSupply": "Maximum # of NFTs",
+						"price": "Initial Price | precision:18"
+					}
+				},
+				"getApproved(uint256)": {
+					"details": "See {IERC721-getApproved}."
+				},
+				"isApprovedForAll(address,address)": {
+					"details": "See {IERC721-isApprovedForAll}."
+				},
+				"mint(uint256)": {
+					"details": "An external method for users to purchase and mint NFTs. Requires that the sale is active, that the minted NFTs will not exceed the `MAX_SUPPLY`, that the user's `walletLimit` will not be exceeded, and that a sufficient payable value is sent.",
+					"params": {
+						"amount": "The number of NFTs to mint."
+					}
+				},
+				"name()": {
+					"details": "See {IERC721Metadata-name}."
+				},
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"ownerOf(uint256)": {
+					"details": "See {IERC721-ownerOf}."
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+				},
+				"reserve(uint256)": {
+					"details": "A way for the owner to reserve a specifc number of NFTs without having to interact with the sale.",
+					"params": {
+						"n": "The number of NFTs to reserve."
+					}
+				},
+				"safeTransferFrom(address,address,uint256)": {
+					"details": "See {IERC721-safeTransferFrom}."
+				},
+				"safeTransferFrom(address,address,uint256,bytes)": {
+					"details": "See {IERC721-safeTransferFrom}."
+				},
+				"setApprovalForAll(address,bool)": {
+					"details": "See {IERC721-setApprovalForAll}."
+				},
+				"setBaseURI(string)": {
+					"details": "Updates the baseURI that will be used to retrieve NFT metadata.",
+					"params": {
+						"baseURI_": "The baseURI to be used."
+					}
+				},
+				"setCurrentPrice(uint256)": {
+					"details": "Sets the price of each NFT during the initial sale.",
+					"params": {
+						"price": "The price of each NFT during the initial sale | precision:18"
+					}
+				},
+				"setSaleIsActive(bool)": {
+					"details": "Sets whether or not the NFT sale is active.",
+					"params": {
+						"isActive": "Whether or not the sale will be active."
+					}
+				},
+				"setWalletLimit(uint256)": {
+					"details": "Sets the maximum number of NFTs that can be sold to a specific address.",
+					"params": {
+						"limit": "The maximum number of NFTs that be bought by a wallet."
+					}
+				},
+				"symbol()": {
+					"details": "See {IERC721Metadata-symbol}."
+				},
+				"tokenByIndex(uint256)": {
+					"details": "See {IERC721Enumerable-tokenByIndex}."
+				},
+				"tokenOfOwnerByIndex(address,uint256)": {
+					"details": "See {IERC721Enumerable-tokenOfOwnerByIndex}."
+				},
+				"tokenURI(uint256)": {
+					"details": "See {IERC721Metadata-tokenURI}."
+				},
+				"totalSupply()": {
+					"details": "See {IERC721Enumerable-totalSupply}."
+				},
+				"transferFrom(address,address,uint256)": {
+					"details": "See {IERC721-transferFrom}."
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				},
+				"withdraw()": {
+					"details": "A way for the owner to withdraw all proceeds from the sale."
+				}
+			},
+			"stateVariables": {
+				"currentPrice": {
+					"custom:precision": "18"
+				}
+			},
+			"title": "NFT Sale with wallet cap",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"notice": "NFT, Sale, ERC721, Limited",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"nft-sale-with-wallet-cap/nft-sale-with-wallet-cap.sol": "LimitedNFT"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"nft-sale-with-wallet-cap/@openzeppelin/contracts/access/Ownable.sol": {
+			"keccak256": "0xe3c80f5a922710d66a9abd916b5a3c4e8f6826087087f6b5e58b9fe41e7e38b8",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://15def342931b43e859a0cd31da8decf21072b9a81d60133e280f276998d1256d",
+				"dweb:/ipfs/QmRfms2rNL1qfkG7xHyDRujr9mBjeZj3i1vZyFgSrhzgRj"
+			]
+		},
+		"nft-sale-with-wallet-cap/@openzeppelin/contracts/token/ERC721/ERC721.sol": {
+			"keccak256": "0x34f5be383d28dc0726d5eb091d90ae3829d935a3b170fc8e3611c3cce9fe9066",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://811b4fd40b162d5d9cd638e6849e2c7135abf3cbf69797191bad1d55739d030b",
+				"dweb:/ipfs/QmbKCuogEVTN3fee1oGeBuE3xhV6NgrdCDqHxf1zKq3TLz"
+			]
+		},
+		"nft-sale-with-wallet-cap/@openzeppelin/contracts/token/ERC721/IERC721.sol": {
+			"keccak256": "0xdc9cedd7c9f223d73b0c815a296dbfce35c508f9ea85259aa7b776f4c5d6e110",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ad3112edd4a6b4292f046bfae4d88f664a7a55bfc355cfd97f0a2af5b5d63e71",
+				"dweb:/ipfs/Qmc5JZGGptgiQFxPTA3BVAYxz6G4iET5Y8e21fNcHefqtR"
+			]
+		},
+		"nft-sale-with-wallet-cap/@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol": {
+			"keccak256": "0x7377d83e27c38a675c026f698459a194d75e6f6b6d0c24546f6733c1dddc4cd1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://37e6ceef67e8334c1cb78ccc520d9d2ffece0f1140580d009bd61a00c5066e3c",
+				"dweb:/ipfs/QmPuhVnTfYFdc4J3EKNHvZoy4PN6H8FZBJz9gyBmzqpDHd"
+			]
+		},
+		"nft-sale-with-wallet-cap/@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol": {
+			"keccak256": "0x90c1ae30d997d645bc51b51e425f012acf33c3a340b4a687d9805add446f7873",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b6093a208a10fb12ec37042bcc1612b801fe600ce62b0170a328b26a144cf7cb",
+				"dweb:/ipfs/QmSR5JWpmtjS2bkbjkkv7aCfx23Jie617XdqosnNurDEXc"
+			]
+		},
+		"nft-sale-with-wallet-cap/@openzeppelin/contracts/token/ERC721/extensions/IERC721Enumerable.sol": {
+			"keccak256": "0xa38db1e5e21f483606d438c7ef5917acc2cf40d664c40eb38d6e2b0a13eaa915",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://9fea6f466f1947f15e6295e0da9d38427a32b5c0120c48339bbf71fe20d233d6",
+				"dweb:/ipfs/QmXpKzn59NjDUyrasZkeAsBg42dWAxgt72sghmW887Qjt7"
+			]
+		},
+		"nft-sale-with-wallet-cap/@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol": {
+			"keccak256": "0x268e1e798a35b82c61199538e40b8f6601f1a64ebbcd791202ec20ba6bda8387",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b860b26a47fdf0d26d5fc62149d891d4bbb1925d3a120cca93ff3ca692acabc7",
+				"dweb:/ipfs/QmcB5ePz6K9X3ziwn6F1JXinrR55XurzCiJAPhbyS2y7jq"
+			]
+		},
+		"nft-sale-with-wallet-cap/@openzeppelin/contracts/utils/Address.sol": {
+			"keccak256": "0x38b075f7a5981722603d8a828fb3c7b8cb09a11ba89baff9f183c82070663b88",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://02b2a19c33dce8d8bc3bea10ad78bfbccb82a639e364c7dbd38749655d1406c7",
+				"dweb:/ipfs/QmdXcVp4UyHvPy6iCzt89R9zMBtjrZJpjPHiUtH8cCMuGE"
+			]
+		},
+		"nft-sale-with-wallet-cap/@openzeppelin/contracts/utils/Context.sol": {
+			"keccak256": "0xf74bde80c26d80d6d604e205feac375f505987b6ae55cfffa41a9598571a4a33",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ebc70e0a32ffd424cfe6278fc119c477d15ed137abeb2d3ec09d01e7dd7af35c",
+				"dweb:/ipfs/QmX9oJCwKGEgexmNAtaTV5VCDcD6EpYJ28CynssM69R6Zi"
+			]
+		},
+		"nft-sale-with-wallet-cap/@openzeppelin/contracts/utils/Strings.sol": {
+			"keccak256": "0x02a988c7bb50ddda73a77718c6c8dad4816b24bdddf898f5aef8982935e826c3",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f7d9d4b6a353083d08e2717ddc31a12c61681da5916d9afb249dafbff2c77072",
+				"dweb:/ipfs/QmRHvpPfABV293CmjS6rnhSgpkLUfD3uburAG1pHN8nNNb"
+			]
+		},
+		"nft-sale-with-wallet-cap/@openzeppelin/contracts/utils/introspection/ERC165.sol": {
+			"keccak256": "0x7eeef8a903f359032ddf2b3de553a18210362a89aab09f5376cc834315d40b67",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5fcc8768e9b007a875e7f319dc14b723f3a42339724c068e71101f67bf9cac11",
+				"dweb:/ipfs/QmNbJ32yqvBHWUHvHjx25FQuftTHVgXbHiVQA38ewJ3WtM"
+			]
+		},
+		"nft-sale-with-wallet-cap/@openzeppelin/contracts/utils/introspection/IERC165.sol": {
+			"keccak256": "0x26acb2f7f92b0653ef875f7713a4fa93937e5812ddf18d9166ea4527a83973ce",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://16951508aef5596ba6dd1b4a7f9286f292a20f70c7ca7be537d69785178e936c",
+				"dweb:/ipfs/QmSXtmQMjhobCzrs8oBZDH86BbpaScZWDB8m9HSSVrEBPS"
+			]
+		},
+		"nft-sale-with-wallet-cap/nft-sale-with-wallet-cap.sol": {
+			"keccak256": "0xb899e36b184c904ed9a586b1f2347dd8797131795c7aa903c40a55da7c9bd8b1",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://eacb0d0ddc8dc953ae751c51530cef72509d0ca874396ce1a204612ff2ad5ec6",
+				"dweb:/ipfs/QmPbWWPTWFgcHzxBvCd9h1XwHttnYDVQd2YGPcKxzZKxRa"
+			]
+		}
+	},
+	"version": 1
+}
