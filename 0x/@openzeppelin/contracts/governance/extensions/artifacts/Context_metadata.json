@@ -19,7 +19,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"0x/@openzeppelin/contracts/governance/extensions/GovernorCountingSimple_flattened.sol": "Context"
+			"0x/@openzeppelin/contracts/governance/extensions/GovernorSettings_flattened.sol": "Context"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -33,11 +33,11 @@
 		"remappings": []
 	},
 	"sources": {
-		"0x/@openzeppelin/contracts/governance/extensions/GovernorCountingSimple_flattened.sol": {
-			"keccak256": "0xd1228519cb44ff4beb5a347f7e95e47fa826805e7434f28f788165ffd89b6b87",
+		"0x/@openzeppelin/contracts/governance/extensions/GovernorSettings_flattened.sol": {
+			"keccak256": "0x73860c2aa696a63f906fb0054786fa59882976e9fdf983282dc5adc674c7e6c7",
 			"urls": [
-				"bzz-raw://8ec7f0397efac42ccdd27283c89a2f1005a47fbb7ba71e7d9b244d52013c73ca",
-				"dweb:/ipfs/QmcAZQYT1GFgMaoqEwzEcxw5nvHYkCziS4RUo43bjkXwVG"
+				"bzz-raw://a4a491f92ae00a57dd23bde6a59ee3f285e90741d83eb8791cdcb99740b2240f",
+				"dweb:/ipfs/QmccsTwNHJozf3P7f7k37sS1xRKCw3FuTgLnVzxZzZvQZp"
 			]
 		}
 	},
