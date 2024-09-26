@@ -1,0 +1,45 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"details": "String operations.",
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"0x/@openzeppelin/contracts/governance/extensions/GovernorVotesQuorumFraction_flattened.sol": "Strings"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"0x/@openzeppelin/contracts/governance/extensions/GovernorVotesQuorumFraction_flattened.sol": {
+			"keccak256": "0x53520e1b7a09c55c10f763f75917fd1c02b6b236b9de55021743696e66163357",
+			"urls": [
+				"bzz-raw://cbd076006a884870d5ee22c85efc29f5f38831f6f799ab7146c297bec4924332",
+				"dweb:/ipfs/QmZFSuphjL5FDP3ocjNye5nWozob4ERAksTuEa9oAaWePw"
+			]
+		}
+	},
+	"version": 1
+}

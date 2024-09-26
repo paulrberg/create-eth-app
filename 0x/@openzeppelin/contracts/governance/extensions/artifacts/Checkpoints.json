@@ -1,0 +1,93 @@
+{
+	"deploy": {
+		"VM:-": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"main:1": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"ropsten:3": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"rinkeby:4": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"kovan:42": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"goerli:5": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"Custom": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		}
+	},
+	"data": {
+		"bytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"linkReferences": {},
+			"object": "6055604b600b8282823980515f1a607314603f577f4e487b71000000000000000000000000000000000000000000000000000000005f525f60045260245ffd5b305f52607381538281f3fe730000000000000000000000000000000000000000301460806040525f80fdfea2646970667358221220939790c2147ce11787b0c94cc58d6fe40cd032aa391001ffdbd83c60ed015afc64736f6c634300081a0033",
+			"opcodes": "PUSH1 0x55 PUSH1 0x4B PUSH1 0xB DUP3 DUP3 DUP3 CODECOPY DUP1 MLOAD PUSH0 BYTE PUSH1 0x73 EQ PUSH1 0x3F JUMPI PUSH32 0x4E487B7100000000000000000000000000000000000000000000000000000000 PUSH0 MSTORE PUSH0 PUSH1 0x4 MSTORE PUSH1 0x24 PUSH0 REVERT JUMPDEST ADDRESS PUSH0 MSTORE PUSH1 0x73 DUP2 MSTORE8 DUP3 DUP2 RETURN INVALID PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 SWAP4 SWAP8 SWAP1 0xC2 EQ PUSH29 0xE11787B0C94CC58D6FE40CD032AA391001FFDBD83C60ED015AFC64736F PUSH13 0x634300081A0033000000000000 ",
+			"sourceMap": "142607:18139:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;"
+		},
+		"deployedBytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"immutableReferences": {},
+			"linkReferences": {},
+			"object": "730000000000000000000000000000000000000000301460806040525f80fdfea2646970667358221220939790c2147ce11787b0c94cc58d6fe40cd032aa391001ffdbd83c60ed015afc64736f6c634300081a0033",
+			"opcodes": "PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 SWAP4 SWAP8 SWAP1 0xC2 EQ PUSH29 0xE11787B0C94CC58D6FE40CD032AA391001FFDBD83C60ED015AFC64736F PUSH13 0x634300081A0033000000000000 ",
+			"sourceMap": "142607:18139:0:-:0;;;;;;;;"
+		},
+		"gasEstimates": {
+			"creation": {
+				"codeDepositCost": "17000",
+				"executionCost": "92",
+				"totalCost": "17092"
+			},
+			"internal": {
+				"_insert(struct Checkpoints.Checkpoint storage ref[] storage pointer,uint32,uint224)": "infinite",
+				"_insert(struct Checkpoints.Checkpoint160 storage ref[] storage pointer,uint96,uint160)": "infinite",
+				"_insert(struct Checkpoints.Checkpoint224 storage ref[] storage pointer,uint32,uint224)": "infinite",
+				"_lowerBinaryLookup(struct Checkpoints.Checkpoint storage ref[] storage pointer,uint32,uint256,uint256)": "infinite",
+				"_lowerBinaryLookup(struct Checkpoints.Checkpoint160 storage ref[] storage pointer,uint96,uint256,uint256)": "infinite",
+				"_lowerBinaryLookup(struct Checkpoints.Checkpoint224 storage ref[] storage pointer,uint32,uint256,uint256)": "infinite",
+				"_unsafeAccess(struct Checkpoints.Checkpoint storage ref[] storage pointer,uint256)": "infinite",
+				"_unsafeAccess(struct Checkpoints.Checkpoint160 storage ref[] storage pointer,uint256)": "infinite",
+				"_unsafeAccess(struct Checkpoints.Checkpoint224 storage ref[] storage pointer,uint256)": "infinite",
+				"_upperBinaryLookup(struct Checkpoints.Checkpoint storage ref[] storage pointer,uint32,uint256,uint256)": "infinite",
+				"_upperBinaryLookup(struct Checkpoints.Checkpoint160 storage ref[] storage pointer,uint96,uint256,uint256)": "infinite",
+				"_upperBinaryLookup(struct Checkpoints.Checkpoint224 storage ref[] storage pointer,uint32,uint256,uint256)": "infinite",
+				"getAtBlock(struct Checkpoints.History storage pointer,uint256)": "infinite",
+				"getAtProbablyRecentBlock(struct Checkpoints.History storage pointer,uint256)": "infinite",
+				"latest(struct Checkpoints.History storage pointer)": "infinite",
+				"latest(struct Checkpoints.Trace160 storage pointer)": "infinite",
+				"latest(struct Checkpoints.Trace224 storage pointer)": "infinite",
+				"latestCheckpoint(struct Checkpoints.History storage pointer)": "infinite",
+				"latestCheckpoint(struct Checkpoints.Trace160 storage pointer)": "infinite",
+				"latestCheckpoint(struct Checkpoints.Trace224 storage pointer)": "infinite",
+				"length(struct Checkpoints.History storage pointer)": "infinite",
+				"length(struct Checkpoints.Trace160 storage pointer)": "infinite",
+				"length(struct Checkpoints.Trace224 storage pointer)": "infinite",
+				"lowerLookup(struct Checkpoints.Trace160 storage pointer,uint96)": "infinite",
+				"lowerLookup(struct Checkpoints.Trace224 storage pointer,uint32)": "infinite",
+				"push(struct Checkpoints.History storage pointer,function (uint256,uint256) view returns (uint256),uint256)": "infinite",
+				"push(struct Checkpoints.History storage pointer,uint256)": "infinite",
+				"push(struct Checkpoints.Trace160 storage pointer,uint96,uint160)": "infinite",
+				"push(struct Checkpoints.Trace224 storage pointer,uint32,uint224)": "infinite",
+				"upperLookup(struct Checkpoints.Trace160 storage pointer,uint96)": "infinite",
+				"upperLookup(struct Checkpoints.Trace224 storage pointer,uint32)": "infinite"
+			}
+		},
+		"methodIdentifiers": {}
+	},
+	"abi": []
+}
