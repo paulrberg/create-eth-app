@@ -43,7 +43,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"0x/@openzeppelin/contracts/governance/extensions/IGovernorTimelock_flattened.sol": "ERC165"
+			"0x/@openzeppelin/contracts/governance/extensions/GovernorCountingSimple_flattened.sol": "ERC165"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -57,11 +57,11 @@
 		"remappings": []
 	},
 	"sources": {
-		"0x/@openzeppelin/contracts/governance/extensions/IGovernorTimelock_flattened.sol": {
-			"keccak256": "0xa60a0d2bdcbeca2ce90b25fa72b4510d9c2a7a7de6df560b8bcf89514b03f5e7",
+		"0x/@openzeppelin/contracts/governance/extensions/GovernorCountingSimple_flattened.sol": {
+			"keccak256": "0xd1228519cb44ff4beb5a347f7e95e47fa826805e7434f28f788165ffd89b6b87",
 			"urls": [
-				"bzz-raw://a7c0afd4c9e192c67f3517b6dbbdef95002ad6a2a73f9eeac24d2117480cfd38",
-				"dweb:/ipfs/QmShpA8bk6Dff7F9CZHPnFEWDKtgtThGiDMhfo15d3QNWp"
+				"bzz-raw://8ec7f0397efac42ccdd27283c89a2f1005a47fbb7ba71e7d9b244d52013c73ca",
+				"dweb:/ipfs/QmcAZQYT1GFgMaoqEwzEcxw5nvHYkCziS4RUo43bjkXwVG"
 			]
 		}
 	},
