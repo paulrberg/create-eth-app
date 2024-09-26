@@ -1,0 +1,421 @@
+{
+	"id": "9a72687e0b2da28d5274d7c7046f2489",
+	"_format": "hh-sol-build-info-1",
+	"solcVersion": "0.7.6",
+	"solcLongVersion": "0.7.6+commit.7338295f",
+	"input": {
+		"language": "Solidity",
+		"sources": {
+			"Umbra-Cash(copy)(copy)/contracts/IUmbraHookReceiver.sol": {
+				"content": "/*\n    \n   ██████  ██████   ██████  ██   ██ ██████   ██████   ██████  ██   ██    ██████  ███████ ██    ██\n  ██      ██    ██ ██    ██ ██  ██  ██   ██ ██    ██ ██    ██ ██  ██     ██   ██ ██      ██    ██\n  ██      ██    ██ ██    ██ █████   ██████  ██    ██ ██    ██ █████      ██   ██ █████   ██    ██\n  ██      ██    ██ ██    ██ ██  ██  ██   ██ ██    ██ ██    ██ ██  ██     ██   ██ ██       ██  ██\n   ██████  ██████   ██████  ██   ██ ██████   ██████   ██████  ██   ██ ██ ██████  ███████   ████\n  \n  Find any smart contract, and build your project faster: https://www.cookbook.dev\n  Twitter: https://twitter.com/cookbook_dev\n  Discord: https://discord.gg/cookbookdev\n  \n  Find this contract on Cookbook: https://www.cookbook.dev/protocols/Umbra-Cash?utm=code\n  */\n  \n  // SPDX-License-Identifier: MIT\n\npragma solidity ^0.7.6;\n\n/// @dev Interface that post-withdraw hooks must implement to interop with Umbra\ninterface IUmbraHookReceiver {\n  /**\n   * @notice Method called after a user completes an Umbra token withdrawal\n   * @param _amount The amount of the token withdrawn _after_ subtracting the sponsor fee\n   * @param _stealthAddr The stealth address whose token balance was withdrawn\n   * @param _acceptor Address where withdrawn funds were sent; can be this contract\n   * @param _tokenAddr Address of the ERC20 token that was withdrawn\n   * @param _sponsor Address which was compensated for submitting the withdrawal tx\n   * @param _sponsorFee Amount of the token that was paid to the sponsor\n   * @param _data Arbitrary data passed to this hook by the withdrawer\n   */\n  function tokensWithdrawn(\n    uint256 _amount,\n    address _stealthAddr,\n    address _acceptor,\n    address _tokenAddr,\n    address _sponsor,\n    uint256 _sponsorFee,\n    bytes memory _data\n  ) external;\n}\n"
+			}
+		},
+		"settings": {
+			"optimizer": {
+				"enabled": true,
+				"runs": 200
+			},
+			"outputSelection": {
+				"*": {
+					"": [
+						"ast"
+					],
+					"*": [
+						"abi",
+						"metadata",
+						"devdoc",
+						"userdoc",
+						"storageLayout",
+						"evm.legacyAssembly",
+						"evm.bytecode",
+						"evm.deployedBytecode",
+						"evm.methodIdentifiers",
+						"evm.gasEstimates",
+						"evm.assembly"
+					]
+				}
+			},
+			"remappings": []
+		}
+	},
+	"output": {
+		"contracts": {
+			"Umbra-Cash(copy)(copy)/contracts/IUmbraHookReceiver.sol": {
+				"IUmbraHookReceiver": {
+					"abi": [
+						{
+							"inputs": [
+								{
+									"internalType": "uint256",
+									"name": "_amount",
+									"type": "uint256"
+								},
+								{
+									"internalType": "address",
+									"name": "_stealthAddr",
+									"type": "address"
+								},
+								{
+									"internalType": "address",
+									"name": "_acceptor",
+									"type": "address"
+								},
+								{
+									"internalType": "address",
+									"name": "_tokenAddr",
+									"type": "address"
+								},
+								{
+									"internalType": "address",
+									"name": "_sponsor",
+									"type": "address"
+								},
+								{
+									"internalType": "uint256",
+									"name": "_sponsorFee",
+									"type": "uint256"
+								},
+								{
+									"internalType": "bytes",
+									"name": "_data",
+									"type": "bytes"
+								}
+							],
+							"name": "tokensWithdrawn",
+							"outputs": [],
+							"stateMutability": "nonpayable",
+							"type": "function"
+						}
+					],
+					"devdoc": {
+						"details": "Interface that post-withdraw hooks must implement to interop with Umbra",
+						"kind": "dev",
+						"methods": {
+							"tokensWithdrawn(uint256,address,address,address,address,uint256,bytes)": {
+								"params": {
+									"_acceptor": "Address where withdrawn funds were sent; can be this contract",
+									"_amount": "The amount of the token withdrawn _after_ subtracting the sponsor fee",
+									"_data": "Arbitrary data passed to this hook by the withdrawer",
+									"_sponsor": "Address which was compensated for submitting the withdrawal tx",
+									"_sponsorFee": "Amount of the token that was paid to the sponsor",
+									"_stealthAddr": "The stealth address whose token balance was withdrawn",
+									"_tokenAddr": "Address of the ERC20 token that was withdrawn"
+								}
+							}
+						},
+						"version": 1
+					},
+					"evm": {
+						"assembly": "",
+						"bytecode": {
+							"generatedSources": [],
+							"linkReferences": {},
+							"object": "",
+							"opcodes": "",
+							"sourceMap": ""
+						},
+						"deployedBytecode": {
+							"generatedSources": [],
+							"immutableReferences": {},
+							"linkReferences": {},
+							"object": "",
+							"opcodes": "",
+							"sourceMap": ""
+						},
+						"gasEstimates": null,
+						"legacyAssembly": null,
+						"methodIdentifiers": {
+							"tokensWithdrawn(uint256,address,address,address,address,uint256,bytes)": "579073de"
+						}
+					},
+					"metadata": "{\"compiler\":{\"version\":\"0.7.6+commit.7338295f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"_stealthAddr\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_acceptor\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_tokenAddr\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_sponsor\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_sponsorFee\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"_data\",\"type\":\"bytes\"}],\"name\":\"tokensWithdrawn\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Interface that post-withdraw hooks must implement to interop with Umbra\",\"kind\":\"dev\",\"methods\":{\"tokensWithdrawn(uint256,address,address,address,address,uint256,bytes)\":{\"params\":{\"_acceptor\":\"Address where withdrawn funds were sent; can be this contract\",\"_amount\":\"The amount of the token withdrawn _after_ subtracting the sponsor fee\",\"_data\":\"Arbitrary data passed to this hook by the withdrawer\",\"_sponsor\":\"Address which was compensated for submitting the withdrawal tx\",\"_sponsorFee\":\"Amount of the token that was paid to the sponsor\",\"_stealthAddr\":\"The stealth address whose token balance was withdrawn\",\"_tokenAddr\":\"Address of the ERC20 token that was withdrawn\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"tokensWithdrawn(uint256,address,address,address,address,uint256,bytes)\":{\"notice\":\"Method called after a user completes an Umbra token withdrawal\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"Umbra-Cash(copy)(copy)/contracts/IUmbraHookReceiver.sol\":\"IUmbraHookReceiver\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"Umbra-Cash(copy)(copy)/contracts/IUmbraHookReceiver.sol\":{\"keccak256\":\"0x6bc3a87d2729ee3ecbd67c304a8d8ef7f6389260671a2300af791cc225869f71\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://317b0cfc37c221d9d3417165bb1af86ef9bb905333738cc327b4faf639dead2e\",\"dweb:/ipfs/QmeiRRRtwgUYhsi8FrMmG2qyNm2Lr2cjYeTL2sxFChtRMC\"]}},\"version\":1}",
+					"storageLayout": {
+						"storage": [],
+						"types": null
+					},
+					"userdoc": {
+						"kind": "user",
+						"methods": {
+							"tokensWithdrawn(uint256,address,address,address,address,uint256,bytes)": {
+								"notice": "Method called after a user completes an Umbra token withdrawal"
+							}
+						},
+						"version": 1
+					}
+				}
+			}
+		},
+		"sources": {
+			"Umbra-Cash(copy)(copy)/contracts/IUmbraHookReceiver.sol": {
+				"ast": {
+					"absolutePath": "Umbra-Cash(copy)(copy)/contracts/IUmbraHookReceiver.sol",
+					"exportedSymbols": {
+						"IUmbraHookReceiver": [
+							21
+						]
+					},
+					"id": 22,
+					"license": "MIT",
+					"nodeType": "SourceUnit",
+					"nodes": [
+						{
+							"id": 1,
+							"literals": [
+								"solidity",
+								"^",
+								"0.7",
+								".6"
+							],
+							"nodeType": "PragmaDirective",
+							"src": "1304:23:0"
+						},
+						{
+							"abstract": false,
+							"baseContracts": [],
+							"contractDependencies": [],
+							"contractKind": "interface",
+							"documentation": {
+								"id": 2,
+								"nodeType": "StructuredDocumentation",
+								"src": "1329:81:0",
+								"text": "@dev Interface that post-withdraw hooks must implement to interop with Umbra"
+							},
+							"fullyImplemented": false,
+							"id": 21,
+							"linearizedBaseContracts": [
+								21
+							],
+							"name": "IUmbraHookReceiver",
+							"nodeType": "ContractDefinition",
+							"nodes": [
+								{
+									"documentation": {
+										"id": 3,
+										"nodeType": "StructuredDocumentation",
+										"src": "1443:635:0",
+										"text": " @notice Method called after a user completes an Umbra token withdrawal\n @param _amount The amount of the token withdrawn _after_ subtracting the sponsor fee\n @param _stealthAddr The stealth address whose token balance was withdrawn\n @param _acceptor Address where withdrawn funds were sent; can be this contract\n @param _tokenAddr Address of the ERC20 token that was withdrawn\n @param _sponsor Address which was compensated for submitting the withdrawal tx\n @param _sponsorFee Amount of the token that was paid to the sponsor\n @param _data Arbitrary data passed to this hook by the withdrawer"
+									},
+									"functionSelector": "579073de",
+									"id": 20,
+									"implemented": false,
+									"kind": "function",
+									"modifiers": [],
+									"name": "tokensWithdrawn",
+									"nodeType": "FunctionDefinition",
+									"parameters": {
+										"id": 18,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 5,
+												"mutability": "mutable",
+												"name": "_amount",
+												"nodeType": "VariableDeclaration",
+												"scope": 20,
+												"src": "2111:15:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												},
+												"typeName": {
+													"id": 4,
+													"name": "uint256",
+													"nodeType": "ElementaryTypeName",
+													"src": "2111:7:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_uint256",
+														"typeString": "uint256"
+													}
+												},
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 7,
+												"mutability": "mutable",
+												"name": "_stealthAddr",
+												"nodeType": "VariableDeclaration",
+												"scope": 20,
+												"src": "2132:20:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_address",
+													"typeString": "address"
+												},
+												"typeName": {
+													"id": 6,
+													"name": "address",
+													"nodeType": "ElementaryTypeName",
+													"src": "2132:7:0",
+													"stateMutability": "nonpayable",
+													"typeDescriptions": {
+														"typeIdentifier": "t_address",
+														"typeString": "address"
+													}
+												},
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 9,
+												"mutability": "mutable",
+												"name": "_acceptor",
+												"nodeType": "VariableDeclaration",
+												"scope": 20,
+												"src": "2158:17:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_address",
+													"typeString": "address"
+												},
+												"typeName": {
+													"id": 8,
+													"name": "address",
+													"nodeType": "ElementaryTypeName",
+													"src": "2158:7:0",
+													"stateMutability": "nonpayable",
+													"typeDescriptions": {
+														"typeIdentifier": "t_address",
+														"typeString": "address"
+													}
+												},
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 11,
+												"mutability": "mutable",
+												"name": "_tokenAddr",
+												"nodeType": "VariableDeclaration",
+												"scope": 20,
+												"src": "2181:18:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_address",
+													"typeString": "address"
+												},
+												"typeName": {
+													"id": 10,
+													"name": "address",
+													"nodeType": "ElementaryTypeName",
+													"src": "2181:7:0",
+													"stateMutability": "nonpayable",
+													"typeDescriptions": {
+														"typeIdentifier": "t_address",
+														"typeString": "address"
+													}
+												},
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 13,
+												"mutability": "mutable",
+												"name": "_sponsor",
+												"nodeType": "VariableDeclaration",
+												"scope": 20,
+												"src": "2205:16:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_address",
+													"typeString": "address"
+												},
+												"typeName": {
+													"id": 12,
+													"name": "address",
+													"nodeType": "ElementaryTypeName",
+													"src": "2205:7:0",
+													"stateMutability": "nonpayable",
+													"typeDescriptions": {
+														"typeIdentifier": "t_address",
+														"typeString": "address"
+													}
+												},
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 15,
+												"mutability": "mutable",
+												"name": "_sponsorFee",
+												"nodeType": "VariableDeclaration",
+												"scope": 20,
+												"src": "2227:19:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												},
+												"typeName": {
+													"id": 14,
+													"name": "uint256",
+													"nodeType": "ElementaryTypeName",
+													"src": "2227:7:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_uint256",
+														"typeString": "uint256"
+													}
+												},
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 17,
+												"mutability": "mutable",
+												"name": "_data",
+												"nodeType": "VariableDeclaration",
+												"scope": 20,
+												"src": "2252:18:0",
+												"stateVariable": false,
+												"storageLocation": "memory",
+												"typeDescriptions": {
+													"typeIdentifier": "t_bytes_memory_ptr",
+													"typeString": "bytes"
+												},
+												"typeName": {
+													"id": 16,
+													"name": "bytes",
+													"nodeType": "ElementaryTypeName",
+													"src": "2252:5:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_bytes_storage_ptr",
+														"typeString": "bytes"
+													}
+												},
+												"visibility": "internal"
+											}
+										],
+										"src": "2105:169:0"
+									},
+									"returnParameters": {
+										"id": 19,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "2283:0:0"
+									},
+									"scope": 21,
+									"src": "2081:203:0",
+									"stateMutability": "nonpayable",
+									"virtual": false,
+									"visibility": "external"
+								}
+							],
+							"scope": 22,
+							"src": "1410:876:0"
+						}
+					],
+					"src": "1304:983:0"
+				},
+				"id": 0
+			}
+		}
+	}
+}
