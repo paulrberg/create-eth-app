@@ -19,7 +19,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"0x/@openzeppelin/contracts/governance/extensions/GovernorSettings_flattened.sol": "ECDSA"
+			"0x/@openzeppelin/contracts/governance/extensions/GovernorVotesQuorumFraction_flattened.sol": "ECDSA"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -33,11 +33,11 @@
 		"remappings": []
 	},
 	"sources": {
-		"0x/@openzeppelin/contracts/governance/extensions/GovernorSettings_flattened.sol": {
-			"keccak256": "0x73860c2aa696a63f906fb0054786fa59882976e9fdf983282dc5adc674c7e6c7",
+		"0x/@openzeppelin/contracts/governance/extensions/GovernorVotesQuorumFraction_flattened.sol": {
+			"keccak256": "0x53520e1b7a09c55c10f763f75917fd1c02b6b236b9de55021743696e66163357",
 			"urls": [
-				"bzz-raw://a4a491f92ae00a57dd23bde6a59ee3f285e90741d83eb8791cdcb99740b2240f",
-				"dweb:/ipfs/QmccsTwNHJozf3P7f7k37sS1xRKCw3FuTgLnVzxZzZvQZp"
+				"bzz-raw://cbd076006a884870d5ee22c85efc29f5f38831f6f799ab7146c297bec4924332",
+				"dweb:/ipfs/QmZFSuphjL5FDP3ocjNye5nWozob4ERAksTuEa9oAaWePw"
 			]
 		}
 	},

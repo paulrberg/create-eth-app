@@ -907,7 +907,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"0x/@openzeppelin/contracts/governance/extensions/IGovernorTimelock.sol": "IGovernorTimelock"
+			"0x/@openzeppelin/contracts/governance/extensions/IGovernorTimelock_flattened.sol": "IGovernorTimelock"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -921,36 +921,11 @@
 		"remappings": []
 	},
 	"sources": {
-		"0x/@openzeppelin/contracts/governance/IGovernor.sol": {
-			"keccak256": "0xafbaf2de8b114f840e0c6d07b14d75fd706b1283584c967ce052384e806b86fb",
-			"license": "MIT",
+		"0x/@openzeppelin/contracts/governance/extensions/IGovernorTimelock_flattened.sol": {
+			"keccak256": "0xa60a0d2bdcbeca2ce90b25fa72b4510d9c2a7a7de6df560b8bcf89514b03f5e7",
 			"urls": [
-				"bzz-raw://e7b3fc44920b68b9cb155202409ade9f1cb732c9a0620a50c4d22e76e2d10503",
-				"dweb:/ipfs/QmPwL6awJ5xckXw6oEZxnMCsrqL9skdqV8nK5dupWYHoni"
-			]
-		},
-		"0x/@openzeppelin/contracts/governance/extensions/IGovernorTimelock.sol": {
-			"keccak256": "0xa9889fb5e5afd9938857eca8efa6de5fdaa3589f55c7ef06d3db6f29b7c58d96",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://89a0b0f7dbcda1ba0d0b6bf3656ba36d68cbdd9d4e69ff9c3d7626dc53f77c76",
-				"dweb:/ipfs/QmZzYdeDyfs5iS2dAj369WAESyXJwqkp2J6jxeaxA5FDyU"
-			]
-		},
-		"0x/@openzeppelin/contracts/utils/introspection/ERC165.sol": {
-			"keccak256": "0x4bb645ff353bc23290136274f6cc2db86fadcb4bfc7ae1c4cd744acb16fa6462",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://ecdc4a3cf074619ac5f65887af6608ac3b83db92b9954446260e36a2e6dea98a",
-				"dweb:/ipfs/QmPQCm7WrCEZiHoZKWRsWiRK2mZw1Kary3fu89TPE1Bg3T"
-			]
-		},
-		"0x/@openzeppelin/contracts/utils/introspection/IERC165.sol": {
-			"keccak256": "0xb0df25fbc61d93b5ba74ce979005b15e3b414eaf10472b675fe870147d6733ac",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://f259947485248198d61b1c389a0871ac688fc0130b5c48aecb24f7b4c5fa98bb",
-				"dweb:/ipfs/QmWXiEXTBEK62vq6WjWM16WBKSpAkJ1ixCg63MbU7RRGvk"
+				"bzz-raw://a7c0afd4c9e192c67f3517b6dbbdef95002ad6a2a73f9eeac24d2117480cfd38",
+				"dweb:/ipfs/QmShpA8bk6Dff7F9CZHPnFEWDKtgtThGiDMhfo15d3QNWp"
 			]
 		}
 	},

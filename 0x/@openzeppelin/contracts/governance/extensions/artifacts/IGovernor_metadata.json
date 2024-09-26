@@ -822,7 +822,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"0x/@openzeppelin/contracts/governance/extensions/GovernorSettings_flattened.sol": "IGovernor"
+			"0x/@openzeppelin/contracts/governance/extensions/IGovernorTimelock_flattened.sol": "IGovernor"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -836,11 +836,11 @@
 		"remappings": []
 	},
 	"sources": {
-		"0x/@openzeppelin/contracts/governance/extensions/GovernorSettings_flattened.sol": {
-			"keccak256": "0x73860c2aa696a63f906fb0054786fa59882976e9fdf983282dc5adc674c7e6c7",
+		"0x/@openzeppelin/contracts/governance/extensions/IGovernorTimelock_flattened.sol": {
+			"keccak256": "0xa60a0d2bdcbeca2ce90b25fa72b4510d9c2a7a7de6df560b8bcf89514b03f5e7",
 			"urls": [
-				"bzz-raw://a4a491f92ae00a57dd23bde6a59ee3f285e90741d83eb8791cdcb99740b2240f",
-				"dweb:/ipfs/QmccsTwNHJozf3P7f7k37sS1xRKCw3FuTgLnVzxZzZvQZp"
+				"bzz-raw://a7c0afd4c9e192c67f3517b6dbbdef95002ad6a2a73f9eeac24d2117480cfd38",
+				"dweb:/ipfs/QmShpA8bk6Dff7F9CZHPnFEWDKtgtThGiDMhfo15d3QNWp"
 			]
 		}
 	},
