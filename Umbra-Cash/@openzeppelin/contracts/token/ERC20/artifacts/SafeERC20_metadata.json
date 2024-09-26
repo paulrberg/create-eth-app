@@ -1,0 +1,71 @@
+{
+	"compiler": {
+		"version": "0.7.6+commit.7338295f"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"details": "Wrappers around ERC20 operations that throw on failure (when the token contract returns false). Tokens that return no value (and instead revert or throw on failure) are also supported, non-reverting calls are assumed to be successful. To use this library you can add a `using SafeERC20 for IERC20;` statement to your contract, which allows you to call the safe operations as `token.safeTransfer(...)`, etc.",
+			"kind": "dev",
+			"methods": {},
+			"title": "SafeERC20",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Umbra-Cash/@openzeppelin/contracts/token/ERC20/SafeERC20.sol": "SafeERC20"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Umbra-Cash/@openzeppelin/contracts/math/SafeMath.sol": {
+			"keccak256": "0xed84f952d9565c4fc3690a3c7f295ae401f14d3e952ef104ef991f272127b5dc",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://54f04c5b3bad1b034e0164b453b326fdddbb067664c2255d79b266bccff3b7d7",
+				"dweb:/ipfs/Qmb83oMdU7UtMZ8YbnxmP8CDc8rgQFzWQDN3uoAwPDyRRQ"
+			]
+		},
+		"Umbra-Cash/@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+			"keccak256": "0x702e70ef0f67b8a45db9bdccdbe3eb1de654d4c8c93503df15784d0964046ff6",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e852c6eddd2a3889f99be4b591be57177d2a00bb0c2e0585f2af8e96b7e480fc",
+				"dweb:/ipfs/QmRSosgbTfUYW7g3mA6Sy8ydsMGQRWKypWxbqLPe5UgjAN"
+			]
+		},
+		"Umbra-Cash/@openzeppelin/contracts/token/ERC20/SafeERC20.sol": {
+			"keccak256": "0x88c47dd07640b0c558afd43ab1003cb600f087dbecdac2869315ccab26170e4e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ed3e6e96547fa60a297b3166919e247242969da0c906482baec9d9130f438e60",
+				"dweb:/ipfs/QmQ7SD1Hoc7eNtsrgSb7FFjdNM4WgVyThzXUT4uQ8S7QbZ"
+			]
+		},
+		"Umbra-Cash/@openzeppelin/contracts/utils/Address.sol": {
+			"keccak256": "0x2ca24a00c51df6788692e84c47dd1c4d59f78dd74bf34a53a648739e10f1cbff",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://988aeb7ea692f2092505048dfa69d67d17ab305574d90e7ff1994417c954e1a2",
+				"dweb:/ipfs/QmXAP6thCWwKu1sG7YzLDcLqXinNpQejpzTAB5bJPuzwnG"
+			]
+		}
+	},
+	"version": 1
+}

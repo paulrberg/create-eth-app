@@ -1,0 +1,157 @@
+{
+	"compiler": {
+		"version": "0.7.6+commit.7338295f"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "lastCallData",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "stealthAddr",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "acceptor",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "tokenAddr",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "sponsor",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "sponsorFee",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_stealthAddr",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_acceptor",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_tokenAddr",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_sponsor",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_sponsorFee",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_data",
+						"type": "bytes"
+					}
+				],
+				"name": "tokensWithdrawn",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "Mock implementation of UmbraHookable used for testing",
+			"kind": "dev",
+			"methods": {
+				"tokensWithdrawn(uint256,address,address,address,address,uint256,bytes)": {
+					"params": {
+						"_acceptor": "Address where withdrawn funds were sent; can be this contract",
+						"_amount": "The amount of the token withdrawn _after_ subtracting the sponsor fee",
+						"_data": "Arbitrary data passed to this hook by the withdrawer",
+						"_sponsor": "Address which was compensated for submitting the withdrawal tx",
+						"_sponsorFee": "Amount of the token that was paid to the sponsor",
+						"_stealthAddr": "The stealth address whose token balance was withdrawn",
+						"_tokenAddr": "Address of the ERC20 token that was withdrawn"
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"tokensWithdrawn(uint256,address,address,address,address,uint256,bytes)": {
+					"notice": "Method called after a user completes an Umbra token withdrawal"
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Umbra-Cash/contracts/MockHook.sol": "MockHook"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Umbra-Cash/contracts/IUmbraHookReceiver.sol": {
+			"keccak256": "0x6bc3a87d2729ee3ecbd67c304a8d8ef7f6389260671a2300af791cc225869f71",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://317b0cfc37c221d9d3417165bb1af86ef9bb905333738cc327b4faf639dead2e",
+				"dweb:/ipfs/QmeiRRRtwgUYhsi8FrMmG2qyNm2Lr2cjYeTL2sxFChtRMC"
+			]
+		},
+		"Umbra-Cash/contracts/MockHook.sol": {
+			"keccak256": "0x6b3936bd2bdc64d6c84ab7cd835557425b37203223204494732c80c8b8a56ac3",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://7b82b5a8fe78a761a540693f2cdee29006a0c524710536964c6db8f510164790",
+				"dweb:/ipfs/QmXqXL55PzjuuTk7AbbK1FJkG2LA7sQY2nt8YNcsqoPmdT"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,45 @@
+{
+	"compiler": {
+		"version": "0.7.6+commit.7338295f"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Umbra-Cash(copy)/@openzeppelin/contracts/utils/Context.sol": "Context"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Umbra-Cash(copy)/@openzeppelin/contracts/utils/Context.sol": {
+			"keccak256": "0x0e92b627582fd191d8db7901cba59e29b57059716e53b5034ef8977357c3244a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://54c37e6816bd5730227bcb2553dd74d9ed0d4b513485375d644061bc98d3d08e",
+				"dweb:/ipfs/QmQ67ZbMnJovZCpgtPbfPQms1ZfWHD5mkaEiy6YrnQvCLD"
+			]
+		}
+	},
+	"version": 1
+}

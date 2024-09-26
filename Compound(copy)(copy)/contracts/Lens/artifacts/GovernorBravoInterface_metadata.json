@@ -1,0 +1,288 @@
+{
+	"compiler": {
+		"version": "0.8.27+commit.40a35a09"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "proposalId",
+						"type": "uint256"
+					}
+				],
+				"name": "getActions",
+				"outputs": [
+					{
+						"internalType": "address[]",
+						"name": "targets",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "values",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "string[]",
+						"name": "signatures",
+						"type": "string[]"
+					},
+					{
+						"internalType": "bytes[]",
+						"name": "calldatas",
+						"type": "bytes[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "proposalId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "voter",
+						"type": "address"
+					}
+				],
+				"name": "getReceipt",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "bool",
+								"name": "hasVoted",
+								"type": "bool"
+							},
+							{
+								"internalType": "uint8",
+								"name": "support",
+								"type": "uint8"
+							},
+							{
+								"internalType": "uint96",
+								"name": "votes",
+								"type": "uint96"
+							}
+						],
+						"internalType": "struct GovernorBravoInterface.Receipt",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "proposalId",
+						"type": "uint256"
+					}
+				],
+				"name": "proposals",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "proposer",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "eta",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "startBlock",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "endBlock",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "forVotes",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "againstVotes",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "abstainVotes",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "canceled",
+								"type": "bool"
+							},
+							{
+								"internalType": "bool",
+								"name": "executed",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct GovernorBravoInterface.Proposal",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Compound(copy)(copy)/contracts/Lens/CompoundLens.sol": "GovernorBravoInterface"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Compound(copy)(copy)/contracts/CErc20.sol": {
+			"keccak256": "0x63205cf8aff9281df2b254aa04d8f3df9e6be115f4beee486b9e6fe0d34bb892",
+			"license": "BSD-3-Clause",
+			"urls": [
+				"bzz-raw://3274714357b0fc037e314baff75b5a644e7deda8f1158809163c3719dff9763a",
+				"dweb:/ipfs/QmQf1nsjiBzU547giCwEmjyoF5GxsVYzkd8bs2vdDYfoad"
+			]
+		},
+		"Compound(copy)(copy)/contracts/CToken.sol": {
+			"keccak256": "0x37b8439ccad9fd1c45e77072339162c75b2c9399cbc71c1734075331ca6eba77",
+			"license": "BSD-3-Clause",
+			"urls": [
+				"bzz-raw://2fecdbb03498329c9831aaa0c1609472b121004d69d5b7b42a8ec166250a003b",
+				"dweb:/ipfs/QmW3is9q7AGYUVkLkgg9G6mMxiDTFZ8Mx5aJUwPt7FqXGy"
+			]
+		},
+		"Compound(copy)(copy)/contracts/CTokenInterfaces.sol": {
+			"keccak256": "0x9a3c3eb313b3031f0631256ab54c9a64189d6a7a07e63e0127438b4d4f07032c",
+			"license": "BSD-3-Clause",
+			"urls": [
+				"bzz-raw://8d17b9092e9abf551cd9b4d1663fe3923dec1be05d65aea3dd03656676986ba2",
+				"dweb:/ipfs/QmYowmShH558aguU9LsPStXQEKxmuCYWrWZt2n6XDiEyG8"
+			]
+		},
+		"Compound(copy)(copy)/contracts/ComptrollerInterface.sol": {
+			"keccak256": "0x76bce20b9c5f701127355a3ab90bf51e235b2a91142ce679987a51076eb5e6fb",
+			"license": "BSD-3-Clause",
+			"urls": [
+				"bzz-raw://88a865fa74213763beaffaec9fd3e4d655eb7e6ed84a7e0012de19c8bf6f3df5",
+				"dweb:/ipfs/QmRa64LngRQ1WnYztrxKvmUAX8KkK6yENGPu5U5jaP3XG1"
+			]
+		},
+		"Compound(copy)(copy)/contracts/EIP20Interface.sol": {
+			"keccak256": "0x6a9ad84e63c55dd3c9fad47b8fc725e1e6dd8e0ef1ae92693e485f6613598161",
+			"license": "BSD-3-Clause",
+			"urls": [
+				"bzz-raw://206e9f417d88e2b704e5b13602645c5a8eb806c371478249e09acf89a31c2f3d",
+				"dweb:/ipfs/QmeMu5EF9xq1gP9nvhNBn9MhA6sbZ5zMyVxH3VKQotqezw"
+			]
+		},
+		"Compound(copy)(copy)/contracts/EIP20NonStandardInterface.sol": {
+			"keccak256": "0x3a1f293bb6474ebfadfcf9d5b9fbcd7c2d1b2f7feeb56c6efe386a8d7c527f01",
+			"license": "BSD-3-Clause",
+			"urls": [
+				"bzz-raw://8d05324dec2c09f88a990df0e8bb900a8086a6a4b070f2c7999466a8fdaeafc0",
+				"dweb:/ipfs/QmfJmd8bJC5cKNR244XJoe441RZSb6dF78HqFEzGG7cYar"
+			]
+		},
+		"Compound(copy)(copy)/contracts/ErrorReporter.sol": {
+			"keccak256": "0x1b582870c86529139b3c6f269d8755b04a3b7d695ba4549a44a7bcd0ff2ec7d4",
+			"license": "BSD-3-Clause",
+			"urls": [
+				"bzz-raw://42228deee6981a7608c401b6da723b6f7531c173e08e63605c1b92c3c9a35527",
+				"dweb:/ipfs/QmQDWHvB4QwT6sxiC6vdPXTadL4jSUZZFKEw6JcRCA1DVk"
+			]
+		},
+		"Compound(copy)(copy)/contracts/ExponentialNoError.sol": {
+			"keccak256": "0x85f78f966b663cb2887688ebae216d1c744c61fb8076bc75817a586e00b8bf6b",
+			"license": "BSD-3-Clause",
+			"urls": [
+				"bzz-raw://8728100a8269341cd8c2ff478cec6951661cfe9ac7957187e9651e9050329662",
+				"dweb:/ipfs/QmZwnqCWCVZgS6aoJGv6BLNNi45QGYnqJhTZtCgjBEB8Wg"
+			]
+		},
+		"Compound(copy)(copy)/contracts/Governance/Comp.sol": {
+			"keccak256": "0x3e90ef05a4e5670e89e8553b33ab529322a23efef0628e3a117f9b4faa61a7dd",
+			"license": "BSD-3-Clause",
+			"urls": [
+				"bzz-raw://a16770cb9d1e40755c67f12a08aef3efc00d3bb4345f8f3d299a1e2144a52732",
+				"dweb:/ipfs/QmarEqNVvaA117iAziQkxpq2LbMKnCBKQfT69oB2Y2eas7"
+			]
+		},
+		"Compound(copy)(copy)/contracts/Governance/GovernorAlpha.sol": {
+			"keccak256": "0x26e65212382a9175d9287fc52d40484c3b4c1da45bfda8318e800ab16b100052",
+			"license": "BSD-3-Clause",
+			"urls": [
+				"bzz-raw://43c0a5ea99c4a8e8cba72809a7adfa4149c0ac4a224d47e7b5e4f682a6d083cd",
+				"dweb:/ipfs/QmTGo4os5jiZxDSzmNJXiVfNxPsd9kZ3LYdKsWJ9QBFCkB"
+			]
+		},
+		"Compound(copy)(copy)/contracts/InterestRateModel.sol": {
+			"keccak256": "0x2fe15d53a414daf1c2004e76e89705e2bc9b8da0566a17531c17b785f97b838b",
+			"license": "BSD-3-Clause",
+			"urls": [
+				"bzz-raw://9b0f6f096de0a8dc6962c620f7fee965a3e304f2d3797681fb6cc9d4dc24a432",
+				"dweb:/ipfs/Qmed4vPA3m5719tqpe9doNGf1j4iEHBYyY8XEHy89NVKD2"
+			]
+		},
+		"Compound(copy)(copy)/contracts/Lens/CompoundLens.sol": {
+			"keccak256": "0x36fdb97fa4fe74493cf5f29ff8746b66d97ea9bedec2d49c0a4663e0c64c2ed3",
+			"license": "BSD-3-Clause",
+			"urls": [
+				"bzz-raw://943f502708b03917bc237f3640b798aaa1cd5f1f30cf458f1e2fb40865de0302",
+				"dweb:/ipfs/QmPHNU5k8pCig2oEkHdcGFJvoByFpV4EKh3gjutTdicJpQ"
+			]
+		},
+		"Compound(copy)(copy)/contracts/PriceOracle.sol": {
+			"keccak256": "0xfa848ad3f6d80d7162a970edee75b98f6cf0867723db33f02eb0c5d8c43bbe78",
+			"license": "BSD-3-Clause",
+			"urls": [
+				"bzz-raw://9b113b6db2b4138f6caadcf695506fdad07e1fdaf5f1ac616468eb64ed855dcf",
+				"dweb:/ipfs/QmYZ4QWU23gwtzT1QHKjumMtc124UB1v7UyGW6vcueSjVG"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,44 @@
+{
+	"compiler": {
+		"version": "0.7.6+commit.7338295f"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Umbra-Cash/@openzeppelin/contracts/token/ERC20/ERC20_flattened.sol": "Context"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Umbra-Cash/@openzeppelin/contracts/token/ERC20/ERC20_flattened.sol": {
+			"keccak256": "0x82b5eeb00e90233ce2d3dda056123737fdea95dc770f4ab20e2aa4fb04bb80fd",
+			"urls": [
+				"bzz-raw://5a0ef83ede982e109c96a83660e62f84bb1506ec40d07ee8ff7e9443a85e0300",
+				"dweb:/ipfs/QmZeifAbs3YCYXDqXpg7YbiN5gGaYw1t2UP6cAB8Ha9UXS"
+			]
+		}
+	},
+	"version": 1
+}

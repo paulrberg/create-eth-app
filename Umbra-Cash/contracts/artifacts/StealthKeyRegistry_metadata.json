@@ -1,0 +1,285 @@
+{
+	"compiler": {
+		"version": "0.8.27+commit.40a35a09"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "registrant",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "spendingPubKeyPrefix",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "spendingPubKey",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "viewingPubKeyPrefix",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "viewingPubKey",
+						"type": "uint256"
+					}
+				],
+				"name": "StealthKeyChanged",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "DOMAIN_SEPARATOR",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "STEALTHKEYS_TYPEHASH",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_spendingPubKeyPrefix",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_spendingPubKey",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_viewingPubKeyPrefix",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_viewingPubKey",
+						"type": "uint256"
+					}
+				],
+				"name": "setStealthKeys",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_registrant",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_spendingPubKeyPrefix",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_spendingPubKey",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_viewingPubKeyPrefix",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_viewingPubKey",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint8",
+						"name": "_v",
+						"type": "uint8"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "_r",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "_s",
+						"type": "bytes32"
+					}
+				],
+				"name": "setStealthKeysOnBehalf",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_registrant",
+						"type": "address"
+					}
+				],
+				"name": "stealthKeys",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "spendingPubKeyPrefix",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "spendingPubKey",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "viewingPubKeyPrefix",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "viewingPubKey",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"events": {
+				"StealthKeyChanged(address,uint256,uint256,uint256,uint256)": {
+					"details": "Event emitted when a user updates their registered stealth keys"
+				}
+			},
+			"kind": "dev",
+			"methods": {
+				"constructor": {
+					"details": "We wait until deployment to codify the domain separator because we need the chainId and the contract address"
+				},
+				"setStealthKeys(uint256,uint256,uint256,uint256)": {
+					"params": {
+						"_spendingPubKey": "The public key for generating a stealth address",
+						"_spendingPubKeyPrefix": "Prefix of the spending public key (2 or 3)",
+						"_viewingPubKey": "The public key to use for encryption",
+						"_viewingPubKeyPrefix": "Prefix of the viewing public key (2 or 3)"
+					}
+				},
+				"setStealthKeysOnBehalf(address,uint256,uint256,uint256,uint256,uint8,bytes32,bytes32)": {
+					"params": {
+						"_r": "ECDSA signature component: x-coordinate of `R`",
+						"_registrant": "The address for which stealth keys are being registered, i.e. the address expected to be recovered from the provided signature",
+						"_s": "ECDSA signature component: `s` value of the signature",
+						"_spendingPubKey": "The public key for generating a stealth address",
+						"_spendingPubKeyPrefix": "Prefix of the spending public key (2 or 3)",
+						"_v": "ECDSA signature component: Parity of the `y` coordinate of point `R`",
+						"_viewingPubKey": "The public key to use for encryption",
+						"_viewingPubKeyPrefix": "Prefix of the viewing public key (2 or 3)"
+					}
+				},
+				"stealthKeys(address)": {
+					"params": {
+						"_registrant": "The address whose keys to lookup."
+					},
+					"returns": {
+						"spendingPubKey": "The public key for generating a stealth address",
+						"spendingPubKeyPrefix": "Prefix of the spending public key (2 or 3)",
+						"viewingPubKey": "The public key to use for encryption",
+						"viewingPubKeyPrefix": "Prefix of the viewing public key (2 or 3)"
+					}
+				}
+			},
+			"stateVariables": {
+				"DOMAIN_SEPARATOR": {
+					"details": "The domain separator used for EIP-712 sigatures in setStealthKeysOnBehalf"
+				},
+				"STEALTHKEYS_TYPEHASH": {
+					"details": "The payload typehash used for EIP-712 signatures in setStealthKeysOnBehalf"
+				},
+				"keys": {
+					"details": "Mapping used to store two secp256k1 curve public keys used for receiving stealth payments. The mapping records two keys: a viewing key and a spending key, which can be set and read via the `setStealthKeys` and `stealthKey` methods respectively. The mapping associates the user's address to another mapping, which itself maps the public key prefix to the actual key . This scheme is used to avoid using an extra storage slot for the public key prefix. For a given address, the mapping may contain a spending key at position 0 or 1, and a viewing key at position 2 or 3. See the setter/getter methods for details of how these map to prefixes. For more on secp256k1 public keys and prefixes generally, see: https://github.com/ethereumbook/ethereumbook/blob/develop/04keys-addresses.asciidoc#generating-a-public-key"
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"setStealthKeys(uint256,uint256,uint256,uint256)": {
+					"notice": "Sets stealth keys for the caller"
+				},
+				"setStealthKeysOnBehalf(address,uint256,uint256,uint256,uint256,uint8,bytes32,bytes32)": {
+					"notice": "Sets stealth keys for the registrant using an EIP-712 signature to authenticate the update on their behalf."
+				},
+				"stealthKeys(address)": {
+					"notice": "Returns the stealth key associated with an address."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Umbra-Cash/contracts/StealthKeyRegistry.sol": "StealthKeyRegistry"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Umbra-Cash/contracts/StealthKeyRegistry.sol": {
+			"keccak256": "0x4db67d00e88b4712dc9044223a27737eef75abdd9cf2cb1185e78644ea16d2c6",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://04c37949f5e643fe57d8133dc7b5632d5efaa00b090cfc25d9b1f6351461fb3b",
+				"dweb:/ipfs/Qma9kNQthdseErXsbri7MaYJFZGytAfchaBhhXoXf1CYCf"
+			]
+		}
+	},
+	"version": 1
+}

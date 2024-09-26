@@ -1,0 +1,46 @@
+{
+	"compiler": {
+		"version": "0.7.6+commit.7338295f"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"details": "Collection of functions related to the address type",
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Umbra-Cash(copy)/@openzeppelin/contracts/utils/Address.sol": "Address"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Umbra-Cash(copy)/@openzeppelin/contracts/utils/Address.sol": {
+			"keccak256": "0x2ca24a00c51df6788692e84c47dd1c4d59f78dd74bf34a53a648739e10f1cbff",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://988aeb7ea692f2092505048dfa69d67d17ab305574d90e7ff1994417c954e1a2",
+				"dweb:/ipfs/QmXAP6thCWwKu1sG7YzLDcLqXinNpQejpzTAB5bJPuzwnG"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,120 @@
+{
+	"compiler": {
+		"version": "0.7.6+commit.7338295f"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "Contract module which provides a basic access control mechanism, where there is an account (an owner) that can be granted exclusive access to specific functions. By default, the owner account will be the one that deploys the contract. This can later be changed with {transferOwnership}. This module is used through inheritance. It will make available the modifier `onlyOwner`, which can be applied to your functions to restrict their use to the owner.",
+			"kind": "dev",
+			"methods": {
+				"constructor": {
+					"details": "Initializes the contract setting the deployer as the initial owner."
+				},
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"erc20-token-with-automatic-vesting/contracts/Token/openzeppelin-solidity/contracts/access/Ownable.sol": "Ownable"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"erc20-token-with-automatic-vesting/contracts/Token/openzeppelin-solidity/contracts/GSN/Context.sol": {
+			"keccak256": "0xbeb5e4abf70b4d3245ef94a398e8e2416872fa1bbf554bf990240c3d5098706d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://138d96547f8feb83ff331dcf78598858aa54510aa052e3d1edd7a57e8aa7fdbd",
+				"dweb:/ipfs/QmRzVkXfY7pbwH5GfWj2dSojGewaTFCZH54e7fyyDbGRUK"
+			]
+		},
+		"erc20-token-with-automatic-vesting/contracts/Token/openzeppelin-solidity/contracts/access/Ownable.sol": {
+			"keccak256": "0x8f048cc9dae6121530ebcd35c1e845e9ad94d5973f74c0954256ed1b4f357220",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://3202ba5182e375e55be650e5d62657a96cf022bbf1e3bd1c0a4b43a91ba4587d",
+				"dweb:/ipfs/QmXVmQdNJH6SjABKj4x6tb5VEC7tDnG2amm11tix1twxEw"
+			]
+		}
+	},
+	"version": 1
+}

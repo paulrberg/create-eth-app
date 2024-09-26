@@ -1,0 +1,205 @@
+{
+	"deploy": {
+		"VM:-": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"main:1": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"ropsten:3": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"rinkeby:4": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"kovan:42": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"goerli:5": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"Custom": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		}
+	},
+	"data": {
+		"bytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"linkReferences": {},
+			"object": "",
+			"opcodes": "",
+			"sourceMap": ""
+		},
+		"deployedBytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"immutableReferences": {},
+			"linkReferences": {},
+			"object": "",
+			"opcodes": "",
+			"sourceMap": ""
+		},
+		"gasEstimates": null,
+		"methodIdentifiers": {
+			"getActions(uint256)": "328dd982",
+			"getReceipt(uint256,address)": "e23a9a52",
+			"proposals(uint256)": "013cf08b"
+		}
+	},
+	"abi": [
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "proposalId",
+					"type": "uint256"
+				}
+			],
+			"name": "getActions",
+			"outputs": [
+				{
+					"internalType": "address[]",
+					"name": "targets",
+					"type": "address[]"
+				},
+				{
+					"internalType": "uint256[]",
+					"name": "values",
+					"type": "uint256[]"
+				},
+				{
+					"internalType": "string[]",
+					"name": "signatures",
+					"type": "string[]"
+				},
+				{
+					"internalType": "bytes[]",
+					"name": "calldatas",
+					"type": "bytes[]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "proposalId",
+					"type": "uint256"
+				},
+				{
+					"internalType": "address",
+					"name": "voter",
+					"type": "address"
+				}
+			],
+			"name": "getReceipt",
+			"outputs": [
+				{
+					"components": [
+						{
+							"internalType": "bool",
+							"name": "hasVoted",
+							"type": "bool"
+						},
+						{
+							"internalType": "uint8",
+							"name": "support",
+							"type": "uint8"
+						},
+						{
+							"internalType": "uint96",
+							"name": "votes",
+							"type": "uint96"
+						}
+					],
+					"internalType": "struct GovernorBravoInterface.Receipt",
+					"name": "",
+					"type": "tuple"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "proposalId",
+					"type": "uint256"
+				}
+			],
+			"name": "proposals",
+			"outputs": [
+				{
+					"components": [
+						{
+							"internalType": "uint256",
+							"name": "id",
+							"type": "uint256"
+						},
+						{
+							"internalType": "address",
+							"name": "proposer",
+							"type": "address"
+						},
+						{
+							"internalType": "uint256",
+							"name": "eta",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "startBlock",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "endBlock",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "forVotes",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "againstVotes",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "abstainVotes",
+							"type": "uint256"
+						},
+						{
+							"internalType": "bool",
+							"name": "canceled",
+							"type": "bool"
+						},
+						{
+							"internalType": "bool",
+							"name": "executed",
+							"type": "bool"
+						}
+					],
+					"internalType": "struct GovernorBravoInterface.Proposal",
+					"name": "",
+					"type": "tuple"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		}
+	]
+}

@@ -1,0 +1,44 @@
+{
+	"compiler": {
+		"version": "0.7.6+commit.7338295f"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Umbra-Cash/@openzeppelin/contracts/access/Ownable_flattened.sol": "Context"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Umbra-Cash/@openzeppelin/contracts/access/Ownable_flattened.sol": {
+			"keccak256": "0xfea23d1ebbb21782be85cef57902f1cb02662286b647e33c1d8acc9afea11cff",
+			"urls": [
+				"bzz-raw://7da29f9f63e54321836334b0bcc78cb39868304523508ee90a8523e3166fbba9",
+				"dweb:/ipfs/QmaqVFpDv17Ge7MyZuYBTJ1BPXSNJJJ2Wn4c3iHabcchZ9"
+			]
+		}
+	},
+	"version": 1
+}
