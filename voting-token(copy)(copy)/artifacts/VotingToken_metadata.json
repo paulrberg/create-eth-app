@@ -1,0 +1,857 @@
+{
+	"compiler": {
+		"version": "0.8.27+commit.40a35a09"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "symbol",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "totalSupply",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "spender",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "Approval",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "delegator",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "fromDelegate",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "toDelegate",
+						"type": "address"
+					}
+				],
+				"name": "DelegateChanged",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "delegate",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "previousBalance",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newBalance",
+						"type": "uint256"
+					}
+				],
+				"name": "DelegateVotesChanged",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "Transfer",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "DOMAIN_SEPARATOR",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "spender",
+						"type": "address"
+					}
+				],
+				"name": "allowance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "spender",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "approve",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "balanceOf",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"internalType": "uint32",
+						"name": "pos",
+						"type": "uint32"
+					}
+				],
+				"name": "checkpoints",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint32",
+								"name": "fromBlock",
+								"type": "uint32"
+							},
+							{
+								"internalType": "uint224",
+								"name": "votes",
+								"type": "uint224"
+							}
+						],
+						"internalType": "struct ERC20Votes.Checkpoint",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "decimals",
+				"outputs": [
+					{
+						"internalType": "uint8",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "spender",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "subtractedValue",
+						"type": "uint256"
+					}
+				],
+				"name": "decreaseAllowance",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "delegatee",
+						"type": "address"
+					}
+				],
+				"name": "delegate",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "delegatee",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "nonce",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "expiry",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint8",
+						"name": "v",
+						"type": "uint8"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "r",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "s",
+						"type": "bytes32"
+					}
+				],
+				"name": "delegateBySig",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "delegates",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "blockNumber",
+						"type": "uint256"
+					}
+				],
+				"name": "getPastTotalSupply",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "blockNumber",
+						"type": "uint256"
+					}
+				],
+				"name": "getPastVotes",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "getVotes",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "spender",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "addedValue",
+						"type": "uint256"
+					}
+				],
+				"name": "increaseAllowance",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "name",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"name": "nonces",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "numCheckpoints",
+				"outputs": [
+					{
+						"internalType": "uint32",
+						"name": "",
+						"type": "uint32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "spender",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "deadline",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint8",
+						"name": "v",
+						"type": "uint8"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "r",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "s",
+						"type": "bytes32"
+					}
+				],
+				"name": "permit",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "symbol",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalSupply",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "transfer",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "transferFrom",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"author": "Breakthrough Labs Inc.",
+			"custom:address": "7",
+			"custom:default-precision": "18",
+			"custom:simple-description": "Fixed supply token that allows for voting on connected DAO proposals.",
+			"custom:version": "1.0.8",
+			"details": "ERC20 token with the following features:  - Token owners can vote on Governance/DAO proposals.  - Premint your total supply.  - No minting function. This allows users to comfortably know the future supply of the token. Used with Governance/DAO contracts for voting.",
+			"events": {
+				"Approval(address,address,uint256)": {
+					"details": "Emitted when the allowance of a `spender` for an `owner` is set by a call to {approve}. `value` is the new allowance."
+				},
+				"DelegateChanged(address,address,address)": {
+					"details": "Emitted when an account changes their delegate."
+				},
+				"DelegateVotesChanged(address,uint256,uint256)": {
+					"details": "Emitted when a token transfer or delegate change results in changes to a delegate's number of votes."
+				},
+				"Transfer(address,address,uint256)": {
+					"details": "Emitted when `value` tokens are moved from one account (`from`) to another (`to`). Note that `value` may be zero."
+				}
+			},
+			"kind": "dev",
+			"methods": {
+				"DOMAIN_SEPARATOR()": {
+					"details": "See {IERC20Permit-DOMAIN_SEPARATOR}."
+				},
+				"allowance(address,address)": {
+					"details": "See {IERC20-allowance}."
+				},
+				"approve(address,uint256)": {
+					"details": "See {IERC20-approve}. NOTE: If `amount` is the maximum `uint256`, the allowance is not updated on `transferFrom`. This is semantically equivalent to an infinite approval. Requirements: - `spender` cannot be the zero address."
+				},
+				"balanceOf(address)": {
+					"details": "See {IERC20-balanceOf}."
+				},
+				"checkpoints(address,uint32)": {
+					"details": "Get the `pos`-th checkpoint for `account`."
+				},
+				"constructor": {
+					"params": {
+						"name": "Token Name",
+						"symbol": "Token Symbol",
+						"totalSupply": "Initial Supply"
+					}
+				},
+				"decimals()": {
+					"details": "Returns the number of decimals used to get its user representation. For example, if `decimals` equals `2`, a balance of `505` tokens should be displayed to a user as `5.05` (`505 / 10 ** 2`). Tokens usually opt for a value of 18, imitating the relationship between Ether and Wei. This is the value {ERC20} uses, unless this function is overridden; NOTE: This information is only used for _display_ purposes: it in no way affects any of the arithmetic of the contract, including {IERC20-balanceOf} and {IERC20-transfer}."
+				},
+				"decreaseAllowance(address,uint256)": {
+					"details": "Atomically decreases the allowance granted to `spender` by the caller. This is an alternative to {approve} that can be used as a mitigation for problems described in {IERC20-approve}. Emits an {Approval} event indicating the updated allowance. Requirements: - `spender` cannot be the zero address. - `spender` must have allowance for the caller of at least `subtractedValue`."
+				},
+				"delegate(address)": {
+					"details": "Delegate votes from the sender to `delegatee`."
+				},
+				"delegateBySig(address,uint256,uint256,uint8,bytes32,bytes32)": {
+					"details": "Delegates votes from signer to `delegatee`"
+				},
+				"delegates(address)": {
+					"details": "Get the address `account` is currently delegating to."
+				},
+				"getPastTotalSupply(uint256)": {
+					"details": "Retrieve the `totalSupply` at the end of `blockNumber`. Note, this value is the sum of all balances. It is but NOT the sum of all the delegated votes! Requirements: - `blockNumber` must have been already mined"
+				},
+				"getPastVotes(address,uint256)": {
+					"details": "Retrieve the number of votes for `account` at the end of `blockNumber`. Requirements: - `blockNumber` must have been already mined"
+				},
+				"getVotes(address)": {
+					"details": "Gets the current votes balance for `account`"
+				},
+				"increaseAllowance(address,uint256)": {
+					"details": "Atomically increases the allowance granted to `spender` by the caller. This is an alternative to {approve} that can be used as a mitigation for problems described in {IERC20-approve}. Emits an {Approval} event indicating the updated allowance. Requirements: - `spender` cannot be the zero address."
+				},
+				"name()": {
+					"details": "Returns the name of the token."
+				},
+				"nonces(address)": {
+					"details": "See {IERC20Permit-nonces}."
+				},
+				"numCheckpoints(address)": {
+					"details": "Get number of checkpoints for `account`."
+				},
+				"permit(address,address,uint256,uint256,uint8,bytes32,bytes32)": {
+					"details": "See {IERC20Permit-permit}."
+				},
+				"symbol()": {
+					"details": "Returns the symbol of the token, usually a shorter version of the name."
+				},
+				"totalSupply()": {
+					"details": "See {IERC20-totalSupply}."
+				},
+				"transfer(address,uint256)": {
+					"details": "See {IERC20-transfer}. Requirements: - `to` cannot be the zero address. - the caller must have a balance of at least `amount`."
+				},
+				"transferFrom(address,address,uint256)": {
+					"details": "See {IERC20-transferFrom}. Emits an {Approval} event indicating the updated allowance. This is not required by the EIP. See the note at the beginning of {ERC20}. NOTE: Does not update the allowance if the current allowance is the maximum `uint256`. Requirements: - `from` and `to` cannot be the zero address. - `from` must have a balance of at least `amount`. - the caller must have allowance for ``from``'s tokens of at least `amount`."
+				}
+			},
+			"title": "Voting Token",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"notice": "Token, ERC20, Voting, Fixed",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"voting-token(copy)(copy)/voting-token.sol": "VotingToken"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"voting-token(copy)(copy)/voting-token.sol": {
+			"keccak256": "0x169d25f5beebe9273922860f90a72e3e90d2784437be860492c659a684e84977",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://68c8d30979b322089727b072a226337b9aa292d1128073d8526427009e7350e8",
+				"dweb:/ipfs/QmQ6T7afYjvtsHcUtjd1N1HuKPDHRycEgtqVRPfHwDrM8g"
+			]
+		},
+		"voting-token/@openzeppelin/contracts/governance/utils/IVotes.sol": {
+			"keccak256": "0xadf1dc38ee4d7b98c04d022c691b745bd6a05df01cf7f37f4975aeb57b1fd094",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://275baaa0fed1d00a203f820b6a0166724397e3b8794997c62642ff3d01e50b61",
+				"dweb:/ipfs/QmYcF39JUr9yXRZJUXaHAegpbVFAYKW55eLVyHmX2fMyGV"
+			]
+		},
+		"voting-token/@openzeppelin/contracts/token/ERC20/ERC20.sol": {
+			"keccak256": "0x554cb5036c4f0d847e09940783580193b7102e3655689b70b2bbd9dbd7370723",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://1f82eb1fbe248d3e197da43b22318c34ee8182d99a94d90fa0327f170fa8d489",
+				"dweb:/ipfs/QmW47NHhdodA9rMvdRry7GCSthR8FRNuj5mSVSk9C8qEto"
+			]
+		},
+		"voting-token/@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+			"keccak256": "0x7bd924c4c9ae064457349c218c729d8582edd778ff32048f61c1928495b2a70c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://2341aff0836e870a3f8a48a235ab7da050b0e3ac7b85b49e3789ebbca4e504df",
+				"dweb:/ipfs/QmeecLCipXXhuwabA61EfR2JPFYxQZWCr1TeHdrZutCZBS"
+			]
+		},
+		"voting-token/@openzeppelin/contracts/token/ERC20/extensions/ERC20Votes.sol": {
+			"keccak256": "0x3c222007a3a72ddb04b0282e47596e52a42bec69d02a4b08e41752a87e7eae50",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4c1a1028d9f2046cbc4ee7006c4138db714e66200054ff96a9a14c4c2909a96b",
+				"dweb:/ipfs/QmcV1GtaoUvPALoA1YaknjXeAc2x6tS4HoYYHuvaRDyLMe"
+			]
+		},
+		"voting-token/@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol": {
+			"keccak256": "0x6155f6ea6b7d42bb457e924166fcd1f3a8f1fe7079278be384700ce86e55a205",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://9636f9e3cfae358380e7fb135ad29918500f929bf700deb9b0a102731d58b032",
+				"dweb:/ipfs/QmcSFYL83QJjFZTJFDoAT4uKQcqQtSSFZkRW76YBBeXk4F"
+			]
+		},
+		"voting-token/@openzeppelin/contracts/token/ERC20/extensions/draft-ERC20Permit.sol": {
+			"keccak256": "0xee969fcb0848f7459d97acaf76864c12b7451be9a95f0a5b5f93ca1d5471a39e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://fa55909d5cbe30f7cdbd8cfc9baca925c31f41230724a7c8d733abdfa70e996c",
+				"dweb:/ipfs/QmettL5SSLuZGvf9yJ4s9QCk9b1AVPtpYy4BoCBVAGLzJY"
+			]
+		},
+		"voting-token/@openzeppelin/contracts/token/ERC20/extensions/draft-IERC20Permit.sol": {
+			"keccak256": "0xfb565cc365ea0c8dd39b3e83657d61863bb99073a38475afae0d7efe5004ae88",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://04c6e7184d40dd9efbc08bc1c3e11b4791fc498aa64f58538531ec22d47f32e1",
+				"dweb:/ipfs/QmY58jKEocU53VfaT8feNsiqigpTHs7BG3M2VTT1xuA3nG"
+			]
+		},
+		"voting-token/@openzeppelin/contracts/utils/Context.sol": {
+			"keccak256": "0x8b1d973df4d078a79149b255788ca49186991ef0090561c3ee6d97f056517880",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://75e67a6f7500a64da07c5bab8a9fa32771368a18f5646a7c034aaf2603d000f7",
+				"dweb:/ipfs/QmfTEqTYNP2z3ymCerSEQsFVCp3Pi4yvi4X7wHo2iv1GJd"
+			]
+		},
+		"voting-token/@openzeppelin/contracts/utils/Counters.sol": {
+			"keccak256": "0x3efdf35525dfe710dadcfcdd67b8b3f53e962c008239e25e96715097efb59666",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://bab8aa7b245fbcec073d6e3788a82e25f49809f37b6b946b477547cb15ecf9e7",
+				"dweb:/ipfs/QmRx1bjv1MTU3vY9EN7v4QieA8iKrxbFFPbUGDQr9wyRwX"
+			]
+		},
+		"voting-token/@openzeppelin/contracts/utils/Strings.sol": {
+			"keccak256": "0xe5547616858ec60bb58addc184e74d09717b5ef088ff5cf21d4055eb748393e6",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0a5a14957cea49b0901c68b4765b4a9cdd3312eaeff112d57dd5d2e1f8fac46b",
+				"dweb:/ipfs/QmZBr4CkNMR2sdEWLLqDUeJTop9omjjG2rs9ZcXTuubT2L"
+			]
+		},
+		"voting-token/@openzeppelin/contracts/utils/cryptography/ECDSA.sol": {
+			"keccak256": "0x4aa95a9895ac17b996d918c39f26f3af77781464fdb0f3cb8e95df1d55477359",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a1b58f94f4cfb93b28fc1ffb8754b6fbde686dec0ba43f04e4acd1f8fd1914b5",
+				"dweb:/ipfs/QmScgDvs6bEuxJLngDs88guDjRyng9qkhYhxvBPuMK7TPo"
+			]
+		},
+		"voting-token/@openzeppelin/contracts/utils/cryptography/draft-EIP712.sol": {
+			"keccak256": "0x70a0413aeb43d1d9210287bddb9ff3d1c4a0e73f3a1ca37d179a7174d3faa26e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c0769a22eb5cf51bc3fb74086ef346193f3a85478bc093585d6f488e5b11ea80",
+				"dweb:/ipfs/QmX54NKjyrdNspYNW7tYFkuJxnJtCywjHEWCU4Z6AjfFPL"
+			]
+		},
+		"voting-token/@openzeppelin/contracts/utils/math/Math.sol": {
+			"keccak256": "0x50c668cbdb2f51931fec9434e4f4c7abe7813c7e4d95ee5f73f1b1f7e54e917c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://03aa50c41fd6e7c2479f0e4a2a4911d2374bf9c5455c33a0085c4fcf78c860c6",
+				"dweb:/ipfs/QmZrAF9LMDxMBN4qAojGzbU4A64A4J7F9NAriYxj5fW5My"
+			]
+		},
+		"voting-token/@openzeppelin/contracts/utils/math/SafeCast.sol": {
+			"keccak256": "0xeee607f89fe2a31c01b5d209d6b0cfa86030573d722f27b4ea526abf8c50c30b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d28354f3137ad5b8d871c0ab81258138a3e71f105823fa9d995eaff28419a161",
+				"dweb:/ipfs/QmVGJdhCws6p4pVraDR3gM36EuxexrJzUkqE2zPEHSJtLf"
+			]
+		}
+	},
+	"version": 1
+}

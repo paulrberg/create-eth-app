@@ -1,0 +1,829 @@
+{
+	"compiler": {
+		"version": "0.8.27+commit.40a35a09"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_uri",
+						"type": "string"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "operator",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "approved",
+						"type": "bool"
+					}
+				],
+				"name": "ApprovalForAll",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "Paused",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "operator",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256[]",
+						"name": "ids",
+						"type": "uint256[]"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256[]",
+						"name": "values",
+						"type": "uint256[]"
+					}
+				],
+				"name": "TransferBatch",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "operator",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "TransferSingle",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "value",
+						"type": "string"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "URI",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "Unpaused",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "balanceOf",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address[]",
+						"name": "accounts",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "ids",
+						"type": "uint256[]"
+					}
+				],
+				"name": "balanceOfBatch",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "burn",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "ids",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "values",
+						"type": "uint256[]"
+					}
+				],
+				"name": "burnBatch",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "exists",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "operator",
+						"type": "address"
+					}
+				],
+				"name": "isApprovedForAll",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					}
+				],
+				"name": "mint",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "ids",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "amounts",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					}
+				],
+				"name": "mintBatch",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "pause",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "paused",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "ids",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "amounts",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					}
+				],
+				"name": "safeBatchTransferFrom",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					}
+				],
+				"name": "safeTransferFrom",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "operator",
+						"type": "address"
+					},
+					{
+						"internalType": "bool",
+						"name": "approved",
+						"type": "bool"
+					}
+				],
+				"name": "setApprovalForAll",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "newuri",
+						"type": "string"
+					}
+				],
+				"name": "setURI",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes4",
+						"name": "interfaceId",
+						"type": "bytes4"
+					}
+				],
+				"name": "supportsInterface",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "totalSupply",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "unpause",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "uri",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"author": "Breakthrough Labs Inc.",
+			"custom:address": "17",
+			"custom:default-precision": "0",
+			"custom:simple-description": "An NFT that supports creating multiple collections, with built in burn functionality to directly decrease supply, and ability for owner to pause NFT transfers.",
+			"custom:version": "1.07",
+			"details": "ERC1155 NFT, the basic standard multi-token, with the following features:  - Burn feature that allow users to burn their NFTs. This directly decreases total supply.  - Owner can pause or unpause NFT transfers.  - Adjustable metadata.  - Create multiple NFT collections with the same contract.",
+			"events": {
+				"ApprovalForAll(address,address,bool)": {
+					"details": "Emitted when `account` grants or revokes permission to `operator` to transfer their tokens, according to `approved`."
+				},
+				"Paused(address)": {
+					"details": "Emitted when the pause is triggered by `account`."
+				},
+				"TransferBatch(address,address,address,uint256[],uint256[])": {
+					"details": "Equivalent to multiple {TransferSingle} events, where `operator`, `from` and `to` are the same for all transfers."
+				},
+				"TransferSingle(address,address,address,uint256,uint256)": {
+					"details": "Emitted when `value` tokens of token type `id` are transferred from `from` to `to` by `operator`."
+				},
+				"URI(string,uint256)": {
+					"details": "Emitted when the URI for token type `id` changes to `value`, if it is a non-programmatic URI. If an {URI} event was emitted for `id`, the standard https://eips.ethereum.org/EIPS/eip-1155#metadata-extensions[guarantees] that `value` will equal the value returned by {IERC1155MetadataURI-uri}."
+				},
+				"Unpaused(address)": {
+					"details": "Emitted when the pause is lifted by `account`."
+				}
+			},
+			"kind": "dev",
+			"methods": {
+				"balanceOf(address,uint256)": {
+					"details": "See {IERC1155-balanceOf}. Requirements: - `account` cannot be the zero address."
+				},
+				"balanceOfBatch(address[],uint256[])": {
+					"details": "See {IERC1155-balanceOfBatch}. Requirements: - `accounts` and `ids` must have the same length."
+				},
+				"constructor": {
+					"params": {
+						"_uri": "NFT metadata URI"
+					}
+				},
+				"exists(uint256)": {
+					"details": "Indicates whether any token exist with a given id, or not."
+				},
+				"isApprovedForAll(address,address)": {
+					"details": "See {IERC1155-isApprovedForAll}."
+				},
+				"mint(address,uint256,uint256,bytes)": {
+					"details": "A method for the owner to mint new ERC1155 tokens.",
+					"params": {
+						"account": "The account for new tokens to be sent to.",
+						"amount": "The number of this token type to be minted.",
+						"data": "additional data that will be used within the receiver's onERC1155Received method",
+						"id": "The id of token type."
+					}
+				},
+				"mintBatch(address,uint256[],uint256[],bytes)": {
+					"details": "A method for the owner to mint a batch of new ERC1155 tokens.",
+					"params": {
+						"amounts": "The number of each token type to be minted.",
+						"data": "additional data that will be used within the receivers' onERC1155Received method",
+						"ids": "The ids of the different token types.",
+						"to": "The account for new tokens to be sent to."
+					}
+				},
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"pause()": {
+					"details": "Pauses the contract, preventing any transfers. Only callable by the contract owner."
+				},
+				"paused()": {
+					"details": "Returns true if the contract is paused, and false otherwise."
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+				},
+				"safeBatchTransferFrom(address,address,uint256[],uint256[],bytes)": {
+					"details": "See {IERC1155-safeBatchTransferFrom}."
+				},
+				"safeTransferFrom(address,address,uint256,uint256,bytes)": {
+					"details": "See {IERC1155-safeTransferFrom}."
+				},
+				"setApprovalForAll(address,bool)": {
+					"details": "See {IERC1155-setApprovalForAll}."
+				},
+				"setURI(string)": {
+					"details": "Updates the base URI that will be used to retrieve metadata.",
+					"params": {
+						"newuri": "The base URI to be used."
+					}
+				},
+				"supportsInterface(bytes4)": {
+					"details": "See {IERC165-supportsInterface}."
+				},
+				"totalSupply(uint256)": {
+					"details": "Total amount of tokens in with a given id."
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				},
+				"unpause()": {
+					"details": "Unpauses the contract, allowing transfers to occur again. Only callable by the contract owner."
+				},
+				"uri(uint256)": {
+					"details": "See {IERC1155MetadataURI-uri}. This implementation returns the same URI for *all* token types. It relies on the token type ID substitution mechanism https://eips.ethereum.org/EIPS/eip-1155#metadata[defined in the EIP]. Clients calling this function must replace the `\\{id\\}` substring with the actual token type ID."
+				}
+			},
+			"title": "Multi-Collection NFT with burnable NFTs and pausable transfers",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"notice": "NFT, ERC1155, Pausable, Burnable",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"multi-collection-nft-with-burnable-nfts-and-pausable-transfers(copy)(copy)/multi-collection-nft-with-burnable-nfts-and-pausable-transfers.sol": "AdvancedERC1155"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"multi-collection-nft-with-burnable-nfts-and-pausable-transfers(copy)(copy)/multi-collection-nft-with-burnable-nfts-and-pausable-transfers.sol": {
+			"keccak256": "0x60802713578c4d1f0e579830decba928382665793ac41454d94abfc57c5cbd4c",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://dececef951024e9ea054a699d43fc04b515c8fd79ca17c2e2168609e69d2397c",
+				"dweb:/ipfs/QmWZe8V6Ye5qTSWY4tBmpzUCdXGLWXwWgLRuv3E6cE6hi2"
+			]
+		},
+		"multi-collection-nft-with-burnable-nfts-and-pausable-transfers/@openzeppelin/contracts/access/Ownable.sol": {
+			"keccak256": "0x8c937e316a12ef7f9ab5ba2ba2c1d11ac10c22e4c296cc9c4860ec1e1f9fbf5a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://3cd7a8530a2db0ada5cc7a017fff98c6e112232663cec880cee5e9ed4eeffc46",
+				"dweb:/ipfs/QmdEbAUyUgSLfEmtigJyZQusXfsW4wc8DzDuDkvAnZco9n"
+			]
+		},
+		"multi-collection-nft-with-burnable-nfts-and-pausable-transfers/@openzeppelin/contracts/security/Pausable.sol": {
+			"keccak256": "0xde1342e911321ffb2a611514bbfcd5361aee6104511b2a3710cc67c28bf79799",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://7c9ff1343d3384ae13dea22ce1b74becbe476aaaace56987b5ccc243d04ac010",
+				"dweb:/ipfs/QmeQa2jsyqkRvfYZsxF1e3QW87dL9k4Rr37ywfmCm7TDeH"
+			]
+		},
+		"multi-collection-nft-with-burnable-nfts-and-pausable-transfers/@openzeppelin/contracts/token/ERC1155/ERC1155.sol": {
+			"keccak256": "0x994d1a9f7170c551ac3561903be5b9fcbac5ee703466e3fde6b095dca02dab60",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c662a43c4bd7fd77541dc0c54b9ca7c4861d3722a47799eb900ec4834bda5119",
+				"dweb:/ipfs/QmTCCVbZ1rWKDFrbbbJfryPHsxHYNFR52m1kveFiyT7WDe"
+			]
+		},
+		"multi-collection-nft-with-burnable-nfts-and-pausable-transfers/@openzeppelin/contracts/token/ERC1155/IERC1155.sol": {
+			"keccak256": "0x8dada0bbd4042e5a3ea269f697c8dc97bc3ca8cdce2d9db2d993c5254a478631",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://76e4a2d6b2bb0ed33a2c7878d6e9deac70fe72d41d33daee93e0fd3ac321a10e",
+				"dweb:/ipfs/QmfFV8MApxnwjxQ5S4n5sp221xNK4VXRMrs2Y6jqhuo66y"
+			]
+		},
+		"multi-collection-nft-with-burnable-nfts-and-pausable-transfers/@openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol": {
+			"keccak256": "0x956390fd24c3eacf27fee75013a814c7f28841a3b0ff3ff1807ac5a0f8a32a78",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://cbdc851a35d15e361d1813e8912c87d00b12062ebf0ba1cb8c026d883b1379b2",
+				"dweb:/ipfs/QmYWrrhCnVCtMiS9UvCLDB3jpMdG5N9TUc4mQsg9nexFBR"
+			]
+		},
+		"multi-collection-nft-with-burnable-nfts-and-pausable-transfers/@openzeppelin/contracts/token/ERC1155/extensions/ERC1155Burnable.sol": {
+			"keccak256": "0xf5de8ed9228db187a995c2b4b8914f5daaec41db4f95963cdfe52cd9f79f3eaf",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://af37702a5bb74eb4b7cce00bd15c36eb5cfacd6effcd9cfea20e56fe1d02a420",
+				"dweb:/ipfs/QmWoU6rRpac3VEegjZW1XUTbgKuFLNUk9pGTMhgerPSwCZ"
+			]
+		},
+		"multi-collection-nft-with-burnable-nfts-and-pausable-transfers/@openzeppelin/contracts/token/ERC1155/extensions/ERC1155Supply.sol": {
+			"keccak256": "0x6a8e3bc1fad16d1459f2fe5109796453cdefdd7933648f9fcb215cc28f351b24",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ff8b719183729cd04f00f2d2b6923d0cf91373a25723f10195499c631e2dd5b1",
+				"dweb:/ipfs/QmZzj6SKYC4meW3PSwETd5EKSYWMCMcthgo4Aifx4LxZCC"
+			]
+		},
+		"multi-collection-nft-with-burnable-nfts-and-pausable-transfers/@openzeppelin/contracts/token/ERC1155/extensions/IERC1155MetadataURI.sol": {
+			"keccak256": "0xe21d12b96882ec85cec76e73c1525590ba4e17e5ec5df7fce80b846126ae3f30",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://149e19eed7be1ade1917b7c01c80ead370522e9dccb16cdd3539212323888ed9",
+				"dweb:/ipfs/Qmd5L4vXCMAPQbrGDkCVALN8BDXPUmcZqw9VB39X6bDkbg"
+			]
+		},
+		"multi-collection-nft-with-burnable-nfts-and-pausable-transfers/@openzeppelin/contracts/utils/Address.sol": {
+			"keccak256": "0x6cfbfa46bb41141b2f9f9279549abf38cc40616c7e32ee4883cdb61f2bae2f46",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://735a69284e5ad12845bdeedb2ac13d5ae700008d5c381587772fb4cc8ee02aca",
+				"dweb:/ipfs/QmajJHJG3j1itBUuwpaeHHDx5rUG2Cw1vNaZH7ToTxg3X9"
+			]
+		},
+		"multi-collection-nft-with-burnable-nfts-and-pausable-transfers/@openzeppelin/contracts/utils/Context.sol": {
+			"keccak256": "0x75e968cd62a2e7a115056fad474edb2179b6188d5c6545928dfe74c58781171a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://11675df478f27dc8a4419af705bd02e729bd704350badf49db73d3ca7c8fc0b2",
+				"dweb:/ipfs/QmddjfBm3BkFVsyUqyz5bVtWM2eqqkfcFsaHXYTT5VtSkn"
+			]
+		},
+		"multi-collection-nft-with-burnable-nfts-and-pausable-transfers/@openzeppelin/contracts/utils/introspection/ERC165.sol": {
+			"keccak256": "0x7328cc7cf8dcc7a5bdeb9742dcd792d19889ad7bf3282ab63586857b03080cc1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5af216447c1f1637e3819e0083f9777894304c462d5e0253abef8202aa06a44c",
+				"dweb:/ipfs/QmTfLLbn2r9Tj54nL24yS3rfSdEdyxkG1pfn4h9AdNDuVR"
+			]
+		},
+		"multi-collection-nft-with-burnable-nfts-and-pausable-transfers/@openzeppelin/contracts/utils/introspection/IERC165.sol": {
+			"keccak256": "0xe1eb5d202120b7a49b69b9edc7f574317bdc4aad666c2f853c95fd84203aa6a3",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://09931d4110943a1c4767960bf44dc266637c3806d83ff67a30a0847480a38443",
+				"dweb:/ipfs/QmSrBg23PxZS9XniX5tBHc9kZW3nE3Ed5hjZHFYYJGWXcW"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,331 @@
+{
+	"compiler": {
+		"version": "0.8.27+commit.40a35a09"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "nftAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "rewardTokenAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "rewardWalletAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "rewardRate",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "available",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "balanceOf",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "lastUpdateTime",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "nft",
+				"outputs": [
+					{
+						"internalType": "contract IERC721",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"name": "onERC721Received",
+				"outputs": [
+					{
+						"internalType": "bytes4",
+						"name": "",
+						"type": "bytes4"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "redeem",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "rewardPerTokenPerDay",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "rewardToken",
+				"outputs": [
+					{
+						"internalType": "contract IERC20",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "rewardWallet",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "stake",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "withdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"author": "Breakthrough Labs Inc.",
+			"custom:address": "51",
+			"custom:default-precision": "0",
+			"custom:simple-description": "NFT staking contract that rewards stakers with an exact number of ERC20 tokens per day.",
+			"custom:version": "1.0.0",
+			"details": "NFT staking contract that rewards stakers with an exact number of ERC20 tokens per day. On deployment, the owner specifies a daily reward rate, and an address that tokens will be pulled from. Neither of these can be changed. Each staked NFT receives the same number of tokens every day. The per NFT rate stays the same even when the number of staked NFTs increases/decreases. A common usecase is for blockchain-based games, where each NFT rewards a certain number of lives per day.",
+			"kind": "dev",
+			"methods": {
+				"available(address)": {
+					"details": "returns the number of reward tokens available for an address",
+					"params": {
+						"account": "account"
+					}
+				},
+				"constructor": {
+					"params": {
+						"nftAddress": "Staked NFT Address",
+						"rewardRate": "# of tokens per staked NFT per day | precision:18",
+						"rewardTokenAddress": "Reward Token Address",
+						"rewardWalletAddress": "Wallet that holds rewards to be paid out"
+					}
+				},
+				"redeem()": {
+					"details": "redeems all of a user's reward tokens."
+				},
+				"stake(uint256)": {
+					"details": "stakes a specific tokenID",
+					"params": {
+						"tokenId": "tokenId"
+					}
+				},
+				"withdraw(uint256)": {
+					"details": "withdraws a token from the staking contract",
+					"params": {
+						"tokenId": "tokenId"
+					}
+				}
+			},
+			"stateVariables": {
+				"rewardPerTokenPerDay": {
+					"custom:precision": "18"
+				}
+			},
+			"title": "NFT Staking with Infinite Rewards",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"notice": "Staking, NFT, ERC721",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"nft-staking-with-infinite-rewards(copy)(copy)/nft-staking-with-infinite-rewards.sol": "NFTStakingPerToken"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"nft-staking-with-infinite-rewards(copy)(copy)/nft-staking-with-infinite-rewards.sol": {
+			"keccak256": "0x70f4fd5f6c305f9eb44e883cd054cc304264dba768f4a0e299b0eaccf3525a3d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a9a6be26926c9424530d162590e53331654a40649de81e91e52aea1debca4232",
+				"dweb:/ipfs/QmcmEm92goGguPYSkvifeat2J7yB6V46ytDSsmv8LtnaN2"
+			]
+		},
+		"nft-staking-with-infinite-rewards/@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+			"keccak256": "0x5c5aa4dacc753e5375a0e19b159849e82b020052579b4a546669585041fc3777",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://eab50e4c7cceee5d032da46f15c9e732039464f58cd2c6466ce14950af5fb860",
+				"dweb:/ipfs/QmQgzjQ8TWyWAGsv5e4f1fWm5wpizQvUqCVUsjkkR4Ru22"
+			]
+		},
+		"nft-staking-with-infinite-rewards/@openzeppelin/contracts/token/ERC721/IERC721.sol": {
+			"keccak256": "0xde5e97f248f6fc86c870a25d11f75cdd818c2a3aafed34ae8f0feaf241d2c5b5",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://9bd8ae9da43450817d47f6580b9b2de592263fb20360d0a683ab8ed3152fdda1",
+				"dweb:/ipfs/QmZCCnyP6RNLNXRkpUnJaQjuHUa4NZZuDQmJofmbgkQMfQ"
+			]
+		},
+		"nft-staking-with-infinite-rewards/@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol": {
+			"keccak256": "0x225d4e860183e7d82ef25b0c31b579e87ac0964c382fef8c92a3fbca818d590d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://752c834b7d33c5ab675d958a87c79622401327d3e1e28284851b5cc3fdc3b0a4",
+				"dweb:/ipfs/Qmb5qK7mmQ6PpWQXZDFXNyL2os9fjGtgLJyg3cQN5B2PVG"
+			]
+		},
+		"nft-staking-with-infinite-rewards/@openzeppelin/contracts/utils/Context.sol": {
+			"keccak256": "0xaabd25ddbc91c7c09b05e6fb7eb79d1851e509fa21a405100967568542e1c08b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://911616537df7b67957a53adb57c4e02542c4a0f1388f367ff7c56303fddfea26",
+				"dweb:/ipfs/QmXNsCDS4aHhN4Li9DUZ36w7XHu7wp2pkjfqSM8b9UdGry"
+			]
+		},
+		"nft-staking-with-infinite-rewards/@openzeppelin/contracts/utils/introspection/IERC165.sol": {
+			"keccak256": "0x668ff4050c0126670a9f09988abf10045122365391d356080aff18c6c78002c1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://933bcc6a8ab217cd9943c4f3fbb615b6a6c1f0a7af06a3a5a82f9de743c85641",
+				"dweb:/ipfs/QmZCW29EG1VpLJNJfMq4ajxii3S5cByPW8UabbCqnK6yiK"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,467 @@
+{
+	"compiler": {
+		"version": "0.8.27+commit.40a35a09"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address[]",
+						"name": "payees",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "shares_",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "contract IERC20",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "ERC20PaymentReleased",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "shares",
+						"type": "uint256"
+					}
+				],
+				"name": "PayeeAdded",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "PaymentReceived",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "PaymentReleased",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					}
+				],
+				"name": "payee",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "releasable",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "contract IERC20",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "releasable",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address payable",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "release",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "contract IERC20",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "release",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "contract IERC20",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "released",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "released",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "shares",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "contract IERC20",
+						"name": "token",
+						"type": "address"
+					}
+				],
+				"name": "totalReleased",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalReleased",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalShares",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
+			}
+		],
+		"devdoc": {
+			"author": "Breakthrough Labs Inc.",
+			"custom:address": "20",
+			"custom:default-precision": "0",
+			"custom:simple-description": "This contract allows payments to be split among a group of accounts.",
+			"custom:version": "0.0.5",
+			"details": "This contract allows payments to be split among a group of accounts. The split can be in equal parts or set in percentages. The way this is specified is by assigning each account to a number of shares. Of all the Ether that this contract receives, each account will then be able to claim an amount proportional to the percentage of total shares they were assigned. The distribution of shares is set when you deploy the contract and can't be updated afterwards. Payments must be claimed from the contract by each user. NOTE: This contract assumes that ERC20 tokens will behave similarly to native tokens (Ether). Rebasing tokens, and tokens that apply fees during transfers, are likely to not be supported as expected. If in doubt, we encourage you to run tests before sending real value to this contract.",
+			"kind": "dev",
+			"methods": {
+				"constructor": {
+					"details": "Creates an instance of `PaymentSplitter` where each account in `payees` is assigned the number of shares at the matching position in the `shares` array. All addresses in `payees` must be non-zero. Both arrays must have the same non-zero length, and there must be no duplicates in `payees`.",
+					"params": {
+						"payees": "Addresses to split payments to",
+						"shares_": "The shares of each payee"
+					}
+				},
+				"payee(uint256)": {
+					"details": "Getter for the address of the payee number `index`.",
+					"params": {
+						"index": "of the payee address to return"
+					}
+				},
+				"releasable(address)": {
+					"details": "Getter for the amount of payee's releasable Ether.",
+					"params": {
+						"account": "address of the account to return releasable Ether for."
+					}
+				},
+				"releasable(address,address)": {
+					"details": "Getter for the amount of payee's releasable `token` tokens. `token` should be the address of an IERC20 contract.",
+					"params": {
+						"account": "address of the account to return releasable token for.",
+						"token": "address of the IERC20 to return releasable for."
+					}
+				},
+				"release(address)": {
+					"details": "Triggers a transfer to `account` of the amount of Ether they are owed, according to their percentage of the total shares and their previous withdrawals.",
+					"params": {
+						"account": "the address to release Ether to."
+					}
+				},
+				"release(address,address)": {
+					"details": "Triggers a transfer to `account` of the amount of `token` tokens they are owed, according to their percentage of the total shares and their previous withdrawals. `token` must be the address of an IERC20 contract.",
+					"params": {
+						"account": "the address to release token to.",
+						"token": "the token to release."
+					}
+				},
+				"released(address)": {
+					"details": "Getter for the amount of Ether already released to a payee.",
+					"params": {
+						"account": "the address of an account to return Ether released for."
+					}
+				},
+				"released(address,address)": {
+					"details": "Getter for the amount of `token` tokens already released to a payee. `token` should be the address of an IERC20 contract.",
+					"params": {
+						"account": "address of an account to return token released for.",
+						"token": "address of an IERC20."
+					}
+				},
+				"shares(address)": {
+					"details": "Getter for the amount of shares held by an account.",
+					"params": {
+						"account": "the address of an account to return the number of shares for."
+					}
+				},
+				"totalReleased()": {
+					"details": "Getter for the total amount of Ether already released."
+				},
+				"totalReleased(address)": {
+					"details": "Getter for the total amount of `token` already released. `token` should be the address of an IERC20 contract.",
+					"params": {
+						"token": "the address of an IERC20 to return the total amount released for."
+					}
+				},
+				"totalShares()": {
+					"details": "Getter for the total shares held by payees."
+				}
+			},
+			"title": "Royalty Splitter",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"notice": "Utility, Finance",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"royalty-splitter(copy)(copy)/royalty-splitter.sol": "PaymentSplitter"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"royalty-splitter(copy)(copy)/royalty-splitter.sol": {
+			"keccak256": "0x1ec302c227c42536f162f58144d8f78dd89340b53de0cb3458ac0d8530510db4",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4e6aa2638750f5262f579fdee6ba2a925e2c1bff6e574b13a2c7229e2646eece",
+				"dweb:/ipfs/QmfTDY1bfcXDmmQfeZ5UHykxgE3dUK4S2gjim2UsWxiUxX"
+			]
+		},
+		"royalty-splitter/@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+			"keccak256": "0xe835d2860d7cfeebdeb324208b603de39a56add74355f156e3a6281f23b3ae0e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0262cf241a7dda8fc2bad8eedeef6a12ab6b105a27672443e6e4466aa7dfb9f1",
+				"dweb:/ipfs/Qmc7KnfqfABBaoLAyXLiALUbqFyDvw2QjuReU3jUUmj6oB"
+			]
+		},
+		"royalty-splitter/@openzeppelin/contracts/token/ERC20/extensions/draft-IERC20Permit.sol": {
+			"keccak256": "0xcfe4cfb9924cc5ab0ae19da0e3fd4bd50c74610abb1a772e286a28c623696dca",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://10bbbbde0f3ab85e2f2bef1ecac484f162e21642a76f2da0deb7e030a8c8227b",
+				"dweb:/ipfs/QmccmGgW1ijnmAC59ReQpLsjUzZ8Bg72ueHp1Jk6iPUCqf"
+			]
+		},
+		"royalty-splitter/@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol": {
+			"keccak256": "0x5e828827e1f13fba54c1d381136a6c81809e110b8f9da6559fc9ac37a2bbe061",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://91b484ed83c8be955f55172bc077617fdca6af773aa0900f5bfc9f65cd5f640b",
+				"dweb:/ipfs/QmUwkcvTe18CgJAD1bb9ALtQdQKWoGe3zT37Jnb2u3ZDoE"
+			]
+		},
+		"royalty-splitter/@openzeppelin/contracts/utils/Address.sol": {
+			"keccak256": "0x68bfdb85856f5ec19e480a293a37089c460dc13cedf436553252b23fc681f807",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ae6dd9045648748a788682a991cd785c9efc172b7a747bee207ae3fb19c381ac",
+				"dweb:/ipfs/QmTdcaCoBXjXswejBHaW9hv2SqkvFNVBdf98zCeWbfENYb"
+			]
+		},
+		"royalty-splitter/@openzeppelin/contracts/utils/Context.sol": {
+			"keccak256": "0x24ec3187ae3f34d861b79115b0cdc636314f33c6e5865269a7452168cc3c5f68",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://19bd3204dd2ec55219498f72f8dcd975c570bf329db37466a07adbe55c5477ec",
+				"dweb:/ipfs/QmPNgevG2bvpdUhyFB7ywaWAdivsM9cSe2XoVxYBKxPtuu"
+			]
+		}
+	},
+	"version": 1
+}
