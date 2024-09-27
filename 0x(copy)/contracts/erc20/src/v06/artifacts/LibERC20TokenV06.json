@@ -1,0 +1,66 @@
+{
+	"deploy": {
+		"VM:-": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"main:1": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"ropsten:3": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"rinkeby:4": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"kovan:42": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"goerli:5": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"Custom": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		}
+	},
+	"data": {
+		"bytecode": {
+			"linkReferences": {},
+			"object": "60566023600b82828239805160001a607314601657fe5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220fd871fc9db05225aea9f205c1937aea6b4b1de612b40c769ff5dcaf31202866f64736f6c634300060c0033",
+			"opcodes": "PUSH1 0x56 PUSH1 0x23 PUSH1 0xB DUP3 DUP3 DUP3 CODECOPY DUP1 MLOAD PUSH1 0x0 BYTE PUSH1 0x73 EQ PUSH1 0x16 JUMPI INVALID JUMPDEST ADDRESS PUSH1 0x0 MSTORE PUSH1 0x73 DUP2 MSTORE8 DUP3 DUP2 RETURN INVALID PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 REVERT DUP8 0x1F 0xC9 0xDB SDIV 0x22 GAS 0xEA SWAP16 KECCAK256 0x5C NOT CALLDATACOPY 0xAE 0xA6 0xB4 0xB1 0xDE PUSH2 0x2B40 0xC7 PUSH10 0xFF5DCAF31202866F6473 PUSH16 0x6C634300060C00330000000000000000 ",
+			"sourceMap": "2075:6075:1:-:0;;;;;;;;;;;;;;;;;;;;;;;;;"
+		},
+		"deployedBytecode": {
+			"immutableReferences": {},
+			"linkReferences": {},
+			"object": "73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220fd871fc9db05225aea9f205c1937aea6b4b1de612b40c769ff5dcaf31202866f64736f6c634300060c0033",
+			"opcodes": "PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 REVERT DUP8 0x1F 0xC9 0xDB SDIV 0x22 GAS 0xEA SWAP16 KECCAK256 0x5C NOT CALLDATACOPY 0xAE 0xA6 0xB4 0xB1 0xDE PUSH2 0x2B40 0xC7 PUSH10 0xFF5DCAF31202866F6473 PUSH16 0x6C634300060C00330000000000000000 ",
+			"sourceMap": "2075:6075:1:-:0;;;;;;;;"
+		},
+		"gasEstimates": {
+			"creation": {
+				"codeDepositCost": "17200",
+				"executionCost": "97",
+				"totalCost": "17297"
+			},
+			"internal": {
+				"_callWithOptionalBooleanResult(address,bytes memory)": "infinite",
+				"approveIfBelow(contract IERC20Token,address,uint256)": "infinite",
+				"compatAllowance(contract IERC20Token,address,address)": "infinite",
+				"compatApprove(contract IERC20Token,address,uint256)": "infinite",
+				"compatBalanceOf(contract IERC20Token,address)": "infinite",
+				"compatDecimals(contract IERC20Token)": "infinite",
+				"compatTransfer(contract IERC20Token,address,uint256)": "infinite",
+				"compatTransferFrom(contract IERC20Token,address,address,uint256)": "infinite"
+			}
+		},
+		"methodIdentifiers": {}
+	},
+	"abi": []
+}

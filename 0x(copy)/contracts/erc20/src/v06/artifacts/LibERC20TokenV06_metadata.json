@@ -1,0 +1,77 @@
+{
+	"compiler": {
+		"version": "0.6.12+commit.27d51765"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"0x(copy)/contracts/erc20/src/v06/LibERC20TokenV06.sol": "LibERC20TokenV06"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"0x(copy)/contracts/erc20/src/IERC20Token.sol": {
+			"keccak256": "0x5b7f7fb1fd8c5a4826d69799d5a89a1b6131985e04f039ce778be866088f63e3",
+			"license": "Apache-2.0",
+			"urls": [
+				"bzz-raw://ad40cb2c570ce0669f90164114f8d236e030683f0d90892714f70399a15c6e45",
+				"dweb:/ipfs/QmUrXFBzcF4jYKzt5rR9PMuszg2Li1i9uWxHRsUDr129nu"
+			]
+		},
+		"0x(copy)/contracts/erc20/src/v06/LibERC20TokenV06.sol": {
+			"keccak256": "0xc5f37e3cff2ab0c5aa647773970581da5172fc5dee8406bc5c546bc0cce99af2",
+			"license": "Apache-2.0",
+			"urls": [
+				"bzz-raw://c79261de9f3aed44d99c0ce87552a46884f78c5d8a6a12279614a6d5d99f2206",
+				"dweb:/ipfs/QmRnH3m66JQ5v3S7H7Wc7rwHQXV1UmXUBiG6So8mT595s8"
+			]
+		},
+		"0x/contracts/utils/contracts/src/v06/LibBytesV06.sol": {
+			"keccak256": "0x3ac2939a96704d2855eb62d4f6c6c1b6772fa042a2d49e4e5b67f7b03de59e99",
+			"license": "Apache-2.0",
+			"urls": [
+				"bzz-raw://ca8c336a5a4526132179b154f292e21d41293044ce86fa286518305f54056d73",
+				"dweb:/ipfs/QmPjS24XdhYE4DNyfFZe2ERNZ1x1YyeCnzsjwNzrDtVr69"
+			]
+		},
+		"0x/contracts/utils/contracts/src/v06/errors/LibBytesRichErrorsV06.sol": {
+			"keccak256": "0x20e28003e3b7b24088451a5cbb7b227c30be07fc9e528513fce4308f49840e6c",
+			"license": "Apache-2.0",
+			"urls": [
+				"bzz-raw://55818622bc1b1c09cdbdc61c4a114d0821b24ba68e894c14019d1d2ea7bdec8c",
+				"dweb:/ipfs/QmXYS18dKRV2s2BxQM7CRgkRxMK21yphEzh4EwT8eb3ErV"
+			]
+		},
+		"0x/contracts/utils/contracts/src/v06/errors/LibRichErrorsV06.sol": {
+			"keccak256": "0x00ff3b18d26bcd8f4c1b400d2a600e937f4f8d2c24dbf334e1de3985578bed0f",
+			"license": "Apache-2.0",
+			"urls": [
+				"bzz-raw://6ce5c757ebee8c3c457993d7ee94bde307ce3bd4e0dba1d068a64b4a7851621f",
+				"dweb:/ipfs/QmXgdVc58GKS7VKwFp6q6rtritWtbfKv5GHbc1NAE6MYjA"
+			]
+		}
+	},
+	"version": 1
+}
