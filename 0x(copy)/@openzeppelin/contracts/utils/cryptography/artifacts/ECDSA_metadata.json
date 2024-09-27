@@ -1,0 +1,62 @@
+{
+	"compiler": {
+		"version": "0.8.27+commit.40a35a09"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"details": "Elliptic Curve Digital Signature Algorithm (ECDSA) operations. These functions can be used to verify that a message was signed by the holder of the private keys of a given address.",
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"0x(copy)/@openzeppelin/contracts/utils/cryptography/ECDSA.sol": "ECDSA"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"0x(copy)/@openzeppelin/contracts/utils/Strings.sol": {
+			"keccak256": "0xffa03cb932c1d0dd09fe28d9443580ca2df950c44a1cd0b17b6b56257532264a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4fd109de1d916a181ca67deed97f076251e7dcce6a0781882c33b1dbef48b1da",
+				"dweb:/ipfs/QmU8VfRkf1yZFA7oXG5YWRtLF1nKuE8pNXtfQgT8W9prhh"
+			]
+		},
+		"0x(copy)/@openzeppelin/contracts/utils/cryptography/ECDSA.sol": {
+			"keccak256": "0xae4722d439ad19e0e2f43bace85781b7324d46974fae114d6b3f71ad9d664cc5",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://7a3fdd78813cd5436637b490f3d6b96e0a34cafe9c3f8e881ab1d908b5057fda",
+				"dweb:/ipfs/QmV6NKgxShDi64RmEt7uwwawk7xTvzfCsnHHcxrKxCtXfd"
+			]
+		},
+		"0x(copy)/@openzeppelin/contracts/utils/math/Math.sol": {
+			"keccak256": "0xd4fe1c128b1c48cf5d4d66d1fc7b54fe96c84039d7e9a21a1450ee7b5c741e74",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://efe28a568f5c4ab9042879b5eb9cf1ea7fc7dad12bf69eab8227529c008171a5",
+				"dweb:/ipfs/QmNtmXBC8wBVgE6rHHMhr4kTHpLtLmWbLYjsRWbq3pHwJP"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,78 @@
+{
+	"compiler": {
+		"version": "0.8.27+commit.40a35a09"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "bytes4",
+						"name": "interfaceId",
+						"type": "bytes4"
+					}
+				],
+				"name": "supportsInterface",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "Implementation of the {IERC165} interface. Contracts that want to implement ERC165 should inherit from this contract and override {supportsInterface} to check for the additional interface id that will be supported. For example: ```solidity function supportsInterface(bytes4 interfaceId) public view virtual override returns (bool) {     return interfaceId == type(MyInterface).interfaceId || super.supportsInterface(interfaceId); } ``` Alternatively, {ERC165Storage} provides an easier to use but more expensive implementation.",
+			"kind": "dev",
+			"methods": {
+				"supportsInterface(bytes4)": {
+					"details": "See {IERC165-supportsInterface}."
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"0x(copy)/@openzeppelin/contracts/utils/introspection/ERC165.sol": "ERC165"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"0x(copy)/@openzeppelin/contracts/utils/introspection/ERC165.sol": {
+			"keccak256": "0x4bb645ff353bc23290136274f6cc2db86fadcb4bfc7ae1c4cd744acb16fa6462",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ecdc4a3cf074619ac5f65887af6608ac3b83db92b9954446260e36a2e6dea98a",
+				"dweb:/ipfs/QmPQCm7WrCEZiHoZKWRsWiRK2mZw1Kary3fu89TPE1Bg3T"
+			]
+		},
+		"0x(copy)/@openzeppelin/contracts/utils/introspection/IERC165.sol": {
+			"keccak256": "0xb0df25fbc61d93b5ba74ce979005b15e3b414eaf10472b675fe870147d6733ac",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f259947485248198d61b1c389a0871ac688fc0130b5c48aecb24f7b4c5fa98bb",
+				"dweb:/ipfs/QmWXiEXTBEK62vq6WjWM16WBKSpAkJ1ixCg63MbU7RRGvk"
+			]
+		}
+	},
+	"version": 1
+}

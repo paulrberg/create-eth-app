@@ -1,0 +1,74 @@
+{
+	"compiler": {
+		"version": "0.8.27+commit.40a35a09"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"details": "https://eips.ethereum.org/EIPS/eip-712[EIP 712] is a standard for hashing and signing of typed structured data. The encoding specified in the EIP is very generic, and such a generic implementation in Solidity is not feasible, thus this contract does not implement the encoding itself. Protocols need to implement the type-specific encoding they need in their contracts using a combination of `abi.encode` and `keccak256`. This contract implements the EIP 712 domain separator ({_domainSeparatorV4}) that is used as part of the encoding scheme, and the final step of the encoding to obtain the message digest that is then signed via ECDSA ({_hashTypedDataV4}). The implementation of the domain separator was designed to be as efficient as possible while still properly updating the chain id to protect against replay attacks on an eventual fork of the chain. NOTE: This contract implements the version of the encoding known as \"v4\", as implemented by the JSON RPC method https://docs.metamask.io/guide/signing-data.html[`eth_signTypedDataV4` in MetaMask]. _Available since v3.4._",
+			"kind": "dev",
+			"methods": {
+				"constructor": {
+					"details": "Initializes the domain separator and parameter caches. The meaning of `name` and `version` is specified in https://eips.ethereum.org/EIPS/eip-712#definition-of-domainseparator[EIP 712]: - `name`: the user readable name of the signing domain, i.e. the name of the DApp or the protocol. - `version`: the current major version of the signing domain. NOTE: These parameters cannot be changed except through a xref:learn::upgrading-smart-contracts.adoc[smart contract upgrade]."
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"0x(copy)/@openzeppelin/contracts/utils/cryptography/EIP712.sol": "EIP712"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"0x(copy)/@openzeppelin/contracts/utils/Strings.sol": {
+			"keccak256": "0xffa03cb932c1d0dd09fe28d9443580ca2df950c44a1cd0b17b6b56257532264a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4fd109de1d916a181ca67deed97f076251e7dcce6a0781882c33b1dbef48b1da",
+				"dweb:/ipfs/QmU8VfRkf1yZFA7oXG5YWRtLF1nKuE8pNXtfQgT8W9prhh"
+			]
+		},
+		"0x(copy)/@openzeppelin/contracts/utils/cryptography/ECDSA.sol": {
+			"keccak256": "0xae4722d439ad19e0e2f43bace85781b7324d46974fae114d6b3f71ad9d664cc5",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://7a3fdd78813cd5436637b490f3d6b96e0a34cafe9c3f8e881ab1d908b5057fda",
+				"dweb:/ipfs/QmV6NKgxShDi64RmEt7uwwawk7xTvzfCsnHHcxrKxCtXfd"
+			]
+		},
+		"0x(copy)/@openzeppelin/contracts/utils/cryptography/EIP712.sol": {
+			"keccak256": "0x3f7a773b88f2d8af17a51f6ce97e1c8d4b88520b59b1f330bc42853dbe5d69fd",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://1092a81a57072e43d4b133d994f43fe976f7de8b970b9930948611a41d35f567",
+				"dweb:/ipfs/QmXH5mjiiHA9VnCFz55VBS51LS2sFRPatx9nfCEfDEGEzp"
+			]
+		},
+		"0x(copy)/@openzeppelin/contracts/utils/math/Math.sol": {
+			"keccak256": "0xd4fe1c128b1c48cf5d4d66d1fc7b54fe96c84039d7e9a21a1450ee7b5c741e74",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://efe28a568f5c4ab9042879b5eb9cf1ea7fc7dad12bf69eab8227529c008171a5",
+				"dweb:/ipfs/QmNtmXBC8wBVgE6rHHMhr4kTHpLtLmWbLYjsRWbq3pHwJP"
+			]
+		}
+	},
+	"version": 1
+}

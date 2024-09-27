@@ -1,0 +1,72 @@
+{
+	"deploy": {
+		"VM:-": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"main:1": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"ropsten:3": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"rinkeby:4": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"kovan:42": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"goerli:5": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"Custom": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		}
+	},
+	"data": {
+		"bytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"linkReferences": {},
+			"object": "6055604b600b8282823980515f1a607314603f577f4e487b71000000000000000000000000000000000000000000000000000000005f525f60045260245ffd5b305f52607381538281f3fe730000000000000000000000000000000000000000301460806040525f5ffdfea264697066735822122080edaa1e6faf998e36410ed076f824f037d8b018f8123799d37191a6af2a6f0864736f6c634300081b0033",
+			"opcodes": "PUSH1 0x55 PUSH1 0x4B PUSH1 0xB DUP3 DUP3 DUP3 CODECOPY DUP1 MLOAD PUSH0 BYTE PUSH1 0x73 EQ PUSH1 0x3F JUMPI PUSH32 0x4E487B7100000000000000000000000000000000000000000000000000000000 PUSH0 MSTORE PUSH0 PUSH1 0x4 MSTORE PUSH1 0x24 PUSH0 REVERT JUMPDEST ADDRESS PUSH0 MSTORE PUSH1 0x73 DUP2 MSTORE8 DUP3 DUP2 RETURN INVALID PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH0 PUSH0 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 DUP1 0xED 0xAA 0x1E PUSH16 0xAF998E36410ED076F824F037D8B018F8 SLT CALLDATACOPY SWAP10 0xD3 PUSH18 0x91A6AF2A6F0864736F6C634300081B003300 ",
+			"sourceMap": "1632:8168:1:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;"
+		},
+		"deployedBytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"immutableReferences": {},
+			"linkReferences": {},
+			"object": "730000000000000000000000000000000000000000301460806040525f5ffdfea264697066735822122080edaa1e6faf998e36410ed076f824f037d8b018f8123799d37191a6af2a6f0864736f6c634300081b0033",
+			"opcodes": "PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH0 PUSH0 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 DUP1 0xED 0xAA 0x1E PUSH16 0xAF998E36410ED076F824F037D8B018F8 SLT CALLDATACOPY SWAP10 0xD3 PUSH18 0x91A6AF2A6F0864736F6C634300081B003300 ",
+			"sourceMap": "1632:8168:1:-:0;;;;;;;;"
+		},
+		"gasEstimates": {
+			"creation": {
+				"codeDepositCost": "17000",
+				"executionCost": "92",
+				"totalCost": "17092"
+			},
+			"internal": {
+				"_throwError(enum ECDSA.RecoverError)": "infinite",
+				"recover(bytes32,bytes memory)": "infinite",
+				"recover(bytes32,bytes32,bytes32)": "infinite",
+				"recover(bytes32,uint8,bytes32,bytes32)": "infinite",
+				"toEthSignedMessageHash(bytes memory)": "infinite",
+				"toEthSignedMessageHash(bytes32)": "infinite",
+				"toTypedDataHash(bytes32,bytes32)": "infinite",
+				"tryRecover(bytes32,bytes memory)": "infinite",
+				"tryRecover(bytes32,bytes32,bytes32)": "infinite",
+				"tryRecover(bytes32,uint8,bytes32,bytes32)": "infinite"
+			}
+		},
+		"methodIdentifiers": {}
+	},
+	"abi": []
+}
