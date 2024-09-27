@@ -1,0 +1,45 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"details": "Wrappers over Solidity's uintXX/intXX casting operators with added overflow checks. Downcasting from uint256/int256 in Solidity does not revert on overflow. This can easily result in undesired exploitation or bugs, since developers usually assume that overflows raise errors. `SafeCast` restores this intuition by reverting the transaction when such an operation overflows. Using this library instead of the unchecked operations eliminates an entire class of bugs, so it's recommended to use it always. Can be combined with {SafeMath} and {SignedSafeMath} to extend it to smaller types, by performing all math on `uint256` and `int256` and then downcasting.",
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"0x/@openzeppelin/contracts/governance/extensions/GovernorCountingSimple_flattened.sol": "SafeCast"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"0x/@openzeppelin/contracts/governance/extensions/GovernorCountingSimple_flattened.sol": {
+			"keccak256": "0xd1228519cb44ff4beb5a347f7e95e47fa826805e7434f28f788165ffd89b6b87",
+			"urls": [
+				"bzz-raw://8ec7f0397efac42ccdd27283c89a2f1005a47fbb7ba71e7d9b244d52013c73ca",
+				"dweb:/ipfs/QmcAZQYT1GFgMaoqEwzEcxw5nvHYkCziS4RUo43bjkXwVG"
+			]
+		}
+	},
+	"version": 1
+}

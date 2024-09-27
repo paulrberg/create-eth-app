@@ -1,0 +1,45 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"details": "Provides information about the current execution context, including the sender of the transaction and its data. While these are generally available via msg.sender and msg.data, they should not be accessed in such a direct manner, since when dealing with meta-transactions the account sending and paying for execution may not be the actual sender (as far as an application is concerned). This contract is only required for intermediate, library-like contracts.",
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"0x/@openzeppelin/contracts/governance/extensions/GovernorCountingSimple_flattened.sol": "Context"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"0x/@openzeppelin/contracts/governance/extensions/GovernorCountingSimple_flattened.sol": {
+			"keccak256": "0xd1228519cb44ff4beb5a347f7e95e47fa826805e7434f28f788165ffd89b6b87",
+			"urls": [
+				"bzz-raw://8ec7f0397efac42ccdd27283c89a2f1005a47fbb7ba71e7d9b244d52013c73ca",
+				"dweb:/ipfs/QmcAZQYT1GFgMaoqEwzEcxw5nvHYkCziS4RUo43bjkXwVG"
+			]
+		}
+	},
+	"version": 1
+}

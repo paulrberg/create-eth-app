@@ -1,0 +1,126 @@
+{
+	"deploy": {
+		"VM:-": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"main:1": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"ropsten:3": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"rinkeby:4": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"kovan:42": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"goerli:5": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"Custom": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		}
+	},
+	"data": {
+		"bytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"linkReferences": {},
+			"object": "6055604b600b8282823980515f1a607314603f577f4e487b71000000000000000000000000000000000000000000000000000000005f525f60045260245ffd5b305f52607381538281f3fe730000000000000000000000000000000000000000301460806040525f80fdfea2646970667358221220b8709df65cf8d1b4a97b6bff9eac419d77db13e52e0ce3cf9c5939788094f70264736f6c634300081a0033",
+			"opcodes": "PUSH1 0x55 PUSH1 0x4B PUSH1 0xB DUP3 DUP3 DUP3 CODECOPY DUP1 MLOAD PUSH0 BYTE PUSH1 0x73 EQ PUSH1 0x3F JUMPI PUSH32 0x4E487B7100000000000000000000000000000000000000000000000000000000 PUSH0 MSTORE PUSH0 PUSH1 0x4 MSTORE PUSH1 0x24 PUSH0 REVERT JUMPDEST ADDRESS PUSH0 MSTORE PUSH1 0x73 DUP2 MSTORE8 DUP3 DUP2 RETURN INVALID PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 0xB8 PUSH17 0x9DF65CF8D1B4A97B6BFF9EAC419D77DB13 0xE5 0x2E 0xC 0xE3 0xCF SWAP13 MSIZE CODECOPY PUSH25 0x8094F70264736F6C634300081A003300000000000000000000 ",
+			"sourceMap": "2190:34153:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;"
+		},
+		"deployedBytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"immutableReferences": {},
+			"linkReferences": {},
+			"object": "730000000000000000000000000000000000000000301460806040525f80fdfea2646970667358221220b8709df65cf8d1b4a97b6bff9eac419d77db13e52e0ce3cf9c5939788094f70264736f6c634300081a0033",
+			"opcodes": "PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 0xB8 PUSH17 0x9DF65CF8D1B4A97B6BFF9EAC419D77DB13 0xE5 0x2E 0xC 0xE3 0xCF SWAP13 MSIZE CODECOPY PUSH25 0x8094F70264736F6C634300081A003300000000000000000000 ",
+			"sourceMap": "2190:34153:0:-:0;;;;;;;;"
+		},
+		"gasEstimates": {
+			"creation": {
+				"codeDepositCost": "17000",
+				"executionCost": "92",
+				"totalCost": "17092"
+			},
+			"internal": {
+				"toInt104(int256)": "infinite",
+				"toInt112(int256)": "infinite",
+				"toInt120(int256)": "infinite",
+				"toInt128(int256)": "infinite",
+				"toInt136(int256)": "infinite",
+				"toInt144(int256)": "infinite",
+				"toInt152(int256)": "infinite",
+				"toInt16(int256)": "infinite",
+				"toInt160(int256)": "infinite",
+				"toInt168(int256)": "infinite",
+				"toInt176(int256)": "infinite",
+				"toInt184(int256)": "infinite",
+				"toInt192(int256)": "infinite",
+				"toInt200(int256)": "infinite",
+				"toInt208(int256)": "infinite",
+				"toInt216(int256)": "infinite",
+				"toInt224(int256)": "infinite",
+				"toInt232(int256)": "infinite",
+				"toInt24(int256)": "infinite",
+				"toInt240(int256)": "infinite",
+				"toInt248(int256)": "infinite",
+				"toInt256(uint256)": "infinite",
+				"toInt32(int256)": "infinite",
+				"toInt40(int256)": "infinite",
+				"toInt48(int256)": "infinite",
+				"toInt56(int256)": "infinite",
+				"toInt64(int256)": "infinite",
+				"toInt72(int256)": "infinite",
+				"toInt8(int256)": "infinite",
+				"toInt80(int256)": "infinite",
+				"toInt88(int256)": "infinite",
+				"toInt96(int256)": "infinite",
+				"toUint104(uint256)": "infinite",
+				"toUint112(uint256)": "infinite",
+				"toUint120(uint256)": "infinite",
+				"toUint128(uint256)": "infinite",
+				"toUint136(uint256)": "infinite",
+				"toUint144(uint256)": "infinite",
+				"toUint152(uint256)": "infinite",
+				"toUint16(uint256)": "infinite",
+				"toUint160(uint256)": "infinite",
+				"toUint168(uint256)": "infinite",
+				"toUint176(uint256)": "infinite",
+				"toUint184(uint256)": "infinite",
+				"toUint192(uint256)": "infinite",
+				"toUint200(uint256)": "infinite",
+				"toUint208(uint256)": "infinite",
+				"toUint216(uint256)": "infinite",
+				"toUint224(uint256)": "infinite",
+				"toUint232(uint256)": "infinite",
+				"toUint24(uint256)": "infinite",
+				"toUint240(uint256)": "infinite",
+				"toUint248(uint256)": "infinite",
+				"toUint256(int256)": "infinite",
+				"toUint32(uint256)": "infinite",
+				"toUint40(uint256)": "infinite",
+				"toUint48(uint256)": "infinite",
+				"toUint56(uint256)": "infinite",
+				"toUint64(uint256)": "infinite",
+				"toUint72(uint256)": "infinite",
+				"toUint8(uint256)": "infinite",
+				"toUint80(uint256)": "infinite",
+				"toUint88(uint256)": "infinite",
+				"toUint96(uint256)": "infinite"
+			}
+		},
+		"methodIdentifiers": {}
+	},
+	"abi": []
+}

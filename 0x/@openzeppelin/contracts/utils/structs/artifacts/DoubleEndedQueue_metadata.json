@@ -1,0 +1,77 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "Empty",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "OutOfBounds",
+				"type": "error"
+			}
+		],
+		"devdoc": {
+			"details": "A sequence of items with the ability to efficiently push and pop items (i.e. insert and remove) on both ends of the sequence (called front and back). Among other access patterns, it can be used to implement efficient LIFO and FIFO queues. Storage use is optimized, and all operations are O(1) constant time. This includes {clear}, given that the existing queue contents are left in storage. The struct is called `Bytes32Deque`. Other types can be cast to and from `bytes32`. This data structure can only be used in storage, and not in memory. ``` DoubleEndedQueue.Bytes32Deque queue; ``` _Available since v4.6._",
+			"errors": {
+				"Empty()": [
+					{
+						"details": "An operation (e.g. {front}) couldn't be completed due to the queue being empty."
+					}
+				],
+				"OutOfBounds()": [
+					{
+						"details": "An operation (e.g. {at}) couldn't be completed due to an index being out of bounds."
+					}
+				]
+			},
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"0x/@openzeppelin/contracts/utils/structs/DoubleEndedQueue.sol": "DoubleEndedQueue"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"0x/@openzeppelin/contracts/utils/math/SafeCast.sol": {
+			"keccak256": "0xa7f6884b6e7dc9a550b95213ff747ed3bc41bac285d170bb1462d288c8bca78b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://401dcd8403694e827d432504f488a62522eea477d7a5e304f80316b44a3ced9b",
+				"dweb:/ipfs/QmWBEcwtnrge3gdnjRUJ7tujm5TCD4hJ8VLk74cZg78Z78"
+			]
+		},
+		"0x/@openzeppelin/contracts/utils/structs/DoubleEndedQueue.sol": {
+			"keccak256": "0x2e0ba9f11c656504f0d6481c55d48f927579960c4e00f31957c44c89eaf9606a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ce30135c66d0e8b1c6a2f0e52105a2d1d833558e89041fc039d361ac1456b4cf",
+				"dweb:/ipfs/QmPkAEpyLs7GFiStf7XS7yySQkipiVE4pSYCiuLtUwytzK"
+			]
+		}
+	},
+	"version": 1
+}
