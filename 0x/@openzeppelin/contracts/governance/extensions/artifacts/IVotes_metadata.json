@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.26+commit.8a97fa7a"
+		"version": "0.8.27+commit.40a35a09"
 	},
 	"language": "Solidity",
 	"output": {
@@ -231,14 +231,14 @@
 		"compilationTarget": {
 			"0x/@openzeppelin/contracts/governance/extensions/GovernorVotesQuorumFraction_flattened.sol": "IVotes"
 		},
-		"evmVersion": "cancun",
+		"evmVersion": "istanbul",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
 		},
 		"optimizer": {
-			"enabled": false,
-			"runs": 200
+			"enabled": true,
+			"runs": 5000000
 		},
 		"remappings": []
 	},

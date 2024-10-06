@@ -263,14 +263,14 @@
 		"compilationTarget": {
 			"Lottery-Contract(copy)(copy)/lottery.sol": "Lottery"
 		},
-		"evmVersion": "cancun",
+		"evmVersion": "istanbul",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
 		},
 		"optimizer": {
-			"enabled": false,
-			"runs": 200
+			"enabled": true,
+			"runs": 5000000
 		},
 		"remappings": []
 	},

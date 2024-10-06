@@ -18,8 +18,8 @@
 
 // OpenZeppelin Contracts (last updated v4.6.0) (token/ERC721/IERC721Receiver.sol)
 
-pragma solidity ^0.8.0;
-
+// SPDX-License-Identifier: MIT
+pragma solidity version 0.6.12+commit.27d51765.Emscripten.clang; 
 /**
  * @title ERC721 token receiver interface
  * @dev Interface for any contract that wants to support safeTransfers

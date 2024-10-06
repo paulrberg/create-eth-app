@@ -266,14 +266,14 @@
 		"compilationTarget": {
 			"nft-staking-with-infinite-rewards(copy)(copy)/nft-staking-with-infinite-rewards.sol": "NFTStakingPerToken"
 		},
-		"evmVersion": "cancun",
+		"evmVersion": "istanbul",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
 		},
 		"optimizer": {
-			"enabled": false,
-			"runs": 200
+			"enabled": true,
+			"runs": 5000000
 		},
 		"remappings": []
 	},

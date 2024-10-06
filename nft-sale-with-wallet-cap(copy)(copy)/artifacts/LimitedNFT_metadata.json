@@ -760,14 +760,14 @@
 		"compilationTarget": {
 			"nft-sale-with-wallet-cap(copy)(copy)/nft-sale-with-wallet-cap.sol": "LimitedNFT"
 		},
-		"evmVersion": "cancun",
+		"evmVersion": "istanbul",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
 		},
 		"optimizer": {
-			"enabled": false,
-			"runs": 200
+			"enabled": true,
+			"runs": 5000000
 		},
 		"remappings": []
 	},

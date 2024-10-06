@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.27+commit.40a35a09"
+		"version": "0.8.28-nightly.2024.10.2+commit.256e9528"
 	},
 	"language": "Solidity",
 	"output": {
@@ -369,14 +369,14 @@
 		"compilationTarget": {
 			"simple-token(copy)(copy)/simple-token.sol": "FixedToken"
 		},
-		"evmVersion": "cancun",
+		"evmVersion": "istanbul",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
 		},
 		"optimizer": {
-			"enabled": false,
-			"runs": 200
+			"enabled": true,
+			"runs": 5000000
 		},
 		"remappings": []
 	},

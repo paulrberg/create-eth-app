@@ -602,14 +602,14 @@
 		"compilationTarget": {
 			"Azuki-ERC721A-ERC721ABurnable(copy)(copy)//extensions/ERC721ABurnable.sol": "ERC721ABurnable"
 		},
-		"evmVersion": "cancun",
+		"evmVersion": "istanbul",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
 		},
 		"optimizer": {
-			"enabled": false,
-			"runs": 200
+			"enabled": true,
+			"runs": 5000000
 		},
 		"remappings": []
 	},

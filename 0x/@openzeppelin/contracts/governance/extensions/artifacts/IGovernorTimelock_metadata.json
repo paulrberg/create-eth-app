@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.26+commit.8a97fa7a"
+		"version": "0.8.27+commit.40a35a09"
 	},
 	"language": "Solidity",
 	"output": {
@@ -907,25 +907,25 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"0x/@openzeppelin/contracts/governance/extensions/IGovernorTimelock_flattened.sol": "IGovernorTimelock"
+			"0x/@openzeppelin/contracts/governance/extensions/GovernorTimelockControl_flattened.sol": "IGovernorTimelock"
 		},
-		"evmVersion": "cancun",
+		"evmVersion": "istanbul",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
 		},
 		"optimizer": {
-			"enabled": false,
-			"runs": 200
+			"enabled": true,
+			"runs": 5000000
 		},
 		"remappings": []
 	},
 	"sources": {
-		"0x/@openzeppelin/contracts/governance/extensions/IGovernorTimelock_flattened.sol": {
-			"keccak256": "0xa60a0d2bdcbeca2ce90b25fa72b4510d9c2a7a7de6df560b8bcf89514b03f5e7",
+		"0x/@openzeppelin/contracts/governance/extensions/GovernorTimelockControl_flattened.sol": {
+			"keccak256": "0x672ba74d9c4a31098d7bacbee915bf6983cff98bb360893c76537f5c36b39fd7",
 			"urls": [
-				"bzz-raw://a7c0afd4c9e192c67f3517b6dbbdef95002ad6a2a73f9eeac24d2117480cfd38",
-				"dweb:/ipfs/QmShpA8bk6Dff7F9CZHPnFEWDKtgtThGiDMhfo15d3QNWp"
+				"bzz-raw://44dfa15af6a8317c3544e262857497bd2846413706e2989b6d45023b5287c2a0",
+				"dweb:/ipfs/QmRo57ad2UB8xQxfPxrqQdUjYTouA7ECWCKD7RYJDguWnn"
 			]
 		}
 	},
